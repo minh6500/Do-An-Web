@@ -1,0 +1,113 @@
+﻿@using LinhKienMayTinh.Models
+@model List<GioHang>
+@{
+    ViewBag.Title = "GioHang";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="banner-top" style="background-color:#333;">
+    <div class="container">
+        <h3>Giỏ Hàng</h3>
+        <h4><a href="@Url.Action("Index","TrangChu")">Trang Chủ</a><label>/</label>Giỏ Hàng</h4>
+        <div class="clearfix"> </div>
+    </div>
+</div>
+
+<div>
+    <div style="margin-left:25%;">
+        <nav style="font-size:15px;margin-top:100px;font-weight:bold;background-color:#609;color:white;width:75%;height:50px;line-height:50px;border-radius:5px;">
+
+            <span style="padding-left:5%;">Sản Phẩm</span>
+
+            <span style="padding-left:30%;padding-right:10%">Số Lượng</span>
+
+            <span>Giá</span>
+
+        </nav>
+
+        <nav style="margin-top:20px;margin-bottom:50px;width:75%;">
+            <nav style="width:100%;height:auto;border:1px solid rgba(0, 0, 0, 0.11); border-radius:5px;">
+
+                @foreach (var item in Model)
+                {
+                    using (Html.BeginForm("CapNhatGioHang", "GioHang", new { iMASP = item.iMASP }))
+                    {
+                    <nav style="margin-top:30px;">
+                        <div style="width:15%;height:auto;float:left;margin-left:3%;">
+                            <span>
+                                <img src="@Url.Content("~/images/" + item.sHINHANH)" width="100px" height="100px" />
+                            </span>
+                        </div>
+
+                        <div style="width:27%;height:100px;line-height:100px;float:left;">
+                            <span style="color:#c1c1c1;font-size:14px;font-weight:bold;">@item.sTENSP</span>
+                        </div>
+                        <div style="float:left;width:17%;height:100px;line-height:100px;">
+                            <span><input type="number" value="@item.iSOLUONG" name="txtSoLuong" style="width:50px;height:30px;" /></span>
+                        </div>
+
+                        <div style="float:left;height:100px;line-height:100px;width:15%;">
+                            <span>@String.Format("{0:0,0}", item.dTHANHTIEN) VNĐ</span>
+                        </div>
+                        <div>
+                            <input type="submit"  value="Cập Nhật" style="height:30px;width:100px;margin-top:35px;color:#fff;background-color:#029241;float:left;border:none;"/>
+                        </div>
+                        <div style="float:left;height:100px;line-height:100px;margin-left:30px;">
+                            <a href="@Url.Action("XoaGioHang","GioHang",new { iMASP = item.iMASP })"><i class="fa fa-times" aria-hidden="true" style="font-size:20px;color:darkred;"></i></a>
+                        </div>
+                    </nav>
+                        }
+
+                    }
+                <div style="clear:both;"></div>
+                <nav style="text-align:center;height:50px;line-height:50px;">
+                    <span style="color:palevioletred;font-size:20px;">@ViewBag.ThongBao</span>
+                </nav>
+            </nav>
+            <div style="height:40px;color:red;font-size:15px;margin-top:20px;width:50%;float:left;">
+                <span style="margin-left:5%;margin-top:20px;">Tổng Tiền</span>
+            </div>
+            <div style="height:40px;color:red;font-size:15px;margin-top:20px;float:left;">
+                <span>@String.Format("{0:0,0}", ViewBag.Tongtien) VNĐ</span>
+            </div>
+            <div class="clearfix"></div>
+            <nav class="submit">
+               
+                
+                <div style="text-align:center;">
+                    <a href="@Url.Action("DatHang","GioHang")">Đặt Hàng</a>
+                </div>
+                
+            </nav>
+            <div class="clearfix"></div>
+        </nav>
+    </div>
+</div>
+
+
+<style>
+    .submit{
+        float:right;
+        width:150px;
+        height:40px;
+        line-height:40px;
+        border:none;
+        background-color:#029241;
+        margin-top:1em;
+        transition: 0.5s all ease;
+        -webkit-transition: 0.5s all ease;
+        -moz-transition: 0.5s all ease;
+        -o-transition: 0.5s all ease;
+        margin-right:20px;
+    }
+    .submit a{
+        color:#fff;
+    }
+    .submit:hover{
+        background-color:#FAB005;
+    }
+    .submit:hover a{
+        list-style-type:none;
+        text-decoration:none;
+    }
+</style>

@@ -1,0 +1,81 @@
+﻿@model LinhKienMayTinh.Models.KHACHHANG
+
+@{
+    ViewBag.Title = "XoaTK";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Xóa Tài Khoản</h2>
+
+<h3>Bạn có muốn xóa tài khoản này không</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MAKH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAKH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TENKH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TENKH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SDT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SDT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DIACHI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DIACHI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMAIL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMAIL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PASS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PASS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NGAYDANGKY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NGAYDANGKY)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa Tài Khoản" class="btn btn-default" /> |
+            @Html.ActionLink("Trở lại", "QLTaiKhoan")
+        </div>
+    }
+</div>

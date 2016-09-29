@@ -1,0 +1,8 @@
+﻿@using LinhKienMayTinh.Models;
+@model List<NSX>
+
+@foreach (var item in Model)
+{
+
+    <li><a href="@Url.Action("SPTheoNSX","TrangChu", new { id = item.MANSX })"><i class="fa fa-angle-right" aria-hidden="true"></i>@item.TENNSX</a></li>
+}

@@ -1,0 +1,108 @@
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\ApplicationInsights.config
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\roslyn\csc.exe
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\roslyn\vbc.exe
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\roslyn\VBCSCompiler.exe
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\LinhKienMayTinh.dll.config
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\LinhKienMayTinh.dll
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\LinhKienMayTinh.pdb
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\Microsoft.AI.Web.dll
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\Microsoft.ApplicationInsights.dll
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\System.Web.Helpers.dll
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\System.Web.Mvc.dll
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\System.Web.Razor.dll
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\System.Web.Webpages.Deployment.dll
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\System.Web.Webpages.dll
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\System.Web.Webpages.Razor.dll
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\Microsoft.AI.Web.xml
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\Microsoft.ApplicationInsights.xml
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\System.Web.Razor.xml
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\System.Web.Webpages.xml
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\System.Web.Webpages.Deployment.xml
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\System.Web.Webpages.Razor.xml
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\System.Web.Helpers.xml
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\System.Web.Mvc.xml
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\obj\Debug\LinhKienMayTinh.csprojResolveAssemblyReference.cache
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\obj\Debug\LinhKienMayTinh.dll
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\obj\Debug\LinhKienMayTinh.pdb
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\EntityFramework.dll
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\EntityFramework.SqlServer.dll
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\EntityFramework.xml
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\EntityFramework.SqlServer.xml
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\PagedList.dll
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\PagedList.Mvc.dll
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\PagedList.xml
+C:\Users\LUU THONG\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\PagedList.Mvc.xml
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\ApplicationInsights.config
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\roslyn\csc.exe
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\roslyn\vbc.exe
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\roslyn\VBCSCompiler.exe
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\LinhKienMayTinh.dll.config
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\LinhKienMayTinh.dll
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\LinhKienMayTinh.pdb
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\EntityFramework.dll
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\EntityFramework.SqlServer.dll
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\Microsoft.AI.Web.dll
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\Microsoft.ApplicationInsights.dll
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\PagedList.dll
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\PagedList.Mvc.dll
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\System.Web.Helpers.dll
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\System.Web.Mvc.dll
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\System.Web.Razor.dll
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\System.Web.Webpages.Deployment.dll
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\System.Web.Webpages.dll
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\System.Web.Webpages.Razor.dll
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\EntityFramework.xml
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\EntityFramework.SqlServer.xml
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\Microsoft.AI.Web.xml
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\Microsoft.ApplicationInsights.xml
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\PagedList.xml
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\PagedList.Mvc.xml
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\System.Web.Razor.xml
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\System.Web.Webpages.xml
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\System.Web.Webpages.Deployment.xml
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\System.Web.Webpages.Razor.xml
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\System.Web.Helpers.xml
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\bin\System.Web.Mvc.xml
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\obj\Debug\LinhKienMayTinh.csprojResolveAssemblyReference.cache
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\obj\Debug\LinhKienMayTinh.dll
+C:\Users\ASUS\Desktop\web\LinhKienMayTinh\LinhKienMayTinh\obj\Debug\LinhKienMayTinh.pdb

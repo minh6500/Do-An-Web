@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "DangNhap";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="banner-top" style="background-color:#333;">
+    <div class="container">
+        <h3>Đăng Nhập</h3>
+        <h4><a href="@Url.Action("Index","TrangChu")">Trang Chủ</a><label>/</label>Đăng Nhập</h4>
+        <div class="clearfix"> </div>
+    </div>
+</div>
+
+<!--login-->
+
+<div class="login">
+
+    <div class="main-agileits">
+        <div class="form-w3agile">
+            <h3>Đăng Nhập</h3>
+            @using (Html.BeginForm())
+            {
+                <div class="key">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <input type="text" value="Tài Khoản" name="ID" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Tài Khoản';}" required="">
+                    <div class="clearfix"></div>
+                </div>
+                <div class="key">
+                    <i class="fa fa-lock" aria-hidden="true"></i>
+                    <input type="password" value="Mật Khẩu" name="PASS" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Mật Khẩu';}" required="">
+                    <div class="clearfix"></div>
+                </div>
+                <input type="submit" value="Đăng Nhập">
+            }
+        </div>
+        <div class="forg">
+            <a href="@Url.Action("DangKy","DangKyDangNhap")" class="forg-right">Đăng Ký</a>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>

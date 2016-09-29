@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLBANHANGModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="DONDATHANG">
+    <Key>
+      <PropertyRef Name="MAD" />
+    </Key>
+    <Property Name="MAD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NGAYDAT" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="NGAYGIAO" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="TENDAIDIEN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SDT" Type="String" MaxLength="11" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="DIACHIGIAO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TINHTRANGTHANHTOAN" Type="Boolean" />
+    <Property Name="TINHTRANGGIAOHANG" Type="Boolean" />
+    <Property Name="MAKH" Type="Int32" />
+    <NavigationProperty Name="CTDDHs" Relationship="Self.FK__CTDDH__MAD__1FCDBCEB" FromRole="DONDATHANG" ToRole="CTDDH" />
+    <NavigationProperty Name="KHACHHANG" Relationship="Self.FK__DONDATHANG__MAKH__1CF15040" FromRole="DONDATHANG" ToRole="KHACHHANG" />
+  </EntityType>
+  <EntityType Name="KHACHHANG">
+    <Key>
+      <PropertyRef Name="MAKH" />
+    </Key>
+    <Property Name="MAKH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TENKH" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SDT" Type="String" MaxLength="11" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="DIACHI" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PASS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NGAYDANGKY" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="DONDATHANGs" Relationship="Self.FK__DONDATHANG__MAKH__1CF15040" FromRole="KHACHHANG" ToRole="DONDATHANG" />
+  </EntityType>
+  <EntityType Name="KHUYENMAI">
+    <Key>
+      <PropertyRef Name="MAKM" />
+    </Key>
+    <Property Name="MAKM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TENKM" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TYLEKM" Type="Double" Nullable="false" />
+    <NavigationProperty Name="SANPHAMs" Relationship="Self.FK__SANPHAM__MAKM__182C9B23" FromRole="KHUYENMAI" ToRole="SANPHAM" />
+  </EntityType>
+  <EntityType Name="LOAISP">
+    <Key>
+      <PropertyRef Name="MALOAI" />
+    </Key>
+    <Property Name="MALOAI" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TENLOAI" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="SANPHAMs" Relationship="Self.FK__SANPHAM__MALOAI__164452B1" FromRole="LOAISP" ToRole="SANPHAM" />
+  </EntityType>
+  <EntityType Name="NSX">
+    <Key>
+      <PropertyRef Name="MANSX" />
+    </Key>
+    <Property Name="MANSX" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TENNSX" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="SANPHAMs" Relationship="Self.FK__SANPHAM__MANSX__173876EA" FromRole="NSX" ToRole="SANPHAM" />
+  </EntityType>
+  <EntityType Name="QUANGCAO">
+    <Key>
+      <PropertyRef Name="MAQC" />
+    </Key>
+    <Property Name="MAQC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LINK" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SANPHAM">
+    <Key>
+      <PropertyRef Name="MASP" />
+    </Key>
+    <Property Name="MASP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TENSP" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MOTA" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="HINHANH" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NGAYCAPNHAT" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DONGIA" Type="Int32" Nullable="false" />
+    <Property Name="MALOAI" Type="Int32" Nullable="false" />
+    <Property Name="MANSX" Type="Int32" Nullable="false" />
+    <Property Name="MAKM" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="KHUYENMAI" Relationship="Self.FK__SANPHAM__MAKM__182C9B23" FromRole="SANPHAM" ToRole="KHUYENMAI" />
+    <NavigationProperty Name="LOAISP" Relationship="Self.FK__SANPHAM__MALOAI__164452B1" FromRole="SANPHAM" ToRole="LOAISP" />
+    <NavigationProperty Name="NSX" Relationship="Self.FK__SANPHAM__MANSX__173876EA" FromRole="SANPHAM" ToRole="NSX" />
+    <NavigationProperty Name="CTDDHs" Relationship="Self.FK__CTDDH__MASP__1ED998B2" FromRole="SANPHAM" ToRole="CTDDH" />
+  </EntityType>
+  <EntityType Name="CTDDH">
+    <Key>
+      <PropertyRef Name="DONGIA" />
+      <PropertyRef Name="SOLUONG" />
+    </Key>
+    <Property Name="MASP" Type="Int32" />
+    <Property Name="MAD" Type="Int32" />
+    <Property Name="DONGIA" Type="Int32" Nullable="false" />
+    <Property Name="SOLUONG" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DONDATHANG" Relationship="Self.FK__CTDDH__MAD__1FCDBCEB" FromRole="CTDDH" ToRole="DONDATHANG" />
+    <NavigationProperty Name="SANPHAM" Relationship="Self.FK__CTDDH__MASP__1ED998B2" FromRole="CTDDH" ToRole="SANPHAM" />
+  </EntityType>
+  <Association Name="FK__CTDDH__MAD__1FCDBCEB">
+    <End Role="DONDATHANG" Type="Self.DONDATHANG" Multiplicity="0..1" />
+    <End Role="CTDDH" Type="Self.CTDDH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DONDATHANG">
+        <PropertyRef Name="MAD" />
+      </Principal>
+      <Dependent Role="CTDDH">
+        <PropertyRef Name="MAD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DONDATHANG__MAKH__1CF15040">
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
+    <End Role="DONDATHANG" Type="Self.DONDATHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACHHANG">
+        <PropertyRef Name="MAKH" />
+      </Principal>
+      <Dependent Role="DONDATHANG">
+        <PropertyRef Name="MAKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SANPHAM__MAKM__182C9B23">
+    <End Role="KHUYENMAI" Type="Self.KHUYENMAI" Multiplicity="1" />
+    <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHUYENMAI">
+        <PropertyRef Name="MAKM" />
+      </Principal>
+      <Dependent Role="SANPHAM">
+        <PropertyRef Name="MAKM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SANPHAM__MALOAI__164452B1">
+    <End Role="LOAISP" Type="Self.LOAISP" Multiplicity="1" />
+    <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOAISP">
+        <PropertyRef Name="MALOAI" />
+      </Principal>
+      <Dependent Role="SANPHAM">
+        <PropertyRef Name="MALOAI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SANPHAM__MANSX__173876EA">
+    <End Role="NSX" Type="Self.NSX" Multiplicity="1" />
+    <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NSX">
+        <PropertyRef Name="MANSX" />
+      </Principal>
+      <Dependent Role="SANPHAM">
+        <PropertyRef Name="MANSX" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CTDDH__MASP__1ED998B2">
+    <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="0..1" />
+    <End Role="CTDDH" Type="Self.CTDDH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SANPHAM">
+        <PropertyRef Name="MASP" />
+      </Principal>
+      <Dependent Role="CTDDH">
+        <PropertyRef Name="MASP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QLBANHANGEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DONDATHANGs" EntityType="Self.DONDATHANG" />
+    <EntitySet Name="KHACHHANGs" EntityType="Self.KHACHHANG" />
+    <EntitySet Name="KHUYENMAIs" EntityType="Self.KHUYENMAI" />
+    <EntitySet Name="LOAISPs" EntityType="Self.LOAISP" />
+    <EntitySet Name="NSXes" EntityType="Self.NSX" />
+    <EntitySet Name="QUANGCAOs" EntityType="Self.QUANGCAO" />
+    <EntitySet Name="SANPHAMs" EntityType="Self.SANPHAM" />
+    <EntitySet Name="CTDDHs" EntityType="Self.CTDDH" />
+    <AssociationSet Name="FK__CTDDH__MAD__1FCDBCEB" Association="Self.FK__CTDDH__MAD__1FCDBCEB">
+      <End Role="DONDATHANG" EntitySet="DONDATHANGs" />
+      <End Role="CTDDH" EntitySet="CTDDHs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DONDATHANG__MAKH__1CF15040" Association="Self.FK__DONDATHANG__MAKH__1CF15040">
+      <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
+      <End Role="DONDATHANG" EntitySet="DONDATHANGs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SANPHAM__MAKM__182C9B23" Association="Self.FK__SANPHAM__MAKM__182C9B23">
+      <End Role="KHUYENMAI" EntitySet="KHUYENMAIs" />
+      <End Role="SANPHAM" EntitySet="SANPHAMs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SANPHAM__MALOAI__164452B1" Association="Self.FK__SANPHAM__MALOAI__164452B1">
+      <End Role="LOAISP" EntitySet="LOAISPs" />
+      <End Role="SANPHAM" EntitySet="SANPHAMs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SANPHAM__MANSX__173876EA" Association="Self.FK__SANPHAM__MANSX__173876EA">
+      <End Role="NSX" EntitySet="NSXes" />
+      <End Role="SANPHAM" EntitySet="SANPHAMs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CTDDH__MASP__1ED998B2" Association="Self.FK__CTDDH__MASP__1ED998B2">
+      <End Role="SANPHAM" EntitySet="SANPHAMs" />
+      <End Role="CTDDH" EntitySet="CTDDHs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

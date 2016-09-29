@@ -1,0 +1,102 @@
+﻿@using LinhKienMayTinh.Models;
+@model SANPHAM
+@{
+    ViewBag.Title = "XemChiTiet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="banner-top" style="background-color:#333">
+    <div class="container">
+        <h3>Chi Tiết Sản Phẩm</h3>
+        <h4><a href="@Url.Action("Index", "TrangChu")">Trang Chủ</a><label>/</label>Chi Tiết Sản Phẩm</h4>
+        <div class="clearfix"> </div>
+    </div>
+</div>
+<div class="single">
+    <div class="container">
+        <div class="single-top-main">
+            <div class="col-md-5 single-top">
+                <div class="single-w3agile">
+                    <div id="picture-frame">
+                        <img src="/images/@Model.HINHANH" data-src="images/si-1.jpg" alt="" class="img-responsive" />
+                    </div>
+                    <script src="/Content/TrangChu/js/jquery.zoomtoo.js"></script>
+                    <script>
+			$(function() {
+				$("#picture-frame").zoomToo({
+					magnify: 1
+				});
+			});
+                    </script>
+
+
+
+                </div>
+            </div>
+            <div class="col-md-7 single-top-left ">
+                <div class="single-right">
+                    <h3>@Model.TENSP</h3>
+
+
+                    <div class="pr-single">
+                        <p class="reduced ">@*<del>$10.00</del>*@@String.Format("{0:0,0}", Model.DONGIA) VNĐ</p>
+                    </div>
+                    <div class="block block-w3">
+                        <div class="starbox small ghosting"> </div>
+                    </div>
+                    <p class="in-pa"> @Model.MOTA </p>
+
+                    <ul class="social-top">
+                        <li><a href="#" class="icon facebook"><i class="fa fa-facebook" aria-hidden="true"></i><span></span></a></li>
+                        <li><a href="#" class="icon twitter"><i class="fa fa-twitter" aria-hidden="true"></i><span></span></a></li>
+                        <li><a href="#" class="icon pinterest"><i class="fa fa-pinterest-p" aria-hidden="true"></i><span></span></a></li>
+                        <li><a href="#" class="icon dribbble"><i class="fa fa-dribbble" aria-hidden="true"></i><span></span></a></li>
+                    </ul>
+                    @using (Html.BeginForm("ThemGioHang", "GioHang", new {@id = @Model.MASP, @strURL = Request.Url.ToString() }))
+                    {
+                    <div class="add add-3">
+                        <button type="submit" class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="Wheat" data-summary="summary 1" data-price="6.00" data-quantity="1" data-image="images/si.jpg">Thêm Vào Giỏ Hàng</button>
+                    </div>
+                    }
+
+
+                    <div class="clearfix"> </div>
+                </div>
+
+
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+
+
+    </div>
+</div>
+<div class="cmt">
+    <div class="fb-comments" data-href="@*<%=Page.Request.Url.AbsoluteUri %>*@http://test.com" data-colorscheme="light" data-numposts="5" data-width="1000"></div>
+</div>
+
+<style>
+    .cmt{
+        text-align:center;
+    }
+</style>
+<!---->
+@*<div class="content-top offer-w3agile">
+    <div class="container ">
+        <div class="spec ">
+            <h3>Sản Phẩm Mới</h3>
+            <div class="ser-t">
+                <b></b>
+                <span><i></i></span>
+                <b class="line"></b>
+            </div>
+        </div>
+        <div class=" con-w3l wthree-of">
+
+            @Html.Partial()
+           
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>*@
+

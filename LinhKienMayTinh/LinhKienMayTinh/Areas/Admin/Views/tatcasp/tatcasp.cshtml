@@ -1,0 +1,90 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.PagedList<LinhKienMayTinh.Models.SANPHAM>
+
+@{
+    ViewBag.Title = "tatcasp";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Tất Cả Sản Phẩm</h2>
+
+<p>
+    @Html.ActionLink("Thêm Mới Sản Phẩm", "ThemSP")
+</p>
+<table class="table">
+    <tr>
+        <th style="width:40px">
+            @Html.DisplayNameFor(model => model.First().MASP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().TENSP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().MOTA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().HINHANH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().NGAYCAPNHAT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().DONGIA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().LOAISP.TENLOAI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().NSX.TENNSX)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().KHUYENMAI.TENKM)
+        </th>
+        <th></th>
+    </tr>
+@foreach (var item in Model)
+{
+    
+    <tr>
+        <td style="width:40px;">
+            @Html.DisplayFor(modelItem => item.MASP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TENSP)
+        </td>
+        <td>
+            @Html.Raw(item.MOTA)
+        </td>
+        <td>
+            <img src="~/images/@Html.DisplayFor(modelItem => item.HINHANH)" class="img-responsive" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NGAYCAPNHAT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DONGIA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LOAISP.TENLOAI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NSX.TENNSX)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KHUYENMAI.TENKM)
+        </td>
+        <td>
+            @Html.ActionLink("Sửa", "SuaSP", new { id = item.MASP }) |
+            @Html.ActionLink("Hiển Thị", "HienThiSP", new { id = item.MASP }) |
+            @Html.ActionLink("Xóa", "XoaSP", new { id = item.MASP })
+        </td>
+    </tr>
+}
+
+</table>
+<!--Tạo link liên kết các trang-->
+Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount)
+<div class="MenuTrang">
+    @Html.PagedListPager(Model, page => Url.Action("tatcasp","tatcasp",new { page = page}))
+</div>
