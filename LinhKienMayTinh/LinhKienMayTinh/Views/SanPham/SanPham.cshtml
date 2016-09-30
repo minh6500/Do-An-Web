@@ -1,7 +1,16 @@
-﻿@using LinhKienMayTinh.Models;
-@model List<SANPHAM>
+﻿@using PagedList;
+@using PagedList.Mvc;
+@using LinhKienMayTinh.Models;
+@model PagedList.PagedList<SANPHAM>
 
-
+<div class="spec ">
+    <h3>Tất Cả Sản Phẩm</h3>
+    <div class="ser-t">
+        <b></b>
+        <span><i></i></span>
+        <b class="line"></b>
+    </div>
+</div>
 
 <div class=" con-w3l">
     @foreach (var item in Model)
@@ -35,5 +44,11 @@
 
     <div class="clearfix"></div>
 </div>
-
+<!--Tạo link liên kết các trang-->
+<div style="text-align:center;">
+    Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount)
+    <div class="MenuTrang">
+        @Html.PagedListPager(Model, page => Url.Action("SanPham", "SanPham", new { page = page }))
+    </div>
+</div>
 

@@ -51,6 +51,7 @@ namespace LinhKienMayTinh.Controllers
                 {
                     throw ex;
                 }
+                return RedirectToAction("Sent");
             }
             return View(model);
         }

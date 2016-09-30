@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using LinhKienMayTinh.Models;
+using PagedList;
+using PagedList.Mvc;
 
 namespace LinhKienMayTinh.Controllers
 {
@@ -11,14 +13,11 @@ namespace LinhKienMayTinh.Controllers
     {
         // GET: SanPham
         QLBANHANGEntities db = new QLBANHANGEntities();
-        private List<SANPHAM> SanPhamMoi(int count)
+        public ActionResult SanPham(int? page)
         {
-            //sap xep theo ngaycapnhat
-            return db.SANPHAMs.OrderByDescending(a => a.NGAYCAPNHAT).Take(count).ToList();
-        }
-        public ActionResult SanPham()
-        {
-            var sp = SanPhamMoi(8);
+            int pageNumber = (page ?? 1);
+            int pageSize = 8;
+            var sp = db.SANPHAMs.OrderByDescending(a => a.NGAYCAPNHAT).ToList().ToPagedList(pageNumber, pageSize);
             return View(sp);
         }
     }

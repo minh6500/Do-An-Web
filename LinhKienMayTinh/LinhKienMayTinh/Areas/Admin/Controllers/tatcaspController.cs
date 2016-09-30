@@ -18,7 +18,7 @@ namespace LinhKienMayTinh.Areas.Admin.Controllers
         public ActionResult tatcasp(int? page)
         {
             int pageNumber = (page ?? 1);
-            int pageSize = 10;
+            int pageSize = 5;
             var sp = db.SANPHAMs.ToList().OrderByDescending(n=>n.NGAYCAPNHAT).ToPagedList(pageNumber,pageSize);
             return View(sp);
         }

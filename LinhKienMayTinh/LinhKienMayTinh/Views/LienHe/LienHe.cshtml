@@ -4,45 +4,115 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@ViewBag.Title.</h2>
+<div>
+    <div class="spec ">
+        <h3>Liên Hệ</h3>
+        <div class="ser-t">
+            <b></b>
+            <span><i></i></span>
+            <b class="line"></b>
+        </div>
+    </div>
+    <div>
+        <div class="col-md-5 contact-right" style="float:left;">
+            <img src="~/images/cac.jpg" class="img-responsive" alt="">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d2482.432383990807!2d0.028213999961443994!3d51.52362882484525!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1423469959819" style="border:0"></iframe>
+        </div>
+    </div>
+ 
+        @using (Html.BeginForm())
+            {
+            @Html.AntiForgeryToken()
+            <hr />
+            <div class="left">
+                <fieldset>
+                    <legend style="font-size:24px;color:#029241;font-weight:bold;">Điền Đơn Liên Hệ</legend>
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    <h4>Send your comments.</h4>
-    <hr />
-    <div class="form-group">
-        @Html.LabelFor(m => m.UserName, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.UserName)
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.Email)
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.ChuDe, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.ChuDe, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.ChuDe)
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.NoiDung, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextAreaFor(m => m.NoiDung, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.NoiDung)
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Send" />
-        </div>
-    </div>
-    <div class="clearfix"></div>
-}
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.UserName, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+                            <p style="color:red;">@Html.ValidationMessageFor(m => m.UserName)</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <p style="margin-top:20px;">@Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })</p>
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                            <p style="color:red;">@Html.ValidationMessageFor(m => m.Email)</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <p style="margin-top:20px;">@Html.LabelFor(m => m.ChuDe, new { @class = "col-md-2 control-label" })</p>
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.ChuDe, new { @class = "form-control" })
+                            <p style="color:red;">@Html.ValidationMessageFor(m => m.ChuDe)</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <p style="margin-top:20px;">@Html.LabelFor(m => m.NoiDung, new { @class = "col-md-2 control-label" })</p>
+                        <div class="col-md-10">
+                            @Html.TextAreaFor(m => m.NoiDung, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.NoiDung)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" class="btn btn-default" value="Gửi Liên Hệ" />
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </fieldset>
+            </div>
+        }
+ 
+</div>
+<div class="clearfix"></div>
+
+
+
+            <style>
+                .left {
+                    width: 50%;
+                    height: auto;
+                    float:right;
+                }
+
+                .form-control {
+                    width: 50%;
+                    height: 35px;
+                    margin-top: 20px;
+                }
+
+                .col-md-2 {
+                    margin-top: 20px;
+                }
+
+                .col-md-offset-2 {
+                    margin-top: 20px;
+                }
+
+                input[type="submit"]:hover {
+                    background-color: #FAB005;
+                    color: #fff;
+                }
+
+                input[type="submit"] {
+                    border: none;
+                    width: 22%;
+                    height: 50px;
+                    margin-top: 0.5em;
+                    margin-bottom: 1em;
+                    font-size: 1em;
+                    color: #fff;
+                    letter-spacing: 1px;
+                    outline: none;
+                    background: #029241;
+                    transition: 0.5s all ease;
+                    -webkit-transition: 0.5s all ease;
+                    -moz-transition: 0.5s all ease;
+                    -o-transition: 0.5s all ease;
+                    -webkit-appearance: none;
+                }
+                
+            </style>

@@ -53,7 +53,7 @@ namespace LinhKienMayTinh.Controllers
             {
                 ViewBag.ThongBao = "Chúc mừng bạn đã đăng nhập thành công";
                 Session["TaiKhoan"] = kh;
-                return RedirectToAction("Index","TrangChu");
+                return View();
             }
             ViewBag.ThongBao = "Tài khoản hoặc mật khẩu không đúng. Vui lòng kiểm tra lại !";
             return View();

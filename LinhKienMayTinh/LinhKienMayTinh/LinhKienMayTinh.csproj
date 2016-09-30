@@ -206,6 +206,11 @@
     <Content Include="Models\QLBanHang.edmx.diagram">
       <DependentUpon>QLBanHang.edmx</DependentUpon>
     </Content>
+    <Content Include="Areas\Admin\Views\DONDATHANGs\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\DONDATHANGs\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\DONDATHANGs\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\DONDATHANGs\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\DONDATHANGs\Index.cshtml" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="scripts\jquery-1.10.2.js" />
     <Content Include="scripts\jquery-1.10.2.min.js" />
@@ -219,6 +224,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\DONDATHANGsController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\loaiController.cs" />
     <Compile Include="Areas\Admin\Controllers\QLTaiKhoanController.cs" />
