@@ -14,10 +14,10 @@ namespace LinhKienMayTinh.Models
     
     public partial class CTDDH
     {
-        public Nullable<int> MASP { get; set; }
-        public Nullable<int> MAD { get; set; }
-        public int DONGIA { get; set; }
-        public int SOLUONG { get; set; }
+        public int MASP { get; set; }
+        public int MAD { get; set; }
+        public Nullable<int> DONGIA { get; set; }
+        public Nullable<int> SOLUONG { get; set; }
     
         public virtual DONDATHANG DONDATHANG { get; set; }
         public virtual SANPHAM SANPHAM { get; set; }

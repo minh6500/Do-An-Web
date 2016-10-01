@@ -25,6 +25,7 @@ namespace LinhKienMayTinh.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<CTDDH> CTDDHs { get; set; }
         public virtual DbSet<DONDATHANG> DONDATHANGs { get; set; }
         public virtual DbSet<KHACHHANG> KHACHHANGs { get; set; }
         public virtual DbSet<KHUYENMAI> KHUYENMAIs { get; set; }
@@ -32,6 +33,5 @@ namespace LinhKienMayTinh.Models
         public virtual DbSet<NSX> NSXes { get; set; }
         public virtual DbSet<QUANGCAO> QUANGCAOs { get; set; }
         public virtual DbSet<SANPHAM> SANPHAMs { get; set; }
-        public virtual DbSet<CTDDH> CTDDHs { get; set; }
     }
 }

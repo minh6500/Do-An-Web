@@ -175,9 +175,8 @@ namespace LinhKienMayTinh.Controllers
                 ctdh.SOLUONG = item.iSOLUONG;
                 ctdh.DONGIA = (int)item.dDONGIA;
                 db.CTDDHs.Add(ctdh);
-                db.SaveChanges();
             }
-            
+            db.SaveChanges();
             return RedirectToAction("Index","TrangChu");
         }
         #endregion

@@ -199,6 +199,11 @@
     <Content Include="Areas\Admin\Views\QLTaiKhoan\ThemTK.cshtml" />
     <Content Include="Areas\Admin\Views\QLTaiKhoan\SuaTK.cshtml" />
     <Content Include="Areas\Admin\Views\QLTaiKhoan\XoaTK.cshtml" />
+    <Content Include="Areas\Admin\Views\DONDATHANGs\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\DONDATHANGs\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\DONDATHANGs\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\DONDATHANGs\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\DONDATHANGs\Index.cshtml" />
     <EntityDeploy Include="Models\QLBanHang.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>QLBanHang.Designer.cs</LastGenOutput>
@@ -206,11 +211,6 @@
     <Content Include="Models\QLBanHang.edmx.diagram">
       <DependentUpon>QLBanHang.edmx</DependentUpon>
     </Content>
-    <Content Include="Areas\Admin\Views\DONDATHANGs\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\DONDATHANGs\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\DONDATHANGs\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\DONDATHANGs\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\DONDATHANGs\Index.cshtml" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="scripts\jquery-1.10.2.js" />
     <Content Include="scripts\jquery-1.10.2.min.js" />
@@ -235,6 +235,7 @@
     <Compile Include="Controllers\LoaiSPController.cs" />
     <Compile Include="Controllers\NSXController.cs" />
     <Compile Include="Controllers\SanPhamController.cs" />
+    <Compile Include="Controllers\TimKiemController.cs" />
     <Compile Include="Controllers\TrangChuController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -313,6 +314,7 @@
     <Content Include="Views\GioHang\DatHang.cshtml" />
     <Content Include="Views\LienHe\Sent.cshtml" />
     <Content Include="Views\LienHe\LienHe.cshtml" />
+    <Content Include="Views\TimKiem\KetQuaTimKiem.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

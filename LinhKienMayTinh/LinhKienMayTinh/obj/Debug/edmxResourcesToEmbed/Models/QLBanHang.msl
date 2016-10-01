@@ -1,6 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="QLBANHANGModelStoreContainer" CdmEntityContainer="QLBANHANGEntities">
+    <EntitySetMapping Name="CTDDHs">
+      <EntityTypeMapping TypeName="QLBANHANGModel.CTDDH">
+        <MappingFragment StoreEntitySet="CTDDH">
+          <ScalarProperty Name="MASP" ColumnName="MASP" />
+          <ScalarProperty Name="MAD" ColumnName="MAD" />
+          <ScalarProperty Name="DONGIA" ColumnName="DONGIA" />
+          <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="DONDATHANGs">
       <EntityTypeMapping TypeName="QLBANHANGModel.DONDATHANG">
         <MappingFragment StoreEntitySet="DONDATHANG">
@@ -75,16 +85,6 @@
           <ScalarProperty Name="MALOAI" ColumnName="MALOAI" />
           <ScalarProperty Name="MANSX" ColumnName="MANSX" />
           <ScalarProperty Name="MAKM" ColumnName="MAKM" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="CTDDHs">
-      <EntityTypeMapping TypeName="QLBANHANGModel.CTDDH">
-        <MappingFragment StoreEntitySet="CTDDH">
-          <ScalarProperty Name="MASP" ColumnName="MASP" />
-          <ScalarProperty Name="MAD" ColumnName="MAD" />
-          <ScalarProperty Name="DONGIA" ColumnName="DONGIA" />
-          <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

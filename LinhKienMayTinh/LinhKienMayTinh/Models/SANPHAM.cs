@@ -30,10 +30,10 @@ namespace LinhKienMayTinh.Models
         public int MANSX { get; set; }
         public int MAKM { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CTDDH> CTDDHs { get; set; }
         public virtual KHUYENMAI KHUYENMAI { get; set; }
         public virtual LOAISP LOAISP { get; set; }
         public virtual NSX NSX { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CTDDH> CTDDHs { get; set; }
     }
 }

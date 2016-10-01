@@ -85,7 +85,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
             <div class="header-ri">
                 <ul class="social-top">
-                    <li><a href="mailto:facebook.com" class="icon facebook"><i class="fa fa-facebook" aria-hidden="true"></i><span></span></a></li>
+                    <li><a href="https://www.facebook.com/" class="icon facebook"><i class="fa fa-facebook" aria-hidden="true"></i><span></span></a></li>
                     <li><a href="#" class="icon twitter"><i class="fa fa-twitter" aria-hidden="true"></i><span></span></a></li>
                     <li><a href="#" class="icon pinterest"><i class="fa fa-pinterest-p" aria-hidden="true"></i><span></span></a></li>
                     <li><a href="#" class="icon dribbble"><i class="fa fa-dribbble" aria-hidden="true"></i><span></span></a></li>
@@ -163,10 +163,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="container">
             <div class="banner-info">
                 <div class="search-form">
-                    <form action="#" method="post">
-                        <input type="text" placeholder="Search..." name="Search...">
+                    @using(Html.BeginForm("KetQuaTimKiem","TimKiem",FormMethod.Post))
+                    {
+                        <input type="text" placeholder="Search..." name="txt_TimKiem">
                         <input type="submit" value=" ">
-                    </form>
+                    }
                 </div>
             </div>
         </div>

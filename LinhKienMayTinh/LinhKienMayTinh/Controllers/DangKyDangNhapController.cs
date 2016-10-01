@@ -33,8 +33,9 @@ namespace LinhKienMayTinh.Controllers
                 db.KHACHHANGs.Add(kh);
                 //lưu vào csdl
                 db.SaveChanges();
+                return RedirectToAction("DangNhap", "DangKyDangNhap");
             }
-            return RedirectToAction("DangNhap","DangKyDangNhap");
+            return View();
         }
 
         [HttpGet]
