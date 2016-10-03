@@ -4,14 +4,15 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="620e81fb7d2c4f8db11129af0a4ca917" Name="Diagram1">
+      <Diagram DiagramId="a8f2fd8dbb5e42c88bebf78c07b882e7" Name="Diagram1">
+        <EntityTypeShape EntityType="QLBANHANGModel.ADMINLOGIN" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="QLBANHANGModel.CTDDH" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
         <EntityTypeShape EntityType="QLBANHANGModel.DONDATHANG" Width="1.5" PointX="3" PointY="11.25" IsExpanded="true" />
         <EntityTypeShape EntityType="QLBANHANGModel.KHACHHANG" Width="1.5" PointX="0.75" PointY="11.375" IsExpanded="true" />
         <EntityTypeShape EntityType="QLBANHANGModel.KHUYENMAI" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
         <EntityTypeShape EntityType="QLBANHANGModel.LOAISP" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="QLBANHANGModel.NSX" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBANHANGModel.QUANGCAO" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBANHANGModel.QUANGCAO" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="QLBANHANGModel.SANPHAM" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="QLBANHANGModel.FK__CTDDH__MAD__20C1E124" ManuallyRouted="false" />
         <AssociationConnector Association="QLBANHANGModel.FK__CTDDH__MASP__1FCDBCEB" ManuallyRouted="false" />

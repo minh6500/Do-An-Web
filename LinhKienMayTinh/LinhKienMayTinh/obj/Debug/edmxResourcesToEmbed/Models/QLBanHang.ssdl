@@ -1,5 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="QLBANHANGModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ADMINLOGIN">
+    <Key>
+      <PropertyRef Name="MAAD" />
+    </Key>
+    <Property Name="MAAD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USERNAME" Type="char" MaxLength="20" />
+    <Property Name="PASS" Type="char" MaxLength="20" />
+  </EntityType>
   <EntityType Name="CTDDH">
     <Key>
       <PropertyRef Name="MASP" />
@@ -153,6 +161,7 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="QLBANHANGModelStoreContainer">
+    <EntitySet Name="ADMINLOGIN" EntityType="Self.ADMINLOGIN" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CTDDH" EntityType="Self.CTDDH" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DONDATHANG" EntityType="Self.DONDATHANG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="KHACHHANG" EntityType="Self.KHACHHANG" Schema="dbo" store:Type="Tables" />

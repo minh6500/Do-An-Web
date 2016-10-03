@@ -5,6 +5,14 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="QLBANHANGModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ADMINLOGIN">
+          <Key>
+            <PropertyRef Name="MAAD" />
+          </Key>
+          <Property Name="MAAD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="USERNAME" Type="char" MaxLength="20" />
+          <Property Name="PASS" Type="char" MaxLength="20" />
+        </EntityType>
         <EntityType Name="CTDDH">
           <Key>
             <PropertyRef Name="MASP" />
@@ -158,6 +166,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="QLBANHANGModelStoreContainer">
+          <EntitySet Name="ADMINLOGIN" EntityType="Self.ADMINLOGIN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CTDDH" EntityType="Self.CTDDH" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DONDATHANG" EntityType="Self.DONDATHANG" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="KHACHHANG" EntityType="Self.KHACHHANG" Schema="dbo" store:Type="Tables" />
@@ -196,6 +205,14 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="QLBANHANGModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ADMINLOGIN">
+          <Key>
+            <PropertyRef Name="MAAD" />
+          </Key>
+          <Property Name="MAAD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USERNAME" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="PASS" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+        </EntityType>
         <EntityType Name="CTDDH">
           <Key>
             <PropertyRef Name="MASP" />
@@ -361,6 +378,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="QLBANHANGEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ADMINLOGINs" EntityType="Self.ADMINLOGIN" />
           <EntitySet Name="CTDDHs" EntityType="Self.CTDDH" />
           <EntitySet Name="DONDATHANGs" EntityType="Self.DONDATHANG" />
           <EntitySet Name="KHACHHANGs" EntityType="Self.KHACHHANG" />
@@ -400,6 +418,15 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="QLBANHANGModelStoreContainer" CdmEntityContainer="QLBANHANGEntities">
+          <EntitySetMapping Name="ADMINLOGINs">
+            <EntityTypeMapping TypeName="QLBANHANGModel.ADMINLOGIN">
+              <MappingFragment StoreEntitySet="ADMINLOGIN">
+                <ScalarProperty Name="MAAD" ColumnName="MAAD" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="PASS" ColumnName="PASS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="CTDDHs">
             <EntityTypeMapping TypeName="QLBANHANGModel.CTDDH">
               <MappingFragment StoreEntitySet="CTDDH">

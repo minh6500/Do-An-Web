@@ -1,5 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="QLBANHANGModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ADMINLOGIN">
+    <Key>
+      <PropertyRef Name="MAAD" />
+    </Key>
+    <Property Name="MAAD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USERNAME" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="PASS" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+  </EntityType>
   <EntityType Name="CTDDH">
     <Key>
       <PropertyRef Name="MASP" />
@@ -165,6 +173,7 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="QLBANHANGEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ADMINLOGINs" EntityType="Self.ADMINLOGIN" />
     <EntitySet Name="CTDDHs" EntityType="Self.CTDDH" />
     <EntitySet Name="DONDATHANGs" EntityType="Self.DONDATHANG" />
     <EntitySet Name="KHACHHANGs" EntityType="Self.KHACHHANG" />

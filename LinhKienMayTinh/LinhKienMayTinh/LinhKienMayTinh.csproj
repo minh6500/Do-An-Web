@@ -135,6 +135,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Admin\Content\Login\css\style.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\PagedList.css" />
@@ -211,6 +212,7 @@
     <Content Include="Models\QLBanHang.edmx.diagram">
       <DependentUpon>QLBanHang.edmx</DependentUpon>
     </Content>
+    <Content Include="Areas\Admin\Views\Login\Login.cshtml" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="scripts\jquery-1.10.2.js" />
     <Content Include="scripts\jquery-1.10.2.min.js" />
@@ -227,6 +229,7 @@
     <Compile Include="Areas\Admin\Controllers\DONDATHANGsController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\loaiController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\QLTaiKhoanController.cs" />
     <Compile Include="Areas\Admin\Controllers\tatcaspController.cs" />
     <Compile Include="Controllers\DangKyDangNhapController.cs" />
@@ -239,6 +242,9 @@
     <Compile Include="Controllers\TrangChuController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ADMINLOGIN.cs">
+      <DependentUpon>QLBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CTDDH.cs">
       <DependentUpon>QLBanHang.tt</DependentUpon>
@@ -327,6 +333,8 @@
     <Folder Include="Areas\Admin\Content\css\" />
     <Folder Include="Areas\Admin\Content\fonts\" />
     <Folder Include="Areas\Admin\Content\js\" />
+    <Folder Include="Areas\Admin\Content\Login\images\" />
+    <Folder Include="Areas\Admin\Content\Login\js\" />
     <Folder Include="Areas\Admin\Content\maps\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Content\TrangChu\js\" />

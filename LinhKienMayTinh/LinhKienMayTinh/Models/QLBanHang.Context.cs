@@ -25,6 +25,7 @@ namespace LinhKienMayTinh.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<ADMINLOGIN> ADMINLOGINs { get; set; }
         public virtual DbSet<CTDDH> CTDDHs { get; set; }
         public virtual DbSet<DONDATHANG> DONDATHANGs { get; set; }
         public virtual DbSet<KHACHHANG> KHACHHANGs { get; set; }

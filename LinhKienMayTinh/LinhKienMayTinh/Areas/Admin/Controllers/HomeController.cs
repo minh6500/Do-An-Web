@@ -11,6 +11,10 @@ namespace LinhKienMayTinh.Areas.Admin.Controllers
         // GET: Admin/Home
         public ActionResult Index()
         {
+            if(Session["admin"] == null)
+            {
+                return RedirectToAction("Login","Login");
+            }
             return View();
         }
     }

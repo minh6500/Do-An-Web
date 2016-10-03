@@ -1,6 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="QLBANHANGModelStoreContainer" CdmEntityContainer="QLBANHANGEntities">
+    <EntitySetMapping Name="ADMINLOGINs">
+      <EntityTypeMapping TypeName="QLBANHANGModel.ADMINLOGIN">
+        <MappingFragment StoreEntitySet="ADMINLOGIN">
+          <ScalarProperty Name="MAAD" ColumnName="MAAD" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="PASS" ColumnName="PASS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="CTDDHs">
       <EntityTypeMapping TypeName="QLBANHANGModel.CTDDH">
         <MappingFragment StoreEntitySet="CTDDH">
