@@ -22,12 +22,12 @@ namespace LinhKienMayTinh.Areas.Admin.Controllers
             var sp = db.SANPHAMs.ToList().OrderByDescending(n=>n.NGAYCAPNHAT).ToPagedList(pageNumber,pageSize);
             return View(sp);
         }
-        public ActionResult SanPhamTheoLoai(int? page,int id)
+        public ActionResult SanPhamTheoLoai(int? page, int id)
         {
             int pageNumber = (page ?? 1);
             int pageSize = 10;
             var sanpham = from s in db.SANPHAMs where s.MALOAI == id select s;
-            return View("SanPhamTheoLoai",sanpham.ToList().OrderByDescending(n => n.NGAYCAPNHAT).ToPagedList(pageNumber, pageSize));
+            return View("SanPhamTheoLoai", sanpham.ToList().OrderByDescending(n => n.NGAYCAPNHAT).ToPagedList(pageNumber, pageSize));
         }
         //Them moi san pham
         [HttpGet]
@@ -53,26 +53,29 @@ namespace LinhKienMayTinh.Areas.Admin.Controllers
                 ViewBag.ThongBao = "Vui lòng chọn hình ảnh";
                 return View();
             }
-            //Thêm vào cơ sở dữ liệu
-            if (ModelState.IsValid) //nếu mà thỏa mãn tất cả điều kiện của textbox trong metadata chưa
+            else
             {
-                //Lưu tên của file
-                var filename = Path.GetFileName(fileupload.FileName);
-                //Lưu đường dẫn của file
-                var path = Path.Combine(Server.MapPath("~/images"), filename);
-                //Kiểm tra hình ảnh đã tồn tại chưa
-                if (System.IO.File.Exists(path))
+                //Thêm vào cơ sở dữ liệu
+                if (ModelState.IsValid) //nếu mà thỏa mãn tất cả điều kiện của textbox trong metadata chưa
                 {
-                    ViewBag.ThongBao = "Hình ảnh đã tồn tại";
+                    //Lưu tên của file
+                    var filename = Path.GetFileName(fileupload.FileName);
+                    //Lưu đường dẫn của file
+                    var path = Path.Combine(Server.MapPath("~/images"), filename);
+                    //Kiểm tra hình ảnh đã tồn tại chưa
+                    if (System.IO.File.Exists(path))
+                    {
+                        ViewBag.ThongBao = "Hình ảnh đã tồn tại";
+                    }
+                    else
+                    {
+                        fileupload.SaveAs(path);
+                    }
+                    sanpham.HINHANH = fileupload.FileName;
+                    //thêm vào cơ sở dữ liệu
+                    db.SANPHAMs.Add(sanpham);
+                    db.SaveChanges();
                 }
-                else
-                {
-                    fileupload.SaveAs(path);
-                }
-                sanpham.HINHANH = fileupload.FileName;
-                //thêm vào cơ sở dữ liệu
-                db.SANPHAMs.Add(sanpham);
-                db.SaveChanges();
             }
             return View();
         }

@@ -45,19 +45,36 @@ namespace LinhKienMayTinh.Controllers
         }
 
         [HttpPost]
-        public ActionResult DangNhap(FormCollection f)
+        public ActionResult DangNhap(FormCollection f,int? id)
         {
             string taikhoan = f["ID"].ToString();
             string matkhau = f["PASS"].ToString();
             KHACHHANG kh = db.KHACHHANGs.SingleOrDefault(n => n.ID == taikhoan && n.PASS == matkhau);
+            ADMINLOGIN ad = db.ADMINLOGINs.SingleOrDefault(a => a.USERNAME == taikhoan && a.PASS == matkhau);
+            if(ad != null)
+            {
+                Session["admin"] = ad;
+                return RedirectToAction("Index", "Admin");
+            }
             if(kh != null)
             {
                 ViewBag.ThongBao = "Chúc mừng bạn đã đăng nhập thành công";
-                Session["TaiKhoan"] = kh;
+                Session["TaiKhoan"] = kh;     
                 return View();
             }
             ViewBag.ThongBao = "Tài khoản hoặc mật khẩu không đúng. Vui lòng kiểm tra lại !";
             return View();
         }
+
+        //[HttpGet]
+        //public ActionResult ThongTinKhachHang(int? id)
+        //{
+            
+        //    if(ModelState.IsValid)
+        //    {
+        //        return View();
+        //    }
+        //    return View();
+        //}
     }
 }

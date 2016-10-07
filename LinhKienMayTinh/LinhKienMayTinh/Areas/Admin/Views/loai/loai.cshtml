@@ -3,5 +3,7 @@
 
 @foreach (var item in Model)
 {
-<li id="menu-academico-avaliacoes"><a href="@Url.Action("SanPhamTheoLoai","tatcasp",new { id = item.MALOAI})">@item.TENLOAI</a></li>
+<li>
+    <a href="@Url.Action("SanPhamTheoLoai","tatcasp",new { id = item.MALOAI})">@item.TENLOAI</a>
+</li>
 }

@@ -1,0 +1,82 @@
+﻿@model LinhKienMayTinh.Models.SANPHAM
+
+@{
+    ViewBag.Title = "Chi Tiết Sản Phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Chi Tiết Sản Phẩm</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TENSP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TENSP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MOTA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MOTA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HINHANH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HINHANH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NGAYCAPNHAT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NGAYCAPNHAT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DONGIA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DONGIA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KHUYENMAI.TENKM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KHUYENMAI.TENKM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LOAISP.TENLOAI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LOAISP.TENLOAI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NSX.TENNSX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NSX.TENNSX)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Sửa Sản Phẩm", "Edit", new { id = Model.MASP }) |
+    @Html.ActionLink("Trở Về", "Index")
+</p>

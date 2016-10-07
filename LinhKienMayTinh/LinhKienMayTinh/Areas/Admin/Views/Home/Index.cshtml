@@ -6,581 +6,573 @@
 
 
 
-    <div class="monthly-grid">
-        <div class="panel panel-widget">
-            <div class="panel-title">
-                Monthly Status Report
-
-            </div>
-            <div class="panel-body">
-                <!-- status -->
-                <div class="contain">
-                    <div class="gantt"></div>
+    <div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Dashboard</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-comments fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">26</div>
+                            <div>New Comments!</div>
+                        </div>
+                    </div>
                 </div>
-                <!-- status -->
+                <a href="#">
+                    <div class="panel-footer">
+                        <span class="pull-left">View Details</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-green">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-tasks fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">12</div>
+                            <div>New Tasks!</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#">
+                    <div class="panel-footer">
+                        <span class="pull-left">View Details</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-yellow">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-shopping-cart fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">124</div>
+                            <div>New Orders!</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#">
+                    <div class="panel-footer">
+                        <span class="pull-left">View Details</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-red">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-support fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">13</div>
+                            <div>Support Tickets!</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#">
+                    <div class="panel-footer">
+                        <span class="pull-left">View Details</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
             </div>
         </div>
     </div>
-
-    <!--//area-->
-    <div class="col-md-5 skil">
-        <div class="content-top-1">
-            <div class="col-md-6 top-content">
-                <h5>Tasks</h5>
-                <label>8761</label>
+    <!-- /.row -->
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bar-chart-o fa-fw"></i> Area Chart Example
+                    <div class="pull-right">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                Actions
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu pull-right" role="menu">
+                                <li>
+                                    <a href="#">Action</a>
+                                </li>
+                                <li>
+                                    <a href="#">Another action</a>
+                                </li>
+                                <li>
+                                    <a href="#">Something else here</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="#">Separated link</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <div id="morris-area-chart"></div>
+                </div>
+                <!-- /.panel-body -->
             </div>
-            <div class="col-md-6 top-content1">
-                <div id="demo-pie-1" class="pie-title-center" data-percent="25"> <span class="pie-value">25%</span> </div>
+            <!-- /.panel -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bar-chart-o fa-fw"></i> Bar Chart Example
+                    <div class="pull-right">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                Actions
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu pull-right" role="menu">
+                                <li>
+                                    <a href="#">Action</a>
+                                </li>
+                                <li>
+                                    <a href="#">Another action</a>
+                                </li>
+                                <li>
+                                    <a href="#">Something else here</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="#">Separated link</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Date</th>
+                                            <th>Time</th>
+                                            <th>Amount</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>3326</td>
+                                            <td>10/21/2013</td>
+                                            <td>3:29 PM</td>
+                                            <td>$321.33</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3325</td>
+                                            <td>10/21/2013</td>
+                                            <td>3:20 PM</td>
+                                            <td>$234.34</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3324</td>
+                                            <td>10/21/2013</td>
+                                            <td>3:03 PM</td>
+                                            <td>$724.17</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3323</td>
+                                            <td>10/21/2013</td>
+                                            <td>3:00 PM</td>
+                                            <td>$23.71</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3322</td>
+                                            <td>10/21/2013</td>
+                                            <td>2:49 PM</td>
+                                            <td>$8345.23</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3321</td>
+                                            <td>10/21/2013</td>
+                                            <td>2:23 PM</td>
+                                            <td>$245.12</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3320</td>
+                                            <td>10/21/2013</td>
+                                            <td>2:15 PM</td>
+                                            <td>$5663.54</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3319</td>
+                                            <td>10/21/2013</td>
+                                            <td>2:13 PM</td>
+                                            <td>$943.45</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+                        </div>
+                        <!-- /.col-lg-4 (nested) -->
+                        <div class="col-lg-8">
+                            <div id="morris-bar-chart"></div>
+                        </div>
+                        <!-- /.col-lg-8 (nested) -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.panel-body -->
             </div>
-            <div class="clearfix"> </div>
+            <!-- /.panel -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-clock-o fa-fw"></i> Responsive Timeline
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <ul class="timeline">
+                        <li>
+                            <div class="timeline-badge">
+                                <i class="fa fa-check"></i>
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">Lorem ipsum dolor</h4>
+                                    <p>
+                                        <small class="text-muted"><i class="fa fa-clock-o"></i> 11 hours ago via Twitter</small>
+                                    </p>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero laboriosam dolor perspiciatis omnis exercitationem. Beatae, officia pariatur? Est cum veniam excepturi. Maiores praesentium, porro voluptas suscipit facere rem dicta, debitis.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-badge warning">
+                                <i class="fa fa-credit-card"></i>
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">Lorem ipsum dolor</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dolorem quibusdam, tenetur commodi provident cumque magni voluptatem libero, quis rerum. Fugiat esse debitis optio, tempore. Animi officiis alias, officia repellendus.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium maiores odit qui est tempora eos, nostrum provident explicabo dignissimos debitis vel! Adipisci eius voluptates, ad aut recusandae minus eaque facere.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="timeline-badge danger">
+                                <i class="fa fa-bomb"></i>
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">Lorem ipsum dolor</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus numquam facilis enim eaque, tenetur nam id qui vel velit similique nihil iure molestias aliquam, voluptatem totam quaerat, magni commodi quisquam.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">Lorem ipsum dolor</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates est quaerat asperiores sapiente, eligendi, nihil. Itaque quos, alias sapiente rerum quas odit! Aperiam officiis quidem delectus libero, omnis ut debitis!</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="timeline-badge info">
+                                <i class="fa fa-save"></i>
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">Lorem ipsum dolor</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis minus modi quam ipsum alias at est molestiae excepturi delectus nesciunt, quibusdam debitis amet, beatae consequuntur impedit nulla qui! Laborum, atque.</p>
+                                    <hr>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
+                                            <i class="fa fa-gear"></i> <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li>
+                                                <a href="#">Action</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Another action</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Something else here</a>
+                                            </li>
+                                            <li class="divider"></li>
+                                            <li>
+                                                <a href="#">Separated link</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">Lorem ipsum dolor</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi fuga odio quibusdam. Iure expedita, incidunt unde quis nam! Quod, quisquam. Officia quam qui adipisci quas consequuntur nostrum sequi. Consequuntur, commodi.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-badge success">
+                                <i class="fa fa-graduation-cap"></i>
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">Lorem ipsum dolor</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt obcaecati, quaerat tempore officia voluptas debitis consectetur culpa amet, accusamus dolorum fugiat, animi dicta aperiam, enim incidunt quisquam maxime neque eaque.</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
         </div>
-        <div class="content-top-1">
-            <div class="col-md-6 top-content">
-                <h5>Points</h5>
-                <label>6295</label>
+        <!-- /.col-lg-8 -->
+        <div class="col-lg-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bell fa-fw"></i> Notifications Panel
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item">
+                            <i class="fa fa-comment fa-fw"></i> New Comment
+                            <span class="pull-right text-muted small">
+                                <em>4 minutes ago</em>
+                            </span>
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                            <span class="pull-right text-muted small">
+                                <em>12 minutes ago</em>
+                            </span>
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <i class="fa fa-envelope fa-fw"></i> Message Sent
+                            <span class="pull-right text-muted small">
+                                <em>27 minutes ago</em>
+                            </span>
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <i class="fa fa-tasks fa-fw"></i> New Task
+                            <span class="pull-right text-muted small">
+                                <em>43 minutes ago</em>
+                            </span>
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                            <span class="pull-right text-muted small">
+                                <em>11:32 AM</em>
+                            </span>
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <i class="fa fa-bolt fa-fw"></i> Server Crashed!
+                            <span class="pull-right text-muted small">
+                                <em>11:13 AM</em>
+                            </span>
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <i class="fa fa-warning fa-fw"></i> Server Not Responding
+                            <span class="pull-right text-muted small">
+                                <em>10:57 AM</em>
+                            </span>
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <i class="fa fa-shopping-cart fa-fw"></i> New Order Placed
+                            <span class="pull-right text-muted small">
+                                <em>9:49 AM</em>
+                            </span>
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <i class="fa fa-money fa-fw"></i> Payment Received
+                            <span class="pull-right text-muted small">
+                                <em>Yesterday</em>
+                            </span>
+                        </a>
+                    </div>
+                    <!-- /.list-group -->
+                    <a href="#" class="btn btn-default btn-block">View All Alerts</a>
+                </div>
+                <!-- /.panel-body -->
             </div>
-            <div class="col-md-6 top-content1">
-                <div id="demo-pie-2" class="pie-title-center" data-percent="50"> <span class="pie-value">50%</span> </div>
-            </div>
-            <div class="clearfix"> </div>
-        </div>
-        <div class="content-top-1">
-            <div class="col-md-6 top-content">
-                <h5>Cards</h5>
-                <label>3401</label>
-            </div>
-            <div class="col-md-6 top-content1">
-                <div id="demo-pie-3" class="pie-title-center" data-percent="75"> <span class="pie-value">75%</span> </div>
-            </div>
-            <div class="clearfix"> </div>
-        </div>
-    </div>
-    <div class="col-md-7 mid-content-top">
-        <div class="middle-content">
-            <h3>
-                Latest Products
-            </h3>
-            <!-- start content_slider -->
-            <div id="owl-demo" class="owl-carousel text-center">
-                <div class="item">
-                    <img class="lazyOwl img-responsive" data-src="images/na.jpg" alt="name">
-                </div>
-                <div class="item">
-                    <img class="lazyOwl img-responsive" data-src="images/na1.jpg" alt="name">
-                </div>
-                <div class="item">
-                    <img class="lazyOwl img-responsive" data-src="images/na2.jpg" alt="name">
-                </div>
-                <div class="item">
-                    <img class="lazyOwl img-responsive" data-src="images/na.jpg" alt="name">
-                </div>
-                <div class="item">
-                    <img class="lazyOwl img-responsive" data-src="images/na1.jpg" alt="name">
-                </div>
-                <div class="item">
-                    <img class="lazyOwl img-responsive" data-src="images/na2.jpg" alt="name">
-                </div>
-                <div class="item">
-                    <img class="lazyOwl img-responsive" data-src="images/na.jpg" alt="name">
-                </div>
-
-            </div>
-        </div>
-        <!--//sreen-gallery-cursual---->
-        <!-- requried-jsfiles-for owl -->
-        <link href="/Areas/Admin/Content/css/owl.carousel.css" rel="stylesheet">
-        <script src="/Areas/Admin/Content/js/owl.carousel.js"></script>
-        <script>
-										$(document).ready(function() {
-											$("#owl-demo").owlCarousel({
-												items : 3,
-												lazyLoad : true,
-												autoPlay : true,
-												pagination : true,
-												nav:true,
-											});
-										});
-        </script>
-        <!-- //requried-jsfiles-for owl -->
-    </div>
-    <div class="clearfix"></div>
-
-    <div class="content-top">
-        <div class="col-md-6 content-top-lft">
-            <div class="panel panel-widget">
-                <div class="panel-title">
-                    Real Time Updates
-
+            <!-- /.panel -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bar-chart-o fa-fw"></i> Donut Chart Example
                 </div>
                 <div class="panel-body">
-                    <div class="demo-container">
-                        <div id="placeholder" class="demo-placeholder"></div>
-                    </div>
-                    <p>Time between updates: <input id="updateInterval" type="text" value="" style="text-align: right; width:5em"> milliseconds</p>
+                    <div id="morris-donut-chart"></div>
+                    <a href="#" class="btn btn-default btn-block">View Details</a>
                 </div>
+                <!-- /.panel-body -->
             </div>
-        </div>
-
-        <div class="col-md-6 content-top-2">
-            <!---start-chart---->
-            <!----->
-            <div class="content-graph">
-                <div class="content-color">
-                    <div class="content-ch">
-                        <p><i></i>Chrome </p><span>100%</span>
-                        <div class="clearfix"> </div>
-                    </div>
-                    <div class="content-ch1">
-                        <p><i></i>Safari</p><span> 50%</span>
-                        <div class="clearfix"> </div>
-                    </div>
-                </div>
-                <!--graph-->
-                <link rel="stylesheet" href="/Areas/Admin/Content/css/graph.css">
-                <!--//graph-->
-                <script src="/Areas/Admin/Content/js/jquery.flot.js"></script>
-                <script>
-									$(document).ready(function () {
-
-										// Graph Data ##############################################
-										var graphData = [{
-												// Visits
-												data: [ [6, 1300], [7, 1600], [8, 1900], [9, 2100], [10, 2500], [11, 2200], [12, 2000], [13, 1950], [14, 1900], [15, 2000] ],
-												color: '#999999'
-											}, {
-												// Returning Visits
-												data: [ [6, 500], [7, 600], [8, 550], [9, 600], [10, 800], [11, 900], [12, 800], [13, 850], [14, 830], [15, 1000] ],
-												color: '#999999',
-												points: { radius: 4, fillColor: '#7f8c8d' }
-											}
-										];
-
-										// Lines Graph #############################################
-										$.plot($('#graph-lines'), graphData, {
-											series: {
-												points: {
-													show: true,
-													radius: 5
-												},
-												lines: {
-													show: true
-												},
-												shadowSize: 0
-											},
-											grid: {
-												color: '#7f8c8d',
-												borderColor: 'transparent',
-												borderWidth: 20,
-												hoverable: true
-											},
-											xaxis: {
-												tickColor: 'transparent',
-												tickDecimals: 2
-											},
-											yaxis: {
-												tickSize: 1000
-											}
-										});
-
-										// Bars Graph ##############################################
-										$.plot($('#graph-bars'), graphData, {
-											series: {
-												bars: {
-													show: true,
-													barWidth: .9,
-													align: 'center'
-												},
-												shadowSize: 0
-											},
-											grid: {
-												color: '#7f8c8d',
-												borderColor: 'transparent',
-												borderWidth: 20,
-												hoverable: true
-											},
-											xaxis: {
-												tickColor: 'transparent',
-												tickDecimals: 2
-											},
-											yaxis: {
-												tickSize: 1000
-											}
-										});
-
-										// Graph Toggle ############################################
-										$('#graph-bars').hide();
-
-										$('#lines').on('click', function (e) {
-											$('#bars').removeClass('active');
-											$('#graph-bars').fadeOut();
-											$(this).addClass('active');
-											$('#graph-lines').fadeIn();
-											e.preventDefault();
-										});
-
-										$('#bars').on('click', function (e) {
-											$('#lines').removeClass('active');
-											$('#graph-lines').fadeOut();
-											$(this).addClass('active');
-											$('#graph-bars').fadeIn().removeClass('hidden');
-											e.preventDefault();
-										});
-
-										// Tooltip #################################################
-										function showTooltip(x, y, contents) {
-											$('<div id="tooltip">' + contents + '</div>').css({
-												top: y - 16,
-												left: x + 20
-											}).appendTo('body').fadeIn();
-										}
-
-										var previousPoint = null;
-
-										$('#graph-lines, #graph-bars').bind('plothover', function (event, pos, item) {
-											if (item) {
-												if (previousPoint != item.dataIndex) {
-													previousPoint = item.dataIndex;
-													$('#tooltip').remove();
-													var x = item.datapoint[0],
-														y = item.datapoint[1];
-														showTooltip(item.pageX, item.pageY, y + ' visitors at ' + x + '.00h');
-												}
-											} else {
-												$('#tooltip').remove();
-												previousPoint = null;
-											}
-										});
-
-									});
-                </script>
-                <div class="graph-container">
-
-                    <div id="graph-lines" style="padding: 0px;"> <canvas class="flot-base" width="883" height="528" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 883px; height: 528px;"></canvas><div class="flot-text" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);"><div class="flot-x-axis flot-x1-axis xAxis x1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 88px; top: 486px; left: 49px; text-align: center;">6.00</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 88px; top: 486px; left: 138px; text-align: center;">7.00</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 88px; top: 486px; left: 225px; text-align: center;">8.00</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 88px; top: 486px; left: 314px; text-align: center;">9.00</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 88px; top: 486px; left: 398px; text-align: center;">10.00</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 88px; top: 486px; left: 489px; text-align: center;">11.00</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 88px; top: 486px; left: 575px; text-align: center;">12.00</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 88px; top: 486px; left: 664px; text-align: center;">13.00</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 88px; top: 486px; left: 752px; text-align: center;">14.00</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 88px; top: 486px; left: 840px; text-align: center;">15.00</div></div><div class="flot-y-axis flot-y1-axis yAxis y1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div class="flot-tick-label tickLabel" style="position: absolute; top: 470px; left: 51px; text-align: right;">0</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 316px; left: 23px; text-align: right;">1000</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 163px; left: 20px; text-align: right;">2000</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 9px; left: 20px; text-align: right;">3000</div></div></div><canvas class="flot-overlay" width="883" height="528" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 883px; height: 528px;"></canvas></div>
-                    <div id="graph-bars" style="padding: 0px; display: none;"> <canvas class="flot-base" width="883" height="528" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 883px; height: 528px;"></canvas><div class="flot-text" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);"><div class="flot-x-axis flot-x1-axis xAxis x1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 73px; top: 486px; left: 85px; text-align: center;">6.00</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 73px; top: 486px; left: 166px; text-align: center;">7.00</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 73px; top: 486px; left: 245px; text-align: center;">8.00</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 73px; top: 486px; left: 326px; text-align: center;">9.00</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 73px; top: 486px; left: 402px; text-align: center;">10.00</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 73px; top: 486px; left: 485px; text-align: center;">11.00</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 73px; top: 486px; left: 563px; text-align: center;">12.00</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 73px; top: 486px; left: 644px; text-align: center;">13.00</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 73px; top: 486px; left: 724px; text-align: center;">14.00</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 73px; top: 486px; left: 804px; text-align: center;">15.00</div></div><div class="flot-y-axis flot-y1-axis yAxis y1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div class="flot-tick-label tickLabel" style="position: absolute; top: 470px; left: 51px; text-align: right;">0</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 316px; left: 23px; text-align: right;">1000</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 163px; left: 20px; text-align: right;">2000</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 9px; left: 20px; text-align: right;">3000</div></div></div><canvas class="flot-overlay" width="883" height="528" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 883px; height: 528px;"></canvas></div>
-                </div>
-
-            </div>
-        </div>
-        <div class="clearfix"> </div>
-    </div>
-    <!--area-->
-    <div class="area">
-        <div class="col-md-6 chrt-two area">
-            <h3 class="sub-tittle">Line Multi Chart</h3>
-            <div style="area">
-                <canvas id="canvas" style="width:100%;height:100%"></canvas>
-            </div>
-            <button id="randomizeData">Randomize Data</button>
-            <script>
-												var randomScalingFactor = function() {
-												return Math.round(Math.random() * 100 * (Math.random() > 0.5 ? -1 : 1));
-													};
-												var randomColor = function(opacity) {
-												return 'rgba(' + Math.round(Math.random() * 255) + ',' + Math.round(Math.random() * 255) + ',' + Math.round(Math.random() * 255) + ',' + (opacity || '.3') + ')';
-													};
-
-												var lineChartData = {
-													labels: ["January", "February", "March", "April", "May", "June", "July"],
-													datasets: [{
-														label: "My First dataset",
-														data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()],
-														yAxisID: "y-axis-1",
-														}, {
-																label: "My Second dataset",
-																data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()],
-																	yAxisID: "y-axis-2"
-																	}]
-																};
-
-																$.each(lineChartData.datasets, function(i, dataset) {
-																	dataset.borderColor = randomColor(0.4);
-																	dataset.backgroundColor = randomColor(1);
-																	dataset.pointBorderColor = randomColor(0.7);
-																	dataset.pointBackgroundColor = randomColor(0.5);
-																	dataset.pointBorderWidth = 1;
-																});
-
-																console.log(lineChartData);
-
-																window.onload = function() {
-																	var ctx = document.getElementById("canvas").getContext("2d");
-																	window.myLine = Chart.Line(ctx, {
-																		data: lineChartData,
-																		options: {
-
-																			hoverMode: 'label',
-																			stacked: false,
-																			scales: {
-																				xAxes: [{
-																					display: true,
-																					gridLines: {
-																						offsetGridLines: false
-																					}
-																				}],
-																				yAxes: [{
-																					type: "linear", // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
-																					display: true,
-																					position: "left",
-																					id: "y-axis-1",
-																				}, {
-																					type: "linear", // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
-																					display: true,
-																					position: "right",
-																					id: "y-axis-2",
-
-																					// grid line settings
-																					gridLines: {
-																						drawOnChartArea: false, // only want the grid lines for one axis to show up
-																					},
-																				}],
-																			}
-																		}
-																	});
-																};
-
-																$('#randomizeData').click(function() {
-																	lineChartData.datasets[0].data = [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()];
-
-																	lineChartData.datasets[1].data = [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()];
-
-																	window.myLine.update();
-																});
-            </script>
-            <script src="/Areas/Admin/Content/js/Chart.js"></script>
-        </div>
-        <div class="col-md-6 chrt-three">
-            <h3 class="sub-tittle">Stacked bar chart</h3>
-            <div id="chartdiv1"></div>
-            <script>
-											var chart = AmCharts.makeChart("chartdiv1", {
-																				  "type": "serial",
-																				  "theme": "light",
-																				  "rotate": true,
-																				  "marginBottom": 50,
-																				  "dataProvider": [{
-																					"age": "85+",
-																					"male": -0.1,
-																					"female": 0.3
-																				  }, {
-																					"age": "80-54",
-																					"male": -0.2,
-																					"female": 0.3
-																				  }, {
-																					"age": "75-79",
-																					"male": -0.3,
-																					"female": 0.6
-																				  }, {
-																					"age": "70-74",
-																					"male": -0.5,
-																					"female": 0.8
-																				  }, {
-																					"age": "65-69",
-																					"male": -0.8,
-																					"female": 1.0
-																				  }, {
-																					"age": "60-64",
-																					"male": -1.1,
-																					"female": 1.3
-																				  }, {
-																					"age": "55-59",
-																					"male": -1.7,
-																					"female": 1.9
-																				  }, {
-																					"age": "50-54",
-																					"male": -2.2,
-																					"female": 2.5
-																				  }, {
-																					"age": "45-49",
-																					"male": -2.8,
-																					"female": 3.0
-																				  }, {
-																					"age": "40-44",
-																					"male": -3.4,
-																					"female": 3.6
-																				  }, {
-																					"age": "35-39",
-																					"male": -4.2,
-																					"female": 4.1
-																				  }, {
-																					"age": "30-34",
-																					"male": -5.2,
-																					"female": 4.8
-																				  }, {
-																					"age": "25-29",
-																					"male": -5.6,
-																					"female": 5.1
-																				  }, {
-																					"age": "20-24",
-																					"male": -5.1,
-																					"female": 5.1
-																				  }, {
-																					"age": "15-19",
-																					"male": -3.8,
-																					"female": 3.8
-																				  }, {
-																					"age": "10-14",
-																					"male": -3.2,
-																					"female": 3.4
-																				  }, {
-																					"age": "5-9",
-																					"male": -4.4,
-																					"female": 4.1
-																				  }, {
-																					"age": "0-4",
-																					"male": -5.0,
-																					"female": 4.8
-																				  }],
-																				  "startDuration": 1,
-																				  "graphs": [{
-																					"fillAlphas": 0.8,
-																					"lineAlpha": 0.2,
-																					"type": "column",
-																					"valueField": "male",
-																					"title": "Male",
-																					"labelText": "[[value]]",
-																					"clustered": false,
-																					"labelFunction": function(item) {
-																					  return Math.abs(item.values.value);
-																					},
-																					"balloonFunction": function(item) {
-																					  return item.category + ": " + Math.abs(item.values.value) + "%";
-																					}
-																				  }, {
-																					"fillAlphas": 0.8,
-																					"lineAlpha": 0.2,
-																					"type": "column",
-																					"valueField": "female",
-																					"title": "Female",
-																					"labelText": "[[value]]",
-																					"clustered": false,
-																					"labelFunction": function(item) {
-																					  return Math.abs(item.values.value);
-																					},
-																					"balloonFunction": function(item) {
-																					  return item.category + ": " + Math.abs(item.values.value) + "%";
-																					}
-																				  }],
-																				  "categoryField": "age",
-																				  "categoryAxis": {
-																					"gridPosition": "start",
-																					"gridAlpha": 0.2,
-																					"axisAlpha": 0
-																				  },
-																				  "valueAxes": [{
-																					"gridAlpha": 0,
-																					"ignoreAxisWidth": true,
-																					"labelFunction": function(value) {
-																					  return Math.abs(value) + '%';
-																					},
-																					"guides": [{
-																					  "value": 0,
-																					  "lineAlpha": 0.2
-																					}]
-																				  }],
-																				  "balloon": {
-																					"fixedPosition": true
-																				  },
-																				  "chartCursor": {
-																					"valueBalloonsEnabled": false,
-																					"cursorAlpha": 0.05,
-																					"fullWidth": true
-																				  },
-																				  "allLabels": [{
-																					"text": "Male",
-																					"x": "28%",
-																					"y": "97%",
-																					"bold": true,
-																					"align": "middle"
-																				  }, {
-																					"text": "Female",
-																					"x": "75%",
-																					"y": "97%",
-																					"bold": true,
-																					"align": "middle"
-																				  }],
-																				 "export": {
-																					"enabled": true
-																				  }
-
-																				});
-            </script>
-        </div>
-        <div class="clearfix"></div>
-    </div>
-    <!--//area-->
-    <div class="fo-top-di">
-        <div class="foot-top">
-
-            <div class="col-md-6 s-c">
-                <li>
-                    <div class="fooll">
-                        <h1>follow us on</h1>
-                    </div>
-                </li>
-                <li>
-                    <div class="social-ic">
-                        <ul>
-                            <li><a href="#"><i class="facebok"> </i></a></li>
-                            <li><a href="#"><i class="twiter"> </i></a></li>
-                            <li><a href="#"><i class="goog"> </i></a></li>
-                            <li><a href="#"><i class="be"> </i></a></li>
-                            <div class="clearfix"></div>
+            <!-- /.panel -->
+            <div class="chat-panel panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-comments fa-fw"></i> Chat
+                    <div class="btn-group pull-right">
+                        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-chevron-down"></i>
+                        </button>
+                        <ul class="dropdown-menu slidedown">
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-refresh fa-fw"></i> Refresh
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-check-circle fa-fw"></i> Available
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-times fa-fw"></i> Busy
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-clock-o fa-fw"></i> Away
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-sign-out fa-fw"></i> Sign Out
+                                </a>
+                            </li>
                         </ul>
                     </div>
-                </li>
-                <div class="clearfix"> </div>
-            </div>
-            <div class="col-md-6 s-c">
-                <div class="stay">
-                    <div class="stay-left">
-                        <form>
-                            <input type="text" placeholder="Enter your email" required="">
-                        </form>
-                    </div>
-                    <div class="btn-1">
-                        <form>
-                            <input type="submit" value="join">
-                        </form>
-                    </div>
-                    <div class="clearfix"> </div>
                 </div>
-            </div>
-            <div class="clearfix"> </div>
-
-        </div>
-        <div class="footer">
-            <div class="col-md-3 cust">
-                <h4>CUSTOMER CARE</h4>
-                <li><a href="contact.html">Help Center</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-                <li><a href="details.html">How To Buy</a></li>
-                <li><a href="checkout.html">Delivery</a></li>
-            </div>
-            <div class="col-md-2 abt">
-                <h4>ABOUT US</h4>
-                <li><a href="products.html">Our Stories</a></li>
-                <li><a href="products.html">Press</a></li>
-                <li><a href="faq.html">Career</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </div>
-            <div class="col-md-2 myac">
-                <h4>MY ACCOUNT</h4>
-                <li><a href="register.html">Register</a></li>
-                <li><a href="checkout.html">My Cart</a></li>
-                <li><a href="checkout.html">Order History</a></li>
-                <li><a href="details.html">Payment</a></li>
-            </div>
-            <div class="col-md-5 our-st">
-                <div class="our-left">
-                    <h4>OUR STORES</h4>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <ul class="chat">
+                        <li class="left clearfix">
+                            <span class="chat-img pull-left">
+                                <img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar" class="img-circle" />
+                            </span>
+                            <div class="chat-body clearfix">
+                                <div class="header">
+                                    <strong class="primary-font">Jack Sparrow</strong>
+                                    <small class="pull-right text-muted">
+                                        <i class="fa fa-clock-o fa-fw"></i> 12 mins ago
+                                    </small>
+                                </div>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="right clearfix">
+                            <span class="chat-img pull-right">
+                                <img src="http://placehold.it/50/FA6F57/fff" alt="User Avatar" class="img-circle" />
+                            </span>
+                            <div class="chat-body clearfix">
+                                <div class="header">
+                                    <small class=" text-muted">
+                                        <i class="fa fa-clock-o fa-fw"></i> 13 mins ago
+                                    </small>
+                                    <strong class="pull-right primary-font">Bhaumik Patel</strong>
+                                </div>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="left clearfix">
+                            <span class="chat-img pull-left">
+                                <img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar" class="img-circle" />
+                            </span>
+                            <div class="chat-body clearfix">
+                                <div class="header">
+                                    <strong class="primary-font">Jack Sparrow</strong>
+                                    <small class="pull-right text-muted">
+                                        <i class="fa fa-clock-o fa-fw"></i> 14 mins ago
+                                    </small>
+                                </div>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="right clearfix">
+                            <span class="chat-img pull-right">
+                                <img src="http://placehold.it/50/FA6F57/fff" alt="User Avatar" class="img-circle" />
+                            </span>
+                            <div class="chat-body clearfix">
+                                <div class="header">
+                                    <small class=" text-muted">
+                                        <i class="fa fa-clock-o fa-fw"></i> 15 mins ago
+                                    </small>
+                                    <strong class="pull-right primary-font">Bhaumik Patel</strong>
+                                </div>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-
-                <li><i class="add"> </i>Mark peter</li>
-                <li><i class="phone"> </i>012-586987</li>
-                <li><a href="mailto:info@example.com"><i class="mail"> </i>info@sitename.com </a></li>
+                <!-- /.panel-body -->
+                <div class="panel-footer">
+                    <div class="input-group">
+                        <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." />
+                        <span class="input-group-btn">
+                            <button class="btn btn-warning btn-sm" id="btn-chat">
+                                Send
+                            </button>
+                        </span>
+                    </div>
+                </div>
+                <!-- /.panel-footer -->
             </div>
-            <div class="clearfix"> </div>
-            <p>© 2016 Gretong. All Rights Reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+            <!-- /.panel .chat-panel -->
         </div>
+        <!-- /.col-lg-4 -->
     </div>
+    <!-- /.row -->
 </div>

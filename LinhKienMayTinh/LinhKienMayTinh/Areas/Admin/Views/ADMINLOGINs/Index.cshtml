@@ -1,0 +1,40 @@
+﻿@model IEnumerable<LinhKienMayTinh.Models.ADMINLOGIN>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Tài Khoản Quản Trị</h2>
+
+<p>
+    @Html.ActionLink("Thêm Mới Tài Khoản Quản Trị", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.USERNAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PASS)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.USERNAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PASS)
+        </td>
+        <td>
+            @Html.ActionLink("Sửa", "Edit", new { id=item.MAAD }) |
+            @Html.ActionLink("Chi Tiết", "Details", new { id=item.MAAD }) |
+            @Html.ActionLink("Xóa", "Delete", new { id=item.MAAD })
+        </td>
+    </tr>
+}
+
+</table>

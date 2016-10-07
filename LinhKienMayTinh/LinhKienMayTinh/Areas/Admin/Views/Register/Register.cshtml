@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Đăng Ký Tài Khoản Quản Trị</title>
+    <link href="/Areas/Admin/Content/Register/css/style.css" rel='stylesheet' type='text/css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    
+    <script>
+			function myFunction()
+			{
+				alert("Chúc Mừng Đăng Ký Thành Công");
+			}
+    </script>
+</head>
+<body>
+    <!--start-login-form-->
+    <div class="login-form">
+        <h1>Đăng Ký Tài Khoản Quản Trị</h1>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <span>
+                <input type="text" name="USERNAME" class="user" value="Tài Khoản" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Tài Khoản';}">
+            </span>
+            <span>
+                <input type="password" name="PASS" class="lock" value="Mật Khẩu" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Mật Khẩu';}">
+            </span>
+            <div class="submit">
+                <input type="submit" onclick="myFunction()" value="Đăng Ký Tài Khoản" />
+            </div>
+
+        }
+       
+    </div>
+    <!--//End-login-form-->
+
+</body>
+</html>

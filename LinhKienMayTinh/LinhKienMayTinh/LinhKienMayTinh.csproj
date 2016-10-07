@@ -135,9 +135,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Admin\Content\Login\css\style.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\GioHang\css\main.css" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\TrangChu\css\bootstrap.css" />
@@ -161,6 +161,7 @@
     <Content Include="images\keyboard-r8-a4-usb.jpg" />
     <Content Include="images\linh-kien-may-tinh-2.png" />
     <Content Include="images\linh-kien-may-tinh.png" />
+    <Content Include="images\logo.png" />
     <Content Include="images\mouse-r8-1613-led.jpg" />
     <Content Include="images\mouse-r8-1618-led.jpg" />
     <Content Include="images\mouse-r8-1628-led.jpg" />
@@ -189,13 +190,8 @@
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\tatcasp\tatcasp.cshtml" />
     <Content Include="Areas\Admin\Views\loai\loai.cshtml" />
     <Content Include="Areas\Admin\Views\tatcasp\SanPhamTheoLoai.cshtml" />
-    <Content Include="Areas\Admin\Views\tatcasp\ThemSP.cshtml" />
-    <Content Include="Areas\Admin\Views\tatcasp\SuaSP.cshtml" />
-    <Content Include="Areas\Admin\Views\tatcasp\HienThiSP.cshtml" />
-    <Content Include="Areas\Admin\Views\tatcasp\XoaSP.cshtml" />
     <Content Include="Areas\Admin\Views\QLTaiKhoan\QLTaiKhoan.cshtml" />
     <Content Include="Areas\Admin\Views\QLTaiKhoan\ThemTK.cshtml" />
     <Content Include="Areas\Admin\Views\QLTaiKhoan\SuaTK.cshtml" />
@@ -212,11 +208,22 @@
     <Content Include="Models\QLBanHang.edmx.diagram">
       <DependentUpon>QLBanHang.edmx</DependentUpon>
     </Content>
+    <Content Include="Areas\Admin\Views\Register\Register.cshtml" />
+    <Content Include="Areas\Admin\Views\ADMINLOGINs\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\ADMINLOGINs\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\ADMINLOGINs\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ADMINLOGINs\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Login\Login.cshtml" />
+    <Content Include="Areas\Admin\Views\SANPHAMs\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\SANPHAMs\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\SANPHAMs\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\SANPHAMs\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\SANPHAMs\Index.cshtml" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="scripts\jquery-1.10.2.js" />
     <Content Include="scripts\jquery-1.10.2.min.js" />
     <Content Include="scripts\modernizr-2.6.2.js" />
+    <Content Include="Views\baokim_3b8991ecaa37fc5b.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -226,11 +233,14 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\ADMINLOGINsController.cs" />
     <Compile Include="Areas\Admin\Controllers\DONDATHANGsController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\loaiController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Admin\Controllers\RegisterController.cs" />
     <Compile Include="Areas\Admin\Controllers\QLTaiKhoanController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SANPHAMsController.cs" />
     <Compile Include="Areas\Admin\Controllers\tatcaspController.cs" />
     <Compile Include="Controllers\DangKyDangNhapController.cs" />
     <Compile Include="Controllers\GioHangController.cs" />
@@ -330,16 +340,20 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Content\css\" />
-    <Folder Include="Areas\Admin\Content\fonts\" />
+    <Folder Include="Areas\Admin\Content\bower_components\" />
+    <Folder Include="Areas\Admin\Content\DangNhap\css\" />
+    <Folder Include="Areas\Admin\Content\DangNhap\images\" />
+    <Folder Include="Areas\Admin\Content\dist\" />
     <Folder Include="Areas\Admin\Content\js\" />
-    <Folder Include="Areas\Admin\Content\Login\images\" />
-    <Folder Include="Areas\Admin\Content\Login\js\" />
-    <Folder Include="Areas\Admin\Content\maps\" />
+    <Folder Include="Areas\Admin\Content\less\" />
+    <Folder Include="Areas\Admin\Content\Register\css\" />
+    <Folder Include="Areas\Admin\Content\Register\images\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Content\GioHang\fonts\" />
+    <Folder Include="Content\GioHang\images\" />
+    <Folder Include="Content\GioHang\js\" />
     <Folder Include="Content\TrangChu\js\" />
     <Folder Include="tinymce\" />
-    <Folder Include="video\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

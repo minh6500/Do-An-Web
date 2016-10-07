@@ -1,4 +1,4 @@
-/*--
+﻿/*--
 Author: W3layouts
 Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
@@ -3164,4 +3164,96 @@ h1.t-button {
 .grid_3 p, .page-header p {
     font-size: 13px;
 }
+}
+
+/*CSS giỏ hàng*/
+.nav_menu_giohang {
+    font-size: 15px;
+    margin-top: 100px;
+    font-weight: bold;
+    background-color: #609;
+    color: white;
+    width: 75%;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 5px;
+}
+#sanpham {
+    padding-left: 5%;
+}
+#soluong {
+    padding-left: 30%;
+    padding-right: 10%;
+}
+.nav_form {
+    width: 100%;
+    height: auto;
+    border: 1px solid rgba(0, 0, 0, 0.11);
+    border-radius: 5px;
+}
+.nav_top {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    width: 75%;
+}
+.nav_sanpham {
+    margin-top: 30px;
+}
+.div_hinhanh {
+    width: 15%;
+    height: auto;
+    float: left;
+    margin-left: 3%;
+}
+.div_ten {
+    width: 27%;
+    height: 100px;
+    line-height: 100px;
+    float: left;
+}
+.div_soluong {
+    float: left;
+    width: 17%;
+    height: 100px;
+    line-height: 100px;
+}
+.div_gia {
+    float: left;
+    height: 100px;
+    line-height: 100px;
+    width: 15%;
+}
+.div_xoagiohang {
+    float: left;
+    height: 100px;
+    line-height: 100px;
+    margin-left: 30px;
+}
+.nav_thongbao {
+    text-align: center;
+    height: auto;
+    line-height: 50px;
+}
+#thongbao {
+    color: palevioletred;
+    font-size: 20px;
+}
+.div_tongtien {
+    height: 40px;
+    color: red;
+    font-size: 15px;
+    margin-top: 20px;
+    width: 50%;
+    float: left;
+}
+#tongtien {
+    margin-left: 5%;
+    margin-top: 20px;
+}
+.div_thanhtien {
+    height: 40px;
+    color: red;
+    font-size: 15px;
+    margin-top: 20px;
+    float: left;
 }

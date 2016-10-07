@@ -38,7 +38,8 @@ namespace LinhKienMayTinh.Models
             [Required(ErrorMessage = "Vui lòng nhập dữ liệu cho trường này ")]
             public string HINHANH { get; set; }
 
-            
+
+
         }
     }
 }

@@ -1,0 +1,35 @@
+﻿@model LinhKienMayTinh.Models.ADMINLOGIN
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Chi Tiết Tài Khoản Quản Trị</h2>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.USERNAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USERNAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PASS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PASS)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Sửa", "Edit", new { id = Model.MAAD }) |
+    @Html.ActionLink("Trở Về", "Index")
+</p>
