@@ -14,14 +14,17 @@
     </div>
 </div>
 
-<div class="input-group custom-search-form" style="width:25%;">
-    <input type="text" class="form-control" placeholder="Search...">
-    <span class="input-group-btn">
-        <button class="btn btn-default" type="button">
-            <i class="fa fa-search"></i>
-        </button>
-    </span>
-</div>
+@using (Html.BeginForm("SearchDonDatHang", "Search", FormMethod.Post))
+{
+    <div class="input-group custom-search-form" style="width:25%;">
+        <input type="text" class="form-control" placeholder="Search..." name="txt_TimKiem">
+        <span class="input-group-btn">
+            <button class="btn btn-default" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </span>
+    </div>
+}
 <p></p>
 
 <div class="row">

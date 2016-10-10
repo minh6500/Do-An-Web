@@ -43,6 +43,9 @@ namespace LinhKienMayTinh.Models
             [StringLength(20, MinimumLength = 10, ErrorMessage = "Mật khẩu phải có từ 10-20 ký tự")]
             [Required(ErrorMessage = "{0} Vui lòng nhập dữ liệu cho trường này")]
             public string PASS { get; set; }
+
+            [Display(Name = "Ngày Đăng Ký")]
+            public System.DateTime NGAYDANGKY { get; set; }
         }
     }
 }

@@ -30,7 +30,7 @@ namespace LinhKienMayTinh.Controllers
                 ViewBag.ThongBao = "Không tìm thấy sản phẩm";
                 return View();
             }
-            ViewBag.ThongBao = "Đã tìm thấy " + lstKQTK.Count + " kết quả";
+            ViewBag.ThongBao = "Đã tìm thấy " + lstKQTK.Count + " " + " kết quả";
             return View(lstKQTK.OrderBy(n=>n.TENSP).ToPagedList(pageNumber,pageSize));
         }
         [HttpGet]
@@ -38,7 +38,7 @@ namespace LinhKienMayTinh.Controllers
         {
             
             List<SANPHAM> lstKQTK = db.SANPHAMs.Where(n => n.TENSP.Contains(sTuKhoa)).ToList();
-
+            ViewBag.TuKhoa = sTuKhoa;
             //Phan Trang
             int pageNumber = (page ?? 1);
             int pageSize = 5;
@@ -48,7 +48,7 @@ namespace LinhKienMayTinh.Controllers
                 ViewBag.ThongBao = "Không tìm thấy sản phẩm";
                 return View(db.SANPHAMs.OrderBy(n => n.TENSP).ToPagedList(pageNumber, pageSize));
             }
-            ViewBag.ThongBao = "Đã tìm thấy " + lstKQTK.Count + "kết quả";
+            ViewBag.ThongBao = "Đã tìm thấy " + lstKQTK.Count + " " + "kết quả";
             return View(lstKQTK.OrderBy(n => n.TENSP).ToPagedList(pageNumber, pageSize));
         }
     }

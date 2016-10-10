@@ -1080,6 +1080,8 @@
     <Content Include="Areas\Admin\Views\KHACHHANGs\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\KHACHHANGs\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Search\SearchSanPham.cshtml" />
+    <Content Include="Areas\Admin\Views\Search\SearchKhachHang.cshtml" />
+    <Content Include="Areas\Admin\Views\Search\SearchDonDatHang.cshtml" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="scripts\jquery-1.10.2.js" />
     <Content Include="scripts\jquery-1.10.2.min.js" />
