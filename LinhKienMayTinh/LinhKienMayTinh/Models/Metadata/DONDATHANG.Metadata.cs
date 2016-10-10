@@ -21,6 +21,9 @@ namespace LinhKienMayTinh.Models
             [Required(ErrorMessage = "Vui lòng nhập dữ liệu cho trường này ")]               //kiểm tra rỗng
             public System.DateTime NGAYGIAO { get; set; }
 
+            [Display(Name = "Ngày Đặt")]
+            public System.DateTime NGAYDAT { get; set; }
+
             [Display(Name = "Địa Chỉ Giao")]
             [Required(ErrorMessage = "Vui lòng nhập dữ liệu cho trường này ")]
             public string DIACHIGIAO { get; set; }
@@ -32,6 +35,14 @@ namespace LinhKienMayTinh.Models
             [Display(Name = "Số Điện Thoại")]
             [Required(ErrorMessage = "Vui lòng nhập dữ liệu cho trường này ")]
             public string SDT { get; set; }
+
+            [Display(Name = "Tình Trạng Thanh Toán")]
+            [Required(ErrorMessage = "Vui lòng nhập dữ liệu cho trường này ")]
+            public string TINHTRANGTHANHTOAN { get; set; }
+
+            [Display(Name = "Tình Trạng Giao Hàng")]
+            [Required(ErrorMessage = "Vui lòng nhập dữ liệu cho trường này ")]
+            public string TINHTRANGGIAOHANG { get; set; }
         }
     }
 }

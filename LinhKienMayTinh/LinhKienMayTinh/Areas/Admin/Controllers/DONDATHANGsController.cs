@@ -7,6 +7,9 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using LinhKienMayTinh.Models;
+using PagedList;
+using PagedList.Mvc;
+using System.IO;
 
 namespace LinhKienMayTinh.Areas.Admin.Controllers
 {
@@ -15,10 +18,12 @@ namespace LinhKienMayTinh.Areas.Admin.Controllers
         private QLBANHANGEntities db = new QLBANHANGEntities();
 
         // GET: Admin/DONDATHANGs
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
+            int pageNumber = (page ?? 1);
+            int pageSize = 5;
             var dONDATHANGs = db.DONDATHANGs.Include(d => d.KHACHHANG);
-            return View(dONDATHANGs.ToList());
+            return View(dONDATHANGs.ToList().ToPagedList(pageNumber, pageSize));
         }
 
         // GET: Admin/DONDATHANGs/Details/5
@@ -50,6 +55,7 @@ namespace LinhKienMayTinh.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "MAD,NGAYDAT,NGAYGIAO,TENDAIDIEN,SDT,DIACHIGIAO,TINHTRANGTHANHTOAN,TINHTRANGGIAOHANG,MAKH")] DONDATHANG dONDATHANG)
         {
+            dONDATHANG.NGAYDAT = DateTime.Now;
             if (ModelState.IsValid)
             {
                 db.DONDATHANGs.Add(dONDATHANG);

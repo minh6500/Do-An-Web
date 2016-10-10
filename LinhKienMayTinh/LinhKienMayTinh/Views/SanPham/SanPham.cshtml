@@ -25,7 +25,7 @@
                         <h6><a href="@Url.Action("XemChiTiet","TrangChu",new { id = @item.MASP })">@item.TENSP</a></h6>
                     </div>
                     <div class="mid-2">
-                        <p> @*@<label>@item.DONGIA</label>*@<em class="item_price">@item.DONGIA</em></p>
+                        <p> @*@<label>@item.DONGIA</label>*@<em class="item_price">@String.Format("{0:0,0}", item.DONGIA) VNĐ</em></p>
                         <div class="block">
                             <div class="starbox small ghosting"> </div>
                         </div>

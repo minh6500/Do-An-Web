@@ -22,13 +22,13 @@ namespace LinhKienMayTinh.Areas.Admin.Controllers
         {
             int pageNumber = (page ?? 1);
             int pageSize = 5;
-            var sANPHAMs = db.SANPHAMs.Include(s => s.KHUYENMAI).Include(s => s.LOAISP).Include(s => s.NSX);
-            return View(sANPHAMs.ToList().ToPagedList(pageNumber,pageSize));
+            var sanpham = db.SANPHAMs.ToList();
+            return View(sanpham.ToPagedList(pageNumber, pageSize));
         }
         public ActionResult SanPhamTheoLoai(int? page, int id)
         {
             int pageNumber = (page ?? 1);
-            int pageSize = 10;
+            int pageSize = 5;
             var sanpham = from s in db.SANPHAMs where s.MALOAI == id select s;
             return View("SanPhamTheoLoai", sanpham.ToList().OrderByDescending(n => n.NGAYCAPNHAT).ToPagedList(pageNumber, pageSize));
         }

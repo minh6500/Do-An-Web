@@ -13,94 +13,110 @@ using System.IO;
 
 namespace LinhKienMayTinh.Areas.Admin.Controllers
 {
-    public class ADMINLOGINsController : Controller
+    public class KHACHHANGsController : Controller
     {
         private QLBANHANGEntities db = new QLBANHANGEntities();
 
-        // GET: Admin/ADMINLOGINs
+        // GET: Admin/KHACHHANGs
         public ActionResult Index(int? page)
         {
             int pageNumber = (page ?? 1);
             int pageSize = 5;
-            return View(db.ADMINLOGINs.ToList().ToPagedList(pageNumber, pageSize));
+            return View(db.KHACHHANGs.ToList().ToPagedList(pageNumber, pageSize));
         }
 
-        // GET: Admin/ADMINLOGINs/Details/5
+        // GET: Admin/KHACHHANGs/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ADMINLOGIN aDMINLOGIN = db.ADMINLOGINs.Find(id);
-            if (aDMINLOGIN == null)
+            KHACHHANG kHACHHANG = db.KHACHHANGs.Find(id);
+            if (kHACHHANG == null)
             {
                 return HttpNotFound();
             }
-            return View(aDMINLOGIN);
+            return View(kHACHHANG);
         }
 
-        // GET: Admin/ADMINLOGINs/Create
+        // GET: Admin/KHACHHANGs/Create
         public ActionResult Create()
         {
-            return RedirectToAction("Register", "Register");
+            return View();
         }
 
+        // POST: Admin/KHACHHANGs/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "MAKH,TENKH,SDT,DIACHI,EMAIL,ID,PASS,NGAYDANGKY")] KHACHHANG kHACHHANG)
+        {
+            kHACHHANG.NGAYDANGKY = DateTime.Now;
+            if (ModelState.IsValid)
+            {
+                db.KHACHHANGs.Add(kHACHHANG);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
 
+            return View(kHACHHANG);
+        }
 
-        // GET: Admin/ADMINLOGINs/Edit/5
+        // GET: Admin/KHACHHANGs/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ADMINLOGIN aDMINLOGIN = db.ADMINLOGINs.Find(id);
-            if (aDMINLOGIN == null)
+            KHACHHANG kHACHHANG = db.KHACHHANGs.Find(id);
+            if (kHACHHANG == null)
             {
                 return HttpNotFound();
             }
-            return View(aDMINLOGIN);
+            return View(kHACHHANG);
         }
 
-        // POST: Admin/ADMINLOGINs/Edit/5
+        // POST: Admin/KHACHHANGs/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MAAD,USERNAME,PASS")] ADMINLOGIN aDMINLOGIN)
+        public ActionResult Edit([Bind(Include = "MAKH,TENKH,SDT,DIACHI,EMAIL,ID,PASS,NGAYDANGKY")] KHACHHANG kHACHHANG)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(aDMINLOGIN).State = EntityState.Modified;
+                db.Entry(kHACHHANG).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(aDMINLOGIN);
+            return View(kHACHHANG);
         }
 
-        // GET: Admin/ADMINLOGINs/Delete/5
+        // GET: Admin/KHACHHANGs/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ADMINLOGIN aDMINLOGIN = db.ADMINLOGINs.Find(id);
-            if (aDMINLOGIN == null)
+            KHACHHANG kHACHHANG = db.KHACHHANGs.Find(id);
+            if (kHACHHANG == null)
             {
                 return HttpNotFound();
             }
-            return View(aDMINLOGIN);
+            return View(kHACHHANG);
         }
 
-        // POST: Admin/ADMINLOGINs/Delete/5
+        // POST: Admin/KHACHHANGs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            ADMINLOGIN aDMINLOGIN = db.ADMINLOGINs.Find(id);
-            db.ADMINLOGINs.Remove(aDMINLOGIN);
+            KHACHHANG kHACHHANG = db.KHACHHANGs.Find(id);
+            db.KHACHHANGs.Remove(kHACHHANG);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

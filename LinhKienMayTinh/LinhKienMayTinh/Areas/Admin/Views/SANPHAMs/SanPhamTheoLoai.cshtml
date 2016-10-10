@@ -1,28 +1,37 @@
 ﻿@using PagedList;
 @using PagedList.Mvc;
-@model PagedList.PagedList<LinhKienMayTinh.Models.DONDATHANG>
+@model PagedList.PagedList<LinhKienMayTinh.Models.SANPHAM>
 
 @{
-    ViewBag.Title = "Đơn Đặt Hàng";
+    ViewBag.Title = "Sản Phẩm Theo Loại";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
+
+<!-- Bootstrap Core CSS -->
+<link href="~/Areas/Admin/Content/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- MetisMenu CSS -->
+<link href="~/Areas/Admin/Content/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+<!-- DataTables CSS -->
+<link href="~/Areas/Admin/Content/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet">
+<!-- DataTables Responsive CSS -->
+<link href="~/Areas/Admin/Content/bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
+<!-- Custom CSS -->
+<link href="~/Areas/Admin/Content/dist/css/sb-admin-2.css" rel="stylesheet">
+<!-- Custom Fonts -->
+<link href="~/Areas/Admin/Content/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
 
 
 <div class="row">
     <div class="col-lg-12">
-        <h1 class="page-header">@ViewBag.Title</h1>
+        <h1 class="page-header">Sản Phẩm Theo Loại</h1>
     </div>
 </div>
-
-<div class="input-group custom-search-form" style="width:25%;">
-    <input type="text" class="form-control" placeholder="Search...">
-    <span class="input-group-btn">
-        <button class="btn btn-default" type="button">
-            <i class="fa fa-search"></i>
-        </button>
-    </span>
-</div>
-<p></p>
 
 <div class="row">
     <div class="col-lg-12">
@@ -38,31 +47,14 @@
                             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
-                                        <th>
-                                            @Html.DisplayNameFor(model => model.First().NGAYDAT)
-                                        </th>
-                                        <th>
-                                            @Html.DisplayNameFor(model => model.First().NGAYGIAO)
-                                        </th>
-                                        <th>
-                                            @Html.DisplayNameFor(model => model.First().TENDAIDIEN)
-                                        </th>
-                                        <th>
-                                            @Html.DisplayNameFor(model => model.First().SDT)
-                                        </th>
-                                        <th>
-                                            @Html.DisplayNameFor(model => model.First().DIACHIGIAO)
-                                        </th>
-                                        <th>
-                                            @Html.DisplayNameFor(model => model.First().TINHTRANGTHANHTOAN)
-                                        </th>
-                                        <th>
-                                            @Html.DisplayNameFor(model => model.First().TINHTRANGGIAOHANG)
-                                        </th>
-                                        <th>
-                                            @Html.DisplayNameFor(model => model.First().KHACHHANG.TENKH)
-                                        </th>
-                                        <th></th>
+                                        <th>@Html.DisplayNameFor(model => model.First().HINHANH)</th>
+                                        <th>@Html.DisplayNameFor(model => model.First().TENSP)</th>
+                                        <th>@Html.DisplayNameFor(model => model.First().MOTA)</th>
+                                        <th>@Html.DisplayNameFor(model => model.First().NGAYCAPNHAT)</th>
+                                        <th>@Html.DisplayNameFor(model => model.First().DONGIA)</th>
+                                        <th>@Html.DisplayNameFor(model => model.First().KHUYENMAI.TENKM)</th>
+                                        <th>@Html.DisplayNameFor(model => model.First().LOAISP.TENLOAI)</th>
+                                        <th>@Html.DisplayNameFor(model => model.First().NSX.TENNSX)</th>
                                     </tr>
                                 </thead>
                                 @foreach (var item in Model)
@@ -70,33 +62,33 @@
                                     <tbody>
                                         <tr>
                                             <td>
-                                                @Html.DisplayFor(modelItem => item.NGAYDAT)
+                                                <img src="~/images/@Html.DisplayFor(modelItem => item.HINHANH)" class="img-responsive" />
                                             </td>
                                             <td>
-                                                @Html.DisplayFor(modelItem => item.NGAYGIAO)
+                                                @Html.DisplayFor(modelItem => item.TENSP)
                                             </td>
                                             <td>
-                                                @Html.DisplayFor(modelItem => item.TENDAIDIEN)
+                                                @Html.DisplayFor(modelItem => item.MOTA)
                                             </td>
                                             <td>
-                                                @Html.DisplayFor(modelItem => item.SDT)
+                                                @Html.DisplayFor(modelItem => item.NGAYCAPNHAT)
                                             </td>
                                             <td>
-                                                @Html.DisplayFor(modelItem => item.DIACHIGIAO)
+                                                @Html.DisplayFor(modelItem => item.DONGIA)
                                             </td>
                                             <td>
-                                                @Html.DisplayFor(modelItem => item.TINHTRANGTHANHTOAN)
+                                                @Html.DisplayFor(modelItem => item.KHUYENMAI.TENKM)
                                             </td>
                                             <td>
-                                                @Html.DisplayFor(modelItem => item.TINHTRANGGIAOHANG)
+                                                @Html.DisplayFor(modelItem => item.LOAISP.TENLOAI)
                                             </td>
                                             <td>
-                                                @Html.DisplayFor(modelItem => item.KHACHHANG.TENKH)
+                                                @Html.DisplayFor(modelItem => item.NSX.TENNSX)
                                             </td>
                                             <td>
-                                                @Html.ActionLink("Sửa", "Edit", new { id = item.MAD }) |
-                                                @Html.ActionLink("Hiển Thị", "Details", new { id = item.MAD }) |
-                                                @Html.ActionLink("Xóa", "Delete", new { id = item.MAD })
+                                                @Html.ActionLink("Sửa", "Edit", new { id = item.MASP }) |
+                                                @Html.ActionLink("Hiển Thị", "Details", new { id = item.MASP }) |
+                                                @Html.ActionLink("Xóa", "Delete", new { id = item.MASP })
                                             </td>
                                         </tr>
                                     </tbody>
@@ -116,7 +108,7 @@
 <!--Tạo link liên kết các trang-->
 Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount)
 <div>
-    @Html.PagedListPager(Model, page => Url.Action("Index", "DONDATHANGs", new { page = page }))
+    @Html.PagedListPager(Model, page => Url.Action("SanPhamTheoLoai", "SANPHAMs", new { page = page }))
 </div>
 
 <!-- jQuery -->

@@ -1,83 +1,79 @@
-﻿@model LinhKienMayTinh.Models.SANPHAM
+﻿@model LinhKienMayTinh.Models.KHACHHANG
 
 @{
-    ViewBag.Title = "Chi Tiết Sản Phẩm";
+    ViewBag.Title = "Chi Tiết Tài Khoản";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Chi Tiết Sản Phẩm</h2>
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">@ViewBag.Title</h1>
+    </div>
+</div>
 
-<div>
-    <hr />
+
+<div class="form-horizontal">
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.TENSP)
+            @Html.DisplayNameFor(model => model.TENKH)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.TENSP)
+            @Html.DisplayFor(model => model.TENKH)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.MOTA)
+            @Html.DisplayNameFor(model => model.SDT)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.MOTA)
+            @Html.DisplayFor(model => model.SDT)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.HINHANH)
+            @Html.DisplayNameFor(model => model.DIACHI)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.HINHANH)
+            @Html.DisplayFor(model => model.DIACHI)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.NGAYCAPNHAT)
+            @Html.DisplayNameFor(model => model.EMAIL)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.NGAYCAPNHAT)
+            @Html.DisplayFor(model => model.EMAIL)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.DONGIA)
+            @Html.DisplayNameFor(model => model.ID)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.DONGIA)
+            @Html.DisplayFor(model => model.ID)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.KHUYENMAI.TENKM)
+            @Html.DisplayNameFor(model => model.PASS)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.KHUYENMAI.TENKM)
+            @Html.DisplayFor(model => model.PASS)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.LOAISP.TENLOAI)
+            @Html.DisplayNameFor(model => model.NGAYDANGKY)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.LOAISP.TENLOAI)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.NSX.TENNSX)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.NSX.TENNSX)
+            @Html.DisplayFor(model => model.NGAYDANGKY)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Sửa Sản Phẩm", "Edit", new { id = Model.MASP }) |
+    @Html.ActionLink("Sửa", "Edit", new { id = Model.MAKH }) |
     @Html.ActionLink("Trở Về", "Index")
 </p>
 <!-- jQuery -->
