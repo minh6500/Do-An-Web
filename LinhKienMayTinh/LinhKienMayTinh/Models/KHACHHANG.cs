@@ -25,7 +25,7 @@ namespace LinhKienMayTinh.Models
         public string SDT { get; set; }
         public string DIACHI { get; set; }
         public string EMAIL { get; set; }
-        public string ID { get; set; }
+        public string USERNAME { get; set; }
         public string PASS { get; set; }
         public System.DateTime NGAYDANGKY { get; set; }
     

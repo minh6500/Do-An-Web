@@ -100,7 +100,7 @@
 
 
                 <!--Tạo link liên kết các trang-->
-                <p>Trang @((Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount)</p>
+                <p>Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount</p>
                 <div>
                     @Html.PagedListPager(Model, page => Url.Action("SearchSanPham", "Search", new { page = page, sTuKhoa = ViewBag.TuKhoa}))
                 </div>

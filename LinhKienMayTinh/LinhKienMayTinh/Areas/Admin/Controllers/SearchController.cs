@@ -134,5 +134,9 @@ namespace LinhKienMayTinh.Areas.Admin.Controllers
             return View(lstKQTK.OrderBy(n => n.KHACHHANG.TENKH).ToPagedList(pageNumber, pageSize));
         }
         #endregion
+
+        #region Search Admin
+
+        #endregion
     }
 }

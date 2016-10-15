@@ -37,7 +37,7 @@ namespace LinhKienMayTinh.Models
             [Display(Name = "Tài Khoản")]
             [MinLength(5, ErrorMessage = "Tài khoản ít nhất phải có 5 ký tự trở lên")]
             [Required(ErrorMessage = "{0} Vui lòng nhập dữ liệu cho trường này")]
-            public string ID { get; set; }
+            public string USERNAME { get; set; }
 
             [Display(Name = "Mật Khẩu")]
             [StringLength(20, MinimumLength = 10, ErrorMessage = "Mật khẩu phải có từ 10-20 ký tự")]

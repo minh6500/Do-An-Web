@@ -1,7 +1,11 @@
 ﻿<!DOCTYPE html>
+@using LinhKienMayTinh.Models;
+@{ 
+    var session = (KHACHHANG)Session["TaiKhoan"];
+}
 <html>
 <head>
-    <title>Big store a Ecommerce Online Shopping Category Flat Bootstrap Responsive Website Template| Home :: w3layouts</title>
+    <title>thegioilinhkien.somee.com</title>
     <!-- for-mobile-apps -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -60,11 +64,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!---//End-rate---->
     <!--font awesome-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
-
+    <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+    <script>tinymce.init({ selector:'textarea' });</script>
 
 </head>
 <body>
-    <a href=""@Url.Action("Index","TrangChu")""><img src="~/images/download.png" class="img-head" alt=""></a>
+    <a href="@Url.Action("Index","TrangChu")"><img src="~/images/download.png" class="img-head" alt=""></a>
     <!--Header-->-->
     <div class="header">
 
@@ -75,20 +80,33 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class="head-t">
                 <ul class="card">
-                    <li><a href="wishlist.html"><i class="fa fa-heart" aria-hidden="true"></i>Yêu Thích</a></li>
-                    <li><a href="@Url.Action("DangNhap","DangKyDangNhap")"><i class="fa fa-user" aria-hidden="true"></i>Đăng Nhập</a></li>
-                    <li><a href="@Url.Action("DangKy","DangKyDangNhap")"><i class="fa fa-arrow-right" aria-hidden="true"></i>Đăng Ký</a></li>
-                    <li><a href="about.html"><i class="fa fa-file-text-o" aria-hidden="true"></i>Giới Thiệu</a></li>
-                    <li><a href="shipping.html"><i class="fa fa-ship" aria-hidden="true"></i>Shipping</a></li>
+                    @*<li><a href="wishlist.html"><i class="fa fa-heart" aria-hidden="true"></i>Yêu Thích</a></li>*@
+                    @if (session == null)
+                    {
+                    <li><a href="@Url.Action("DangNhap", "DangKyDangNhap")"><i class="fa fa-user" aria-hidden="true"></i>Đăng Nhập</a></li>
+                    <li><a href="@Url.Action("DangKy", "DangKyDangNhap")"><i class="fa fa-arrow-right" aria-hidden="true"></i>Đăng Ký</a></li>
+                    }
+                    else
+                    {
+                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Xin Chào @session.TENKH</a>
+                            <ul class="dropdown-menu">
+                                <li ><i class="fa fa-user" aria-hidden="true"></i><a href="@Url.Action("ThongTinTaiKhoan","DangKyDangNhap",new { id = session.MAKH })">Thông Tin Tài Khoản</a></li>
+                                <li ><a href="@Url.Action("Thoat","DangKyDangNhap") ">Thoát</a></li>
+                </ul>
+
+            </li>
+                    }
+                    @*<li><a href="about.html"><i class="fa fa-file-text-o" aria-hidden="true"></i>Giới Thiệu</a></li>*@
+                    @*<li><a href="shipping.html"><i class="fa fa-ship" aria-hidden="true"></i>Shipping</a></li>*@
                 </ul>
             </div>
 
             <div class="header-ri">
                 <ul class="social-top">
                     <li><a href="https://www.facebook.com/" class="icon facebook"><i class="fa fa-facebook" aria-hidden="true"></i><span></span></a></li>
-                    <li><a href="#" class="icon twitter"><i class="fa fa-twitter" aria-hidden="true"></i><span></span></a></li>
-                    <li><a href="#" class="icon pinterest"><i class="fa fa-pinterest-p" aria-hidden="true"></i><span></span></a></li>
-                    <li><a href="#" class="icon dribbble"><i class="fa fa-dribbble" aria-hidden="true"></i><span></span></a></li>
+                    <li><a href="https://twitter.com" class="icon twitter"><i class="fa fa-twitter" aria-hidden="true"></i><span></span></a></li>
+                    <li><a href="https://www.pinterest.com" class="icon pinterest"><i class="fa fa-pinterest-p" aria-hidden="true"></i><span></span></a></li>
+                    <li><a href="https://dribbble.com" class="icon dribbble"><i class="fa fa-dribbble" aria-hidden="true"></i><span></span></a></li>
                 </ul>
             </div>
 
@@ -150,9 +168,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </ul>
                     </div>
                 </nav>
-
-              
-                @Html.Action("GioHangPartial","GioHang")
+                @Html.Action("GioHangPartial", "GioHang")
                 <div class="clearfix"></div>
             </div>
 
@@ -160,172 +176,144 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
     <!--//Header-->
     <!--Banner-->
-        <div class="container">
-            <div class="banner-info">
-                <div class="search-form">
-                    @using(Html.BeginForm("KetQuaTimKiem","TimKiem",FormMethod.Post))
-                    {
-                        <input type="text" placeholder="Search..." name="txt_TimKiem">
-                        <input type="submit" value=" ">
-                    }
-                </div>
+    <div class="container">
+        <div class="banner-info">
+            <div class="search-form">
+                @using (Html.BeginForm("KetQuaTimKiem", "TimKiem", FormMethod.Post))
+                {
+                    <input type="text" placeholder="Search..." name="txt_TimKiem">
+                    <input type="submit" value=" ">
+                }
             </div>
         </div>
+    </div>
     <!--//Banner-->
     <script>window.jQuery || document.write('<script src="/Content/TrangChu/js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
     <script src="/Content/TrangChu/js/jquery.vide.min.js"></script>
 
     <!--content-->
-    <div></div>
-    @RenderBody()
-    <!--content-->
-    <!--footer-->
-    <div class="footer">
-        <div class="container">
-            <div class="col-md-3 footer-grid">
-                <h3>About Us</h3>
-                <p>
-                    Nam libero tempore, cum soluta nobis est eligendi
-                    optio cumque nihil impedit quo minus id quod maxime
-                    placeat facere possimus.
-                </p>
-            </div>
-            <div class="col-md-3 footer-grid ">
-                <h3>Menu</h3>
-                <ul>
-                    <li><a href="@Url.Action("Index","TrangChu")">Trang Chủ</a></li>
-                    @Html.Action("LoaiSP","LoaiSP")
-                    
-                </ul>
-            </div>
-            <div class="col-md-3 footer-grid ">
-                <h3>Customer Services</h3>
-                <ul>
-                    <li><a href="shipping.html">Shipping</a></li>
-                    <li><a href="terms.html">Terms & Conditions</a></li>
-                    <li><a href="faqs.html">Faqs</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="offer.html">Online Shopping</a></li>
-
-                </ul>
-            </div>
-            <div class="col-md-3 footer-grid">
-                <h3>Tài Khoản</h3>
-                <ul>
-                    <li><a href="@Url.Action("DangKyDangNhap","DangNhap")">Đăng Nhập</a></li>
-                    <li><a href="@Url.Action("DangKyDangNhap","DangKy")">Đăng Ký</a></li>
-                    <li><a href="wishlist.html">Wishlist</a></li>
-
-                </ul>
-            </div>
-            <div class="clearfix"></div>
-            <div class="footer-bottom">
-                <h2><a href="index.html"><b>T<br>H<br>E</b>Big Store<span>The Best Supermarket</span></a></h2>
-                <p class="fo-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
-                <ul class="social-fo">
-                    <li><a href="#" class=" face"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                    <li><a href="#" class=" twi"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                    <li><a href="#" class=" pin"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
-                    <li><a href="#" class=" dri"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-                </ul>
-                <div class=" address">
-                    <div class="col-md-4 fo-grid1">
-                        <p><i class="fa fa-home" aria-hidden="true"></i>12K Street , 45 Building Road Canada.</p>
+            @RenderBody()
+            <!--content-->
+            <!--footer-->
+            <div class="footer">
+                <div class="container">
+                    <div class="col-md-3 footer-grid">
+                        <h3>About Us</h3>
+                        <p>
+                            Linh Kiện Vi Tính Chất Lượng Uy Tín
+                        </p>
                     </div>
-                    <div class="col-md-4 fo-grid1">
-                        <p><i class="fa fa-phone" aria-hidden="true"></i>+1234 758 839 , +1273 748 730</p>
+                    <div class="col-md-3 footer-grid ">
+                        <h3>Menu</h3>
+                        <ul>
+                            <li><a href="@Url.Action("Index","TrangChu")">Trang Chủ</a></li>
+                            @Html.Action("LoaiSP", "LoaiSP")
+
+                        </ul>
                     </div>
-                    <div class="col-md-4 fo-grid1">
-                        <p><a href="mailto:info@example.com"><i class="fa fa-envelope-o" aria-hidden="true"></i>info@example1.com</a></p>
+                    <div class="col-md-3 footer-grid ">
+                        <h3>Customer Services</h3>
+                        <ul>
+                            <li><a href="shipping.html">Shipping</a></li>
+                            <li><a href="terms.html">Terms & Conditions</a></li>
+                            <li><a href="faqs.html">Faqs</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="offer.html">Online Shopping</a></li>
+
+                        </ul>
+                    </div>
+                    <div class="col-md-3 footer-grid">
+                        <h3>Tài Khoản</h3>
+                        <ul>
+                            <li><a href="@Url.Action("DangKyDangNhap","DangNhap")">Đăng Nhập</a></li>
+                            <li><a href="@Url.Action("DangKyDangNhap","DangKy")">Đăng Ký</a></li>
+                            <li><a href="wishlist.html">Wishlist</a></li>
+
+                        </ul>
                     </div>
                     <div class="clearfix"></div>
-
+                    
                 </div>
             </div>
-            <div class="copy-right">
-                <p> &copy; 2016 Big store. All Rights Reserved | Design by  <a href="http://w3layouts.com/"> W3layouts</a></p>
-            </div>
-        </div>
-    </div>
 
-    <!-- //footer-->
-    <!-- smooth scrolling -->
-    <script type="text/javascript">
-	$(document).ready(function() {
-	/*
-		var defaults = {
-		containerID: 'toTop', // fading element id
-		containerHoverID: 'toTopHover', // fading element hover id
-		scrollSpeed: 1200,
-		easingType: 'linear'
-		};
-	*/
-	$().UItoTop({ easingType: 'easeOutQuart' });
-	});
-    </script>
-    <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-    <!-- //smooth scrolling -->
-    <!-- for bootstrap working -->
-    <script src="/Content/TrangChu/js/bootstrap.js"></script>
-    <!-- //for bootstrap working -->
-    <script type='text/javascript' src="/Content/TrangChu/js/jquery.mycart.js"></script>
-    <script type="text/javascript">
-$(function () {
+            <!-- //footer-->
+            <!-- smooth scrolling -->
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    /*
+                        var defaults = {
+                        containerID: 'toTop', // fading element id
+                        containerHoverID: 'toTopHover', // fading element hover id
+                        scrollSpeed: 1200,
+                        easingType: 'linear'
+                        };
+                    */
+                    $().UItoTop({ easingType: 'easeOutQuart' });
+                });
+            </script>
+            <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+            <!-- //smooth scrolling -->
+            <!-- for bootstrap working -->
+            <script src="/Content/TrangChu/js/bootstrap.js"></script>
+            <!-- //for bootstrap working -->
+            <script type='text/javascript' src="/Content/TrangChu/js/jquery.mycart.js"></script>
+            <script type="text/javascript">
+                $(function () {
 
-var goToCartIcon = function($addTocartBtn){
-    var $cartIcon = $(".my-cart-icon");
-    var $image = $('<img width="30px" height="30px" src="' + $addTocartBtn.data("image") + '"/>').css({"position": "fixed", "z-index": "999"});
-    $addTocartBtn.prepend($image);
-    var position = $cartIcon.position();
-    $image.animate({
-    top: position.top,
-    left: position.left
-    }, 500 , "linear", function() {
-    $image.remove();
-    });
-}
+                    var goToCartIcon = function ($addTocartBtn) {
+                        var $cartIcon = $(".my-cart-icon");
+                        var $image = $('<img width="30px" height="30px" src="' + $addTocartBtn.data("image") + '"/>').css({ "position": "fixed", "z-index": "999" });
+                        $addTocartBtn.prepend($image);
+                        var position = $cartIcon.position();
+                        $image.animate({
+                            top: position.top,
+                            left: position.left
+                        }, 500, "linear", function () {
+                            $image.remove();
+                        });
+                    }
 
-$('.my-cart-btn').myCart({
-    classCartIcon: 'my-cart-icon',
-    classCartBadge: 'my-cart-badge',
-    affixCartIcon: true,
-    checkoutCart: function(products) {
-    $.each(products, function(){
-        console.log(this);
-    });
-    },
-    clickOnAddToCart: function($addTocart){
-    goToCartIcon($addTocart);
-    },
-    getDiscountPrice: function(products) {
-    var total = 0;
-    $.each(products, function(){
-        total += this.quantity * this.price;
-    });
-    return total * 1;
-    }
-});
+                    $('.my-cart-btn').myCart({
+                        classCartIcon: 'my-cart-icon',
+                        classCartBadge: 'my-cart-badge',
+                        affixCartIcon: true,
+                        checkoutCart: function (products) {
+                            $.each(products, function () {
+                                console.log(this);
+                            });
+                        },
+                        clickOnAddToCart: function ($addTocart) {
+                            goToCartIcon($addTocart);
+                        },
+                        getDiscountPrice: function (products) {
+                            var total = 0;
+                            $.each(products, function () {
+                                total += this.quantity * this.price;
+                            });
+                            return total * 1;
+                        }
+                    });
 
-});
-    </script>
-    <!-- facebook scrip-->
-    <script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '1590678804567495',
-      xfbml      : true,
-      version    : 'v2.7'
-    });
-  };
+                });
+            </script>
+            <!-- facebook scrip-->
+            <script>
+                window.fbAsyncInit = function () {
+                    FB.init({
+                        appId: '1590678804567495',
+                        xfbml: true,
+                        version: 'v2.7'
+                    });
+                };
 
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-    </script>
-    <!-- //facebook scrip-->
+                (function (d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) { return; }
+                    js = d.createElement(s); js.id = id;
+                    js.src = "//connect.facebook.net/en_US/sdk.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+            </script>
+            <!-- //facebook scrip-->
 </body>
 </html>

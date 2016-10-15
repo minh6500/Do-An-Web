@@ -28,6 +28,9 @@
             @Html.AntiForgeryToken()
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <span>
+                <input type="text" name="TENAD" class="user" value="Họ Tên" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Họ Tên';}">
+            </span>
+            <span>
                 <input type="text" name="USERNAME" class="user" value="Tài Khoản" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Tài Khoản';}">
             </span>
             <span>

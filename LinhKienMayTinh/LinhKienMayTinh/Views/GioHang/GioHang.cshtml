@@ -20,7 +20,6 @@
         <div class="clearfix"> </div>
     </div>
 </div>
-
 <section id="cart_items">
     <div class="container">
         <div class="table-responsive cart_info">
@@ -38,42 +37,54 @@
                 <tbody>
                     @foreach (var item in Model)
                     {
-                        using (Html.BeginForm("CapNhatGioHang", "GioHang",new { iMASP = item.iMASP }))
+                        using (Html.BeginForm("CapNhatGioHang", "GioHang", new { iMASP = item.iMASP }))
                         {
-                    <tr>
-                        <td class="cart_product">
-                            <img src="~/images/@item.sHINHANH" alt="" width="200" height="200">
-                        </td>
-                        <td class="cart_description">
-                            <h4>@item.sTENSP</h4>
-                        </td>
-                        <td class="cart_price">
-                            <p>@String.Format("{0:0,0}", item.dDONGIA) VNĐ</p>
-                        </td>
-                        <td class="cart_quantity">
-                            <div class="div_soluong">
-                                <input type="number" value="@item.iSOLUONG" name="txtSoLuong" style="width:50px;height:30px;font-size:15px;border-radius:10px;" />
-                            </div>
-                        </td>
-                        <td class="cart_total">
-                            <p class="cart_total_price">@String.Format("{0:0,0}", item.dTHANHTIEN) VNĐ</p>
-                        </td>
-                        <td>
-                            <div>
-                                <input type="submit" value="Cập Nhật" style="height:30px;width:100px;color:#fff;background-color:#029241;float:left;border:none;" />
-                            </div>
-                        </td>
-                        <td class="cart_delete">
-                            <a class="cart_quantity_delete" href="@Url.Action("XoaGioHang","GioHang",new {  iMASP = item.iMASP })"><i class="fa fa-times"></i></a>
-                        </td>
-                    </tr>
-                            }
+                            <tr>
+                                <td class="cart_product">
+                                    <img src="~/images/@item.sHINHANH" alt="" width="200" height="200">
+                                </td>
+                                <td class="cart_description">
+                                    <h4>@item.sTENSP</h4>
+                                </td>
+                                <td class="cart_price">
+                                    <p>@String.Format("{0:0,0}", item.dDONGIA) VNĐ</p>
+                                </td>
+                                <td class="cart_quantity">
+                                    <div class="div_soluong">
+                                        <input type="number" value="@item.iSOLUONG" name="txtSoLuong" style="width:50px;height:30px;font-size:15px;border-radius:10px;" />
+                                    </div>
+                                </td>
+                                <td class="cart_total">
+                                    <p class="cart_total_price">@String.Format("{0:0,0}", item.dTHANHTIEN) VNĐ</p>
+                                </td>
+                                <td>
+                                    <div>
+                                        <input type="submit" value="Cập Nhật" style="height:30px;width:100px;color:#fff;background-color:#029241;float:left;border:none;" />
+                                    </div>
+                                </td>
+                                <td class="cart_delete">
+                                    <a class="cart_quantity_delete" href="@Url.Action("XoaGioHang","GioHang",new {  iMASP = item.iMASP })"><i class="fa fa-times"></i></a>
+                                </td>
+                            </tr>
                         }
+                    }
                 </tbody>
             </table>
             <div style="clear:both;"></div>
             <nav class="nav_thongbao">
                 <span id="thongbao">@ViewBag.ThongBao</span>
+            </nav>
+            <div class="div_tongtien">
+                <span id="tongtien">Tổng Tiền</span>
+            </div>
+            <div class="div_thanhtien">
+                <span>@String.Format("{0:0,0}", ViewBag.Tongtien) VNĐ</span>
+            </div>
+            <div class="clearfix"></div>
+            <nav class="submit">
+                <div style="text-align:center;">
+                    <a href="@Url.Action("DatHang", "GioHang")">Đặt Hàng</a>
+                </div>
             </nav>
         </div>
     </div>
@@ -86,129 +97,32 @@
 <script src="/Content/GioHang/js/main.js"></script>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@*<div>
-    <div style="margin-left:25%;">
-        <nav class="nav_menu_giohang">
-
-            <span id="sanpham">Sản Phẩm</span>
-
-            <span id="soluong">Số Lượng</span>
-
-            <span>Giá</span>
-
-        </nav>
-
-        <nav class="nav_top">
-            <nav class="nav_form">
-
-                @foreach (var item in Model)
-                {
-                    using (Html.BeginForm("CapNhatGioHang", "GioHang", new { iMASP = item.iMASP }))
-                    {
-                    <nav class="nav_sanpham">
-                        <div class="div_hinhanh">
-                            <span>
-                                <img src="@Url.Content("~/images/" + item.sHINHANH)" width="100px" height="100px" />
-                            </span>
-                        </div>
-
-                        <div class="div_ten">
-                            <span style="color:#c1c1c1;font-size:14px;font-weight:bold;">@item.sTENSP</span>
-                        </div>
-                        <div class="div_soluong">
-                            <span><input type="number" value="@item.iSOLUONG" name="txtSoLuong" style="width:50px;height:30px;" /></span>
-                        </div>
-
-                        <div class="div_gia">
-                            <span>@String.Format("{0:0,0}", item.dTHANHTIEN) VNĐ</span>
-                        </div>
-                        <div>
-                            <input type="submit"  value="Cập Nhật" style="height:30px;width:100px;margin-top:35px;color:#fff;background-color:#029241;float:left;border:none;"/>
-                        </div>
-                        <div class="div_xoagiohang">
-                            <a href="@Url.Action("XoaGioHang", "GioHang", new { iMASP = item.iMASP })"><i class="fa fa-times" aria-hidden="true" style="font-size:20px;color:darkred;"></i></a>
-                        </div>
-                    </nav>
-                    }
-
-                }
-                <div style="clear:both;"></div>
-                <nav class="nav_thongbao">
-                    <span id="thongbao">@ViewBag.ThongBao</span>
-                </nav>
-            </nav>
-            <div class="div_tongtien">
-                <span id="tongtien">Tổng Tiền</span>
-            </div>
-            <div class="div_thanhtien">
-                <span>@String.Format("{0:0,0}", ViewBag.Tongtien) VNĐ</span>
-            </div>
-            <div class="clearfix"></div>
-            <nav class="submit"> 
-                <div style="text-align:center;">
-                    <a href="@Url.Action("DatHang", "GioHang")">Đặt Hàng</a>
-                </div>
-            </nav>
-            <div class="clearfix"></div>
-        </nav>
-    </div>
-</div>
 <style>
-    .submit{
-        float:right;
-        width:150px;
-        height:40px;
-        line-height:40px;
-        border:none;
-        background-color:#029241;
-        margin-top:1em;
+    .submit {
+        float: right;
+        width: 150px;
+        height: 40px;
+        line-height: 40px;
+        border: none;
+        background-color: #029241;
+        margin-top: 1em;
         transition: 0.5s all ease;
         -webkit-transition: 0.5s all ease;
         -moz-transition: 0.5s all ease;
         -o-transition: 0.5s all ease;
-        margin-right:20px;
+        margin-right: 20px;
     }
-    .submit a{
-        color:#fff;
-    }
-    .submit:hover{
-        background-color:#FAB005;
-    }
-    .submit:hover a{
-        list-style-type:none;
-        text-decoration:none;
-    }
-</style>*@
+
+        .submit a {
+            color: #fff;
+        }
+
+        .submit:hover {
+            background-color: #FAB005;
+        }
+
+            .submit:hover a {
+                list-style-type: none;
+                text-decoration: none;
+            }
+</style>

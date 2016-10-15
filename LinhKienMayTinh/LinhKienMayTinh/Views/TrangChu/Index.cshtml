@@ -4,7 +4,17 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@helper RutGon(string input, int length)
+{
+    if(input.Length < length)
+    {
+        @input
+    }
+    else
+    {
+        @input.Substring(0,length)<text>...</text>
+    }
+}
 
 <!--content-->
 <div class="content-mid">
@@ -35,7 +45,7 @@
         </div>
         <div class="col-md-4 m-w3ls">
             <div class="col-md2 ">
-                <a href="kitchen.html">
+                <a href="@Url.Action("KhuyenMai10","KhuyenMai")">
                     <img src="~/images/big-sale1.jpg" style="width:370px;height:172px;" class="img-responsive img1" alt="">
                     <div class="big-sale2">
                         <h3>Sale <span>10%</span></h3>
@@ -67,15 +77,14 @@
 
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <a href="kitchen.html"> <img class="first-slide" src="~/images/linh-kien-may-tinh.png" alt="First slide" style="width:100%;height:300px"></a>
+                <a href="#"> <img class="first-slide" src="~/images/linh-kien-may-tinh.png" alt="First slide" style="width:100%;height:300px"></a>
+            </div>
+            <div class="item">
+                <a href="#"> <img class="second-slide " src="~/images/linh-kien-may-tinh-2.png" alt="Second slide" style="width:100%;height:300px"></a>
 
             </div>
             <div class="item">
-                <a href="care.html"> <img class="second-slide " src="~/images/linh-kien-may-tinh-2.png" alt="Second slide" style="width:100%;height:300px"></a>
-
-            </div>
-            <div class="item">
-                <a href="hold.html"><img class="third-slide " src="~/images/s2.jpg" alt="Third slide" style="width:100%;height:300px;"></a>
+                <a href="#"><img class="third-slide " src="~/images/s2.jpg" alt="Third slide" style="width:100%;height:300px;"></a>
             </div>
         </div>
     </div>
@@ -102,7 +111,7 @@
                             </a>
                             <div class="mid-1">
                                 <div class="women">
-                                    <h6><a href="@Url.Action("XemChiTiet","TrangChu",new { id = @item.MASP })">@item.TENSP</a></h6>
+                                    <h6><a href="@Url.Action("XemChiTiet","TrangChu",new { id = @item.MASP })">@RutGon(item.TENSP,18)</a></h6>
                                 </div>
                                 <div class="mid-2">
                                     <p> @*@<label>@item.DONGIA</label>*@<em class="item_price">@String.Format("{0:0,0}",item.DONGIA) VNĐ</em></p>
@@ -114,7 +123,7 @@
                                 @using (Html.BeginForm("ThemGioHang", "GioHang", new { @id = @item.MASP, @strURL = Request.Url.ToString() }))
                                 {
                                 <div class="add add-2">
-                                    <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="product 1" data-summary="summary 1" data-price="6.00" data-quantity="1" data-image="~/images/of16.png">Thêm Vào Giỏ Hàng</button>
+                                    <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="product 1" data-summary="summary 1" data-price="6.00" data-quantity="1" data-image="~/images/of16.png">Đặt Hàng</button>
                                 </div>
                                 }
                             </div>

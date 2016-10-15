@@ -1,5 +1,7 @@
 ﻿@using LinhKienMayTinh.Models;
 @model List<GioHang>
-<div class="cart">
-    <a href="@Url.Action("GioHang","GioHang")"><span class="fa fa-shopping-cart" style="font-size:20px;color:#039445;"></span><div style="width:20px; height:20px;background-color:#FAB005;float:right;margin-right:50px;border-radius:50%;color:#fff;">@ViewBag.Tongsoluong</div></a>
+<div class="cm-md-6">
+    <div class="cart">
+        <a href="@Url.Action("GioHang","GioHang")"><span class="fa fa-shopping-cart" style="font-size:20px;color:#039445;float:left"></span><div style="width:20px; height:20px;background-color:#FAB005;float:left;margin-right:50px;border-radius:50%;color:#fff;">@ViewBag.Tongsoluong</div></a>
+    </div>
 </div>

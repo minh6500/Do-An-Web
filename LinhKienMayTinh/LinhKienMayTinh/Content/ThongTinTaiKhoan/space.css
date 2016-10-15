@@ -1,0 +1,89 @@
+﻿#main{background:url(../images/spacebg.gif) repeat-y;}
+.left, .middle{margin-right:15px;}
+.left{width:190px;}
+.middle{width:550px;}
+.right{width:215px;}
+.clanPanelB .hd{background:none; color:#333; border-bottom:3px solid #a00; padding:10px 0 0 0; font:700 13px Tahoma; height:18px;}
+.clanPanelB .bd{background:none; border:0; padding-top:10px; margin-bottom:30px;}
+.hdR, .ft{display:none;}
+.middle .clanPanelB .hd{font-size:18px; padding:5px 0 0 0; height:23px;}
+.tr {text-align:right;}
+.nowrap {white-space:nowrap;}
+
+.profileMenu li,a.buddyAdd, a.buddyAwaiting, a.buddyNum, a.addBuddyBtn, .hdArrow,.statP, .statF, .edit
+{background:url(../images/space-sprites.png) no-repeat;}
+
+/*left profile menu*/
+.profileMenu{margin-top:10px;}
+.profileMenu li{padding:5px 0 5px 20px; font-size:12px; font-weight:700;}
+li.mSpace{background-position:0 -167px;}
+li.mProfile{background-position:0 -190px;}
+li.mAcc{background-position:0 -215px;}
+li.mSecurity{background-position:0 -239px;}
+
+/*left buddy list*/
+.buddyList li{display:block; margin-bottom:8px; height:50px; position:relative;}
+.buddyList .rounded-img{float:left; margin-right:5px;}
+.buddyList .imgBlock{vertical-align:top; width:115px; position:absolute; top:0; left:55px;}
+.buddyStat{position:absolute; top:0; right:0;}
+a.buddyAdd, a.buddyAwaiting, a.buddyNum{background-position:0 -115px; display:block; width:14px; height:14px; position:relative; top:0; left:0;}
+a.buddyAwaiting{background-position:0 -129px;}
+a.buddyNum{background-position:0 -143px; width:19px; height:13px; color:#fff; font:9px/13px Tahoma; top:5px; text-align:center; letter-spacing:1px; text-decoration:none; padding-left:3px;}
+a.addBuddyBtn{display:block; width:145px; height:35px; font:700 15px/30px Arial !important; text-align:center; padding-right:30px; color:#fff; margin:3px 0;}
+a.addBuddyBtn:hover{background-position:0 -35px; text-decoration:none;}
+
+/*middle feeds*/
+.hdArrow{background-position:-108px -279px; width:8px; height:9px; padding:0 4px;}
+.selections select{position:relative; top:-2px !important; border:1px solid #ddd;}
+.iconRefresh, .iconNewPost, .iconImg, .iconVideo, .iconLink{background:url(../images/space-sprites.png) no-repeat !important; display:block; width:22px; height:20px; float:left; border:1px solid #fff;}
+.iconRefresh{background-position:0 -85px !important;}
+.iconNewPost{background-position:-23px -85px !important;}
+.iconImg{background-position:-46px -85px !important;}
+.iconVideo{background-position:-69px -85px !important;}
+.iconLink{background-position:-92px -85px !important;}
+.iconRefresh:hover, .iconNewPost:hover, .iconImg:hover, .iconVideo:hover, .iconLink:hover{border:1px solid #fcc; background-color:#fee !important;}
+
+.feedsInput{background:#eee; margin:-20px 0 20px 0;}
+.feedsInput td{padding-top:15px;}
+.feedsInput .hdlineshort{border:0;}
+
+/*right buddy list*/
+.hdRight{position:absolute; top:4px; right:0;}
+.buddyListH li{display:block;  width:68px; height:80px; float:left; text-align:center;}
+
+/*general middle content*/
+.space{font-size:12px;}
+.space .section{margin-bottom:25px;}
+
+.space td, .space th{padding:6px; vertical-align:top; line-height:18px; }
+.space th{text-align:right; font-weight:100;}
+th strong, .accSetting th{font-weight:700;}
+.space p{margin-bottom:5px;}
+
+/*account setting*/
+.accSetting{margin:20px 0 0; width:100%;}
+.accSetting td, .accSetting th{padding:15px 3px; height:auto; border-bottom:1px solid #ddd; font:12px Tahoma; line-height:20px;}
+.accSetting th{font-weight:700;}
+.statP, .statF{background-position:2px -272px; width:15px;}
+.statF{background-position:-28px -272px;}
+.accSetting .tr {}
+.desc{
+	color:#777; padding:0; background:#fafafa; padding:8px; line-height:1.3em; margin:10px 0 0 0; font-size:11px; width:280px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+.app {position:relative;}
+.appChoice {position:absolute; top:20px; left:70px; width:90px; height:60px; border:1px solid #ccc; border-bottom:0; display:none;}
+.appChoice a {display:block; width:80px; height:30px; background:#eee; border-bottom:1px solid #ccc; padding-left:10px; line-height:30px; text-align:left;}
+.appChoice a:hover {background:#900; color:#fff; text-decoration:none;}
+
+.edit{background-position:-72px -285px; display:block; width:16px; height:16px;}
+.pwd{position:relative; margin-bottom:5px;}
+.pwdWrapper{position:absolute; top:2px; right:15px; border:1px solid #ccc; height:10px; width:160px;}
+.pwdBar{background:#c00; height:10px;}
+.accSetting input[type="password"] {border:1px solid #ddd; width:250px;}
+.accSetting .btns {margin-top:10px;}
+.accSetting input.clanPostBtn {border:0; margin:5px 5px 5px 0;}
+.accSetting label {margin:15px 0 0 0; display:block;}
+.error {color:#f00;}

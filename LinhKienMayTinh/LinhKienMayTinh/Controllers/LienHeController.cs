@@ -53,7 +53,7 @@ namespace LinhKienMayTinh.Controllers
                 }
                 return RedirectToAction("Sent");
             }
-            return View(model);
+            return View();
         }
         public ActionResult Sent()
         {

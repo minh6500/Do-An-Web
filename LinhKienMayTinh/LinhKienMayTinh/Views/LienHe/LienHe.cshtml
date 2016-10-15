@@ -1,9 +1,17 @@
 ﻿@model LinhKienMayTinh.Models.LienHe
 @{
-    ViewBag.Title = "LienHe";
+    ViewBag.Title = "Liên Hệ";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<div class="banner-top" style="background-color:#333;">
+    <div class="container">
+        <h3>Giỏ Hàng</h3>
+        <h4><a href="@Url.Action("Index", "TrangChu")">Trang Chủ</a><label>/</label>Liên Hệ</h4>
+        <div class="clearfix"> </div>
+    </div>
+</div>
+<div style="margin-top:50px;"></div>
 <div>
     <div class="spec ">
         <h3>Liên Hệ</h3>
@@ -13,6 +21,7 @@
             <b class="line"></b>
         </div>
     </div>
+
     <div>
         <div class="col-md-5 contact-right" style="float:left;">
             <img src="~/images/cac.jpg" class="img-responsive" alt="">
@@ -52,8 +61,7 @@
                     <div class="form-group">
                         <p style="margin-top:20px;">@Html.LabelFor(m => m.NoiDung, new { @class = "col-md-2 control-label" })</p>
                         <div class="col-md-10">
-                            @Html.TextAreaFor(m => m.NoiDung, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(m => m.NoiDung)
+                            <textarea name="NoiDung">Nội Dung</textarea>
                         </div>
                     </div>
                     <div class="form-group">

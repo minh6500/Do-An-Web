@@ -15,14 +15,17 @@
     </div>
 </div>
 
-<div class="input-group custom-search-form" style="width:25%;">
-    <input type="text" class="form-control" placeholder="Search...">
-    <span class="input-group-btn">
-        <button class="btn btn-default" type="button">
-            <i class="fa fa-search"></i>
-        </button>
-    </span>
-</div>
+@using (Html.BeginForm("SearchAdmin", "Search", FormMethod.Post))
+{
+    <div class="input-group custom-search-form" style="width:25%;">
+        <input type="text" class="form-control" placeholder="Search..." name="txt_TimKiem">
+        <span class="input-group-btn">
+            <button class="btn btn-default" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </span>
+    </div>
+}
 <p></p>
 
 <div class="row">
@@ -40,6 +43,9 @@
                                 <thead>
                                     <tr>
                                         <th>
+                                            @Html.DisplayNameFor(model => model.First().TENAD)
+                                        </th>
+                                        <th>
                                             @Html.DisplayNameFor(model => model.First().USERNAME)
                                         </th>
                                         <th>
@@ -52,6 +58,9 @@
                                 {
                                     <tbody>
                                         <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.TENAD)
+                                            </td>
                                             <td>
                                                 @Html.DisplayFor(modelItem => item.USERNAME)
                                             </td>
@@ -79,7 +88,7 @@
 </div>
 
 <!--Tạo link liên kết các trang-->
-Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount)
+Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
 <div>
     @Html.PagedListPager(Model, page => Url.Action("Index", "ADMINLOGINs", new { page = page }))
 </div>

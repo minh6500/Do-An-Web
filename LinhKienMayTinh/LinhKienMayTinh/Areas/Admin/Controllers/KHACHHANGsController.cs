@@ -51,7 +51,7 @@ namespace LinhKienMayTinh.Areas.Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MAKH,TENKH,SDT,DIACHI,EMAIL,ID,PASS,NGAYDANGKY")] KHACHHANG kHACHHANG)
+        public ActionResult Create([Bind(Include = "MAKH,TENKH,SDT,DIACHI,EMAIL,USERNAME,PASS,NGAYDANGKY")] KHACHHANG kHACHHANG)
         {
             kHACHHANG.NGAYDANGKY = DateTime.Now;
             if (ModelState.IsValid)
@@ -84,7 +84,8 @@ namespace LinhKienMayTinh.Areas.Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MAKH,TENKH,SDT,DIACHI,EMAIL,ID,PASS,NGAYDANGKY")] KHACHHANG kHACHHANG)
+        [ValidateInput(false)]
+        public ActionResult Edit(KHACHHANG kHACHHANG)
         {
             if (ModelState.IsValid)
             {

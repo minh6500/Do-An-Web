@@ -18,6 +18,7 @@ namespace LinhKienMayTinh.Models
         public string ChuDe { get; set; }
 
         [Display(Name ="Nội dung")]
+        [Required(ErrorMessage = "Nội dung không được để trống")]
         [DataType(DataType.MultilineText)]
         public string NoiDung { get; set; }
     }

@@ -25,7 +25,7 @@
                 {
                     <div class="key">
                         <i class="fa fa-envelope" aria-hidden="true"></i>
-                        <input type="text" value="Tài Khoản" name="ID" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Tài Khoản';}" required="">
+                        <input type="text" value="Tài Khoản" name="USERNAME" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Tài Khoản';}" required="">
                         <div class="clearfix"></div>
                     </div>
                     <div class="key">
@@ -43,6 +43,7 @@
             </div>
             @if (ViewBag.ThongBao == "Chúc mừng bạn đã đăng nhập thành công")
             {
+                <p style="text-align:center;margin-top:10px;"><a href="@Url.Action("Index","TrangChu")">Bấm Vào Đây Để Trở Về Trang Chủ</a></p>
                 <style>
                     .Hiden
                     {

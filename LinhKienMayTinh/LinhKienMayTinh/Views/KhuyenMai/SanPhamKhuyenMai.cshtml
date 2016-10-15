@@ -1,10 +1,21 @@
-﻿@using PagedList;
+﻿
+@{
+    ViewBag.Title = "SanPhamKhuyenMai";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using PagedList;
 @using PagedList.Mvc;
 @using LinhKienMayTinh.Models;
 @model PagedList.PagedList<SANPHAM>
 
+@{
+    ViewBag.Title = "Khuyến Mãi 10%";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
 <div class="spec ">
-    <h3>Tất Cả Sản Phẩm</h3>
+    <h3>@ViewBag.Title</h3>
     <div class="ser-t">
         <b></b>
         <span><i></i></span>
@@ -33,9 +44,9 @@
                     </div>
                     @using (Html.BeginForm("ThemGioHang", "GioHang", new { @id = @item.MASP, @strURL = Request.Url.ToString() }))
                     {
-                    <div class="add add-2">
-                        <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="product 1" data-summary="summary 1" data-price="6.00" data-quantity="1" data-image="~/images/of16.png">Đặt Hàng</button>
-                    </div>
+                        <div class="add add-2">
+                            <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="product 1" data-summary="summary 1" data-price="6.00" data-quantity="1" data-image="~/images/of16.png">Đặt Hàng</button>
+                        </div>
                     }
                 </div>
             </div>
@@ -48,7 +59,11 @@
 <div style="text-align:center;">
     Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
     <div class="MenuTrang">
-        @Html.PagedListPager(Model, page => Url.Action("SanPham", "SanPham", new { page = page }))
+        @Html.PagedListPager(Model, page => Url.Action("SanPhamKhuyenMai", "KhuyenMai", new { page = page }))
     </div>
 </div>
+
+
+
+
 

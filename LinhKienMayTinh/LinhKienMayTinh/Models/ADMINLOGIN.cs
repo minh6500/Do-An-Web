@@ -15,6 +15,7 @@ namespace LinhKienMayTinh.Models
     public partial class ADMINLOGIN
     {
         public int MAAD { get; set; }
+        public string TENAD { get; set; }
         public string USERNAME { get; set; }
         public string PASS { get; set; }
     }

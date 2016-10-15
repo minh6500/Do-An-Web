@@ -1,0 +1,198 @@
+﻿@using LinhKienMayTinh.Models;
+@model LinhKienMayTinh.Models.KHACHHANG
+@{ var session = (KHACHHANG)Session["TaiKhoan"];}
+
+@{
+    ViewBag.Title = "Thông Tin Tài Khoản";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="/Content/ThongTinTaiKhoan/screen.css" rel="stylesheet" type="text/css" media="all">
+<link rel="stylesheet" href="/Content/ThongTinTaiKhoan/user.css" type="text/css">
+<link media="all" type="text/css" rel="stylesheet" href="/Content/ThongTinTaiKhoan/space.css">
+
+
+<div class="banner-top" style="background-color:#333;">
+    <div class="container">
+        <h3>Đăng Ký</h3>
+        <h4><a href="@Url.Action("Index","TrangChu")">Trang Chủ</a><label>/</label>Thông Tin Tài Khoản</h4>
+        <div class="clearfix"> </div>
+    </div>
+</div>
+<div style="margin-top:50px;"></div>
+<div class="spec ">
+    <h3>Tài Khoản Của Bạn</h3>
+    <div class="ser-t">
+        <b></b>
+        <span><i></i></span>
+        <b class="line"></b>
+    </div>
+</div>
+
+<div id="main">
+    <div class="middle">
+        <div class="clanPanelB space" id="account_setting">
+            <div class="bd">
+                <table class="accSetting">
+                    <tbody>
+
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.TENKH) :</th>
+                            <td>@Html.DisplayFor(model => model.TENKH)</td>
+                            <td class="tr"></td>
+                        </tr>
+
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.DIACHI) :</th>
+                            <td>@Html.DisplayFor(model => model.DIACHI)</td>
+                            <td class="tr"></td>
+                        </tr>
+
+
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.USERNAME) :</th>
+                            <td>@Html.DisplayFor(model => model.USERNAME)</td>
+                            <td class="tr"></td>
+                        </tr>
+
+                        <tr>
+                            <th width="112">@Html.DisplayNameFor(model => model.PASS) :</th>
+                            <td>
+                                <div class="pwd">********</div>
+
+                            </td>
+                            <td class="tr"><a href="@Url.Action("DoiMatKhau","DangKyDangNhap",new { id = session.MAKH})">Thay đổi</a></td>
+                        </tr>
+
+
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.EMAIL) :</th>
+                            <td>@Html.DisplayFor(model => model.DIACHI)</td>
+                            <td class="tr"></td>
+                        </tr>
+
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.NGAYDANGKY) :</th>
+                            <td>@Html.DisplayFor(model => model.NGAYDANGKY)</td>
+                            <td class="tr"></td>
+                        </tr>
+
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.SDT) :</th>      
+                            <td>@Html.DisplayFor(model => model.SDT)</td>
+                            <td class="tr nowrap">
+
+                                <p style="margin:0">
+                                    <a href="@Url.Action("DoiSDT","DangKyDangNhap",new { id = session.MAKH})" target="_blank">Thay đổi</a>
+                                </p>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div><!--end middle-->
+
+    <div class="clearfix"></div>
+</div>
+
+<style>
+    .tsa_div_stat {
+        float: left;
+        height: 20px;
+        padding-right: 2px;
+        width: 15px;
+        /* background:url("../images/space-sprites.png") no-repeat scroll 0 0 transparent; } */
+        background: url("http://cdn.garenanow.com/webmain/static/space/images/space-sprites.png") no-repeat scroll 0 0 transparent;
+    }
+
+    .tsa_div_statP {
+        background-position: 0 -283px;
+    }
+
+    .tsa_div_statF {
+        background-position: -30px -283px;
+    }
+
+    .middle {
+        width: 730px;
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @*<h2>@ViewBag.Title</h2>
+            <div class="content-mid">
+                <div class="container">
+                    <div style="">
+                        <div>
+
+                            <dl class="dl-horizontal">
+
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.EMAIL)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.EMAIL)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.USERNAME)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.USERNAME)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.PASS)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.PASS)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.NGAYDANGKY)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.NGAYDANGKY)
+                                </dd>
+
+                            </dl>
+                        </div>
+                        <p>
+                            @Html.ActionLink("Edit", "Edit", new { id = Model.MAKH }) |
+                            @Html.ActionLink("Back to List", "Index")
+                        </p>
+                    </div>
+            </div>
+        </div>*@

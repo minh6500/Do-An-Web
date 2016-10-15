@@ -5,6 +5,7 @@
       <EntityTypeMapping TypeName="QLBANHANGModel.ADMINLOGIN">
         <MappingFragment StoreEntitySet="ADMINLOGIN">
           <ScalarProperty Name="MAAD" ColumnName="MAAD" />
+          <ScalarProperty Name="TENAD" ColumnName="TENAD" />
           <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
           <ScalarProperty Name="PASS" ColumnName="PASS" />
         </MappingFragment>
@@ -43,7 +44,7 @@
           <ScalarProperty Name="SDT" ColumnName="SDT" />
           <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
           <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
           <ScalarProperty Name="PASS" ColumnName="PASS" />
           <ScalarProperty Name="NGAYDANGKY" ColumnName="NGAYDANGKY" />
         </MappingFragment>

@@ -68,7 +68,7 @@ namespace LinhKienMayTinh.Areas.Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MAAD,USERNAME,PASS")] ADMINLOGIN aDMINLOGIN)
+        public ActionResult Edit([Bind(Include = "MAAD,TENAD,USERNAME,PASS")] ADMINLOGIN aDMINLOGIN)
         {
             if (ModelState.IsValid)
             {
