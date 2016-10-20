@@ -15,11 +15,6 @@ namespace LinhKienMayTinh.Models
         //chỉ sử dụng cho 1 class này không cho kế thừa
         internal sealed class DONDATHANGMetadata
         {
-            [Display(Name ="Ngày Giao")]
-            [DataType(DataType.Date)]
-            [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)] //định dạng ngày sinh
-            [Required(ErrorMessage = "Vui lòng nhập dữ liệu cho trường này ")]               //kiểm tra rỗng
-            public System.DateTime NGAYGIAO { get; set; }
 
             [Display(Name = "Ngày Đặt")]
             public System.DateTime NGAYDAT { get; set; }

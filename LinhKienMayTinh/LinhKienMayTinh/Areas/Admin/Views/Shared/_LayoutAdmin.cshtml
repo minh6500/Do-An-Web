@@ -32,7 +32,7 @@
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
-                <a class="navbar-brand" href="index.html"><h4>Trang Quản Trị</h4></a>
+                <a class="navbar-brand" href="@Url.Action("Index","Home")"><h4>Trang Quản Trị</h4></a>
             </div>
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
@@ -45,15 +45,17 @@
                             <a href="@Url.Action("Index","Home")"><i class="fa fa-dashboard fa-fw"></i> Trang Chủ</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Loại Sản Phẩm<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Quản Lý Sản Phẩm<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                                @Html.Action("loai","loai")
+                                <li>
+                                    <a href="@Url.Action("Index","LOAISPs")">Loại Sản Phẩm</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Index","NSXes")">Nhà Sản Xuất</a>
+                                </li>
                             </ul>
                             <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="@Url.Action("Index","SANPHAMs")"><i class="fa fa-table fa-fw"></i> Tất Cả SP</a>
-                        </li>
+                        </li>                       
                         <li>
                             <a href="@Url.Action("Index","ADMINLOGINs")""><i class="fa fa-edit fa-fw"></i> Tài Khoản Quản Trị</a>
                         </li>
@@ -64,35 +66,21 @@
                                     <a href="@Url.Action("Index","KHACHHANGs")">Tài Khoản</a>
                                 </li>
                                 <li>
-                                    <a href="@Url.Action("Index","DONDATHANGs")"">Đơn Đặt Hàng</a>
+                                    <a href="@Url.Action("Index","DONDATHANGs")">Đơn Đặt Hàng</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Sản Phẩm<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">Second Level Item</a>
+                                    <a href="@Url.Action("Index","SANPHAMs")">Tất Cả Sản Phẩm</a>
                                 </li>
                                 <li>
-                                    <a href="#">Second Level Item</a>
-                                </li>
-                                <li>
-                                    <a href="#">Third Level <span class="fa arrow"></span></a>
+                                    <a href="#">Sản Phẩm Theo Loại <span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
+                                        @Html.Action("loai","loai")
                                     </ul>
                                     <!-- /.nav-third-level -->
                                 </li>

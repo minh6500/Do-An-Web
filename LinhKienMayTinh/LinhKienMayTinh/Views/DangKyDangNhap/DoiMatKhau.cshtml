@@ -15,7 +15,7 @@
 <div class="banner-top" style="background-color:#333;">
     <div class="container">
         <h3>Đổi Mật Khẩu</h3>
-        <h4><a href="@Url.Action("Index","TrangChu")">Trang Chủ</a><label>/</label><a href="@Url.Action("ThongTinTaiKhoan","DangKyDangNhap")">Thông Tin Tài Khoản</a><label>/</label>Đổi Mật Khẩu</h4>
+        <h4><a href="@Url.Action("Index","TrangChu")">Trang Chủ</a><label>/</label><a href="@Url.Action("ThongTinTaiKhoan","DangKyDangNhap",new { id = session.MAKH })">Thông Tin Tài Khoản</a><label>/</label>Đổi Mật Khẩu</h4>
         <div class="clearfix"> </div>
     </div>
 </div>
@@ -54,7 +54,7 @@
                            
 
                                 <tr>
-                                    <th width="112">Nhập Mật Khẩu Cũ :</th>
+                                    <th width="112">Mật Khẩu Cũ :</th>
                                     <td>
                                         <input type="password" name="PASSWORD"/>
                                     </td>
@@ -62,14 +62,14 @@
                                 </tr>
 
                                 <tr>
-                                    <th width="112">Nhập Mật Khẩu Mới :</th>
+                                    <th width="112">Mật Khẩu Mới :</th>
                                     <td>
                                         <input type="password" name="PASS"  />
                                     </td>
                                 </tr>
 
                                 <tr>
-                                    <th width="112">Xác Nhận Mật Khẩu :</th>
+                                    <th width="112">Xác Nhận :</th>
                                     <td>
                                         <input type="password" name="PW" />
                                     </td>
@@ -124,7 +124,7 @@
 
                 input[type="submit"] {
                     border: none;
-                    width: 100%;
+                    width: 50%;
                     height: 50px;
                     margin-top: 0.5em;
                     margin-bottom: 1em;
@@ -139,4 +139,9 @@
                     -o-transition: 0.5s all ease;
                     -webkit-appearance: none;
                 }
+    input[type = "password"]
+    {
+        width:100%;
+        height:35px;
+    }
 </style>

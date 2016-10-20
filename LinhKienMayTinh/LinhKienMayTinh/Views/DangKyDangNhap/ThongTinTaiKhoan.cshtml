@@ -1,4 +1,5 @@
 ﻿@using LinhKienMayTinh.Models;
+@using System.Security;
 @model LinhKienMayTinh.Models.KHACHHANG
 @{ var session = (KHACHHANG)Session["TaiKhoan"];}
 
@@ -6,7 +7,6 @@
     ViewBag.Title = "Thông Tin Tài Khoản";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <link href="/Content/ThongTinTaiKhoan/screen.css" rel="stylesheet" type="text/css" media="all">
 <link rel="stylesheet" href="/Content/ThongTinTaiKhoan/user.css" type="text/css">
 <link media="all" type="text/css" rel="stylesheet" href="/Content/ThongTinTaiKhoan/space.css">
@@ -58,7 +58,14 @@
                         <tr>
                             <th width="112">@Html.DisplayNameFor(model => model.PASS) :</th>
                             <td>
-                                <div class="pwd">********</div>
+                                @{
+                                    string pwd = "";
+                                    foreach (var res in Model.PASS)
+                                    {
+                                        pwd += "*";
+                                    }
+                                }
+                                <div class="pwd">@pwd</div>
 
                             </td>
                             <td class="tr"><a href="@Url.Action("DoiMatKhau","DangKyDangNhap",new { id = session.MAKH})">Thay đổi</a></td>
@@ -78,15 +85,9 @@
                         </tr>
 
                         <tr>
-                            <th>@Html.DisplayNameFor(model => model.SDT) :</th>      
+                            <th>@Html.DisplayNameFor(model => model.SDT) :</th>
                             <td>@Html.DisplayFor(model => model.SDT)</td>
-                            <td class="tr nowrap">
-
-                                <p style="margin:0">
-                                    <a href="@Url.Action("DoiSDT","DangKyDangNhap",new { id = session.MAKH})" target="_blank">Thay đổi</a>
-                                </p>
-
-                            </td>
+                            <td class="tr nowrap"></td>
                         </tr>
                     </tbody>
                 </table>
@@ -116,83 +117,56 @@
     }
 
     .middle {
-        width: 730px;
+        width: 100%;
+    }
+
+    .pwd {
+        overflow: hidden;
+        width: 40px;
+        text-overflow: ellipsis;
+    }
+    /*.middle {
+        min-width: 40%;
+        max-width: 50%;
+        width: 45%;
+    }*/
+    .clanPanelB {
+        position: relative;
+    }
+
+    .accSetting th {
+        font-size: 15px;
+    }
+
+    .accSetting td {
+        font-size: 15px;
+    }
+
+    @@media (max-width: 998px) {
+        #main {
+            width: 40%;
+        }
+    }
+
+    @@media (max-width: 414px) {
+        #main {
+            width: 40%;
+        }
+
+        .accSetting th {
+            font-size: 10px;
+        }
+
+        .accSetting td {
+            font-size: 10px;
+        }
+    }
+    @@media (min-width: 998px) {
+        #main {
+            width: 45%;
+        }
     }
 </style>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    @*<h2>@ViewBag.Title</h2>
-            <div class="content-mid">
-                <div class="container">
-                    <div style="">
-                        <div>
-
-                            <dl class="dl-horizontal">
-
-
-                                <dt>
-                                    @Html.DisplayNameFor(model => model.EMAIL)
-                                </dt>
-
-                                <dd>
-                                    @Html.DisplayFor(model => model.EMAIL)
-                                </dd>
-
-                                <dt>
-                                    @Html.DisplayNameFor(model => model.USERNAME)
-                                </dt>
-
-                                <dd>
-                                    @Html.DisplayFor(model => model.USERNAME)
-                                </dd>
-
-                                <dt>
-                                    @Html.DisplayNameFor(model => model.PASS)
-                                </dt>
-
-                                <dd>
-                                    @Html.DisplayFor(model => model.PASS)
-                                </dd>
-
-                                <dt>
-                                    @Html.DisplayNameFor(model => model.NGAYDANGKY)
-                                </dt>
-
-                                <dd>
-                                    @Html.DisplayFor(model => model.NGAYDANGKY)
-                                </dd>
-
-                            </dl>
-                        </div>
-                        <p>
-                            @Html.ActionLink("Edit", "Edit", new { id = Model.MAKH }) |
-                            @Html.ActionLink("Back to List", "Index")
-                        </p>
-                    </div>
-            </div>
-        </div>*@

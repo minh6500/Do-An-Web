@@ -53,7 +53,7 @@ namespace LinhKienMayTinh.Areas.Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MAD,NGAYDAT,NGAYGIAO,TENDAIDIEN,SDT,DIACHIGIAO,TINHTRANGTHANHTOAN,TINHTRANGGIAOHANG,MAKH")] DONDATHANG dONDATHANG)
+        public ActionResult Create([Bind(Include = "MAD,NGAYDAT,TENDAIDIEN,SDT,DIACHIGIAO,TINHTRANGTHANHTOAN,TINHTRANGGIAOHANG,MAKH")] DONDATHANG dONDATHANG)
         {
             dONDATHANG.NGAYDAT = DateTime.Now;
             if (ModelState.IsValid)
@@ -88,10 +88,12 @@ namespace LinhKienMayTinh.Areas.Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MAD,NGAYDAT,NGAYGIAO,TENDAIDIEN,SDT,DIACHIGIAO,TINHTRANGTHANHTOAN,TINHTRANGGIAOHANG,MAKH")] DONDATHANG dONDATHANG)
+        public ActionResult Edit([Bind(Include = "MAD,NGAYDAT,TENDAIDIEN,SDT,DIACHIGIAO,TINHTRANGTHANHTOAN,TINHTRANGGIAOHANG,MAKH")] DONDATHANG dONDATHANG)
         {
+            var ngaydat = dONDATHANG.NGAYDAT;
             if (ModelState.IsValid)
             {
+                dONDATHANG.NGAYDAT = ngaydat;
                 db.Entry(dONDATHANG).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

@@ -3,8 +3,9 @@
 @{ 
     var session = (KHACHHANG)Session["TaiKhoan"];
 }
-<html>
+<html xmlns:fb='http://www.facebook.com/2008/fbml' >
 <head>
+    <meta property="fb:admins" content="100000686899395" />
     <title>thegioilinhkien.somee.com</title>
     <!-- for-mobile-apps -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -66,9 +67,48 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
     <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
     <script>tinymce.init({ selector:'textarea' });</script>
-
+    <meta property="fb:app_id" content="967203416735970" />
 </head>
 <body>
+    <div id="fb-root"></div>
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+            appId: '100000686899395',
+            status : true, // check login status
+            cookie : true, // enable cookies to allow the server to access the session
+            xfbml : true // parse XFBML
+            });
+        };
+        (function() {
+            var e = document.createElement('script');
+            e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+            e.async = true;
+            document.getElementById('fb-root').appendChild(e);
+        }());
+    </script>
+    <style type="text/css">
+    .hisella-messages { position: fixed; bottom: 0; right: 0; z-index: 999999; }
+    .hisella-messages-outer { position: relative; }
+    #hisella-minimize { background: #3b5998; font-size: 14px; color: #fff; padding: 3px 10px; position: absolute; top: -34px; left: -1px; border: 1px solid #E9EAED; cursor: pointer; }
+    @@media screen and (max-width:768px){ #hisella-facebook { opacity:0; } .hisella-messages { bottom: -300px; right: -135px; } }
+    </style>
+    <script>
+(function($) { $(document).ready(function(){ $( '#hisella-minimize' ).click( function() { if( $( '#hisella-facebook' ).css( 'opacity' ) == 0 ) { $( '#hisella-facebook' ).css( 'opacity', 1 ); $( '.hisella-messages' ).animate( { right: '0' } ).animate( { bottom: '0' } ); } else { $( '.hisella-messages' ).animate( { bottom: '-300px' } ).animate( { right: '-135px' }, 400, function(){ $( '#hisella-facebook' ).css( 'opacity', 0 ) } ); } } ) }); })(jQuery);
+(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+    </script>
+    <div class="hisella-messages"><div class="hisella-messages-outer"><div id="hisella-minimize">Facebook chat</div><div id="hisella-facebook" class='fb-page' data-adapt-container-width='true' data-height='300' data-hide-cover='false' data-href='https://www.facebook.com/TheGioiLinhKien2016/' data-show-facepile='true' data-show-posts='false' data-small-header='false' data-tabs='messages' data-width='250'></div></div></div>
+
+
+
+
+
     <a href="@Url.Action("Index","TrangChu")"><img src="~/images/download.png" class="img-head" alt=""></a>
     <!--Header-->-->
     <div class="header">
@@ -92,9 +132,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <ul class="dropdown-menu">
                                 <li ><i class="fa fa-user" aria-hidden="true"></i><a href="@Url.Action("ThongTinTaiKhoan","DangKyDangNhap",new { id = session.MAKH })">Thông Tin Tài Khoản</a></li>
                                 <li ><a href="@Url.Action("Thoat","DangKyDangNhap") ">Thoát</a></li>
-                </ul>
+                            </ul>
 
-            </li>
+                        </li>
                     }
                     @*<li><a href="about.html"><i class="fa fa-file-text-o" aria-hidden="true"></i>Giới Thiệu</a></li>*@
                     @*<li><a href="shipping.html"><i class="fa fa-ship" aria-hidden="true"></i>Shipping</a></li>*@
@@ -138,7 +178,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             </ul>
                                         </div>
                                         <div class="col-sm-3 w3l">
-                                            <a href="kitchen.html"><img src="~/images/me.png" class="img-responsive" alt=""></a>
+                                            <a href="kitchen.html"><img src="~/images/computer.png" class="img-responsive" alt=""></a>
                                         </div>
                                         <div class="clearfix"></div>
                                     </div>
@@ -157,7 +197,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                                         </div>
                                         <div class="col-sm-3 w3l">
-                                            <a href="kitchen.html"><img src="~/images/me.png" class="img-responsive" alt=""></a>
+                                            <a href="kitchen.html"><img src="~/images/computer.png" class="img-responsive" alt=""></a>
                                         </div>
                                         <div class="clearfix"></div>
                                     </div>
@@ -198,27 +238,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="footer">
                 <div class="container">
                     <div class="col-md-3 footer-grid">
-                        <h3>About Us</h3>
+                        <h3>Thông Tin Liên Hệ</h3>
                         <p>
                             Linh Kiện Vi Tính Chất Lượng Uy Tín
                         </p>
+                        <p>
+                            Số Điện Thoại: 0903107268
+                        </p>
+                        <p>
+                            Email: luutrangminh@gmail.com
+                        </p>
                     </div>
                     <div class="col-md-3 footer-grid ">
-                        <h3>Menu</h3>
+                        <h3>Danh Mục</h3>
                         <ul>
                             <li><a href="@Url.Action("Index","TrangChu")">Trang Chủ</a></li>
                             @Html.Action("LoaiSP", "LoaiSP")
-
                         </ul>
                     </div>
                     <div class="col-md-3 footer-grid ">
-                        <h3>Customer Services</h3>
+                        <h3>Dịch Vụ Khách Hàng</h3>
                         <ul>
-                            <li><a href="shipping.html">Shipping</a></li>
-                            <li><a href="terms.html">Terms & Conditions</a></li>
-                            <li><a href="faqs.html">Faqs</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                            <li><a href="offer.html">Online Shopping</a></li>
+                            <li><a href="@Url.Action("LienHe","LienHe")">Liên Hệ</a></li>
+                            <li><a href="https://www.facebook.com/TheGioiLinhKien2016/">Page Facebook</a></li>
 
                         </ul>
                     </div>
@@ -227,7 +269,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <ul>
                             <li><a href="@Url.Action("DangKyDangNhap","DangNhap")">Đăng Nhập</a></li>
                             <li><a href="@Url.Action("DangKyDangNhap","DangKy")">Đăng Ký</a></li>
-                            <li><a href="wishlist.html">Wishlist</a></li>
 
                         </ul>
                     </div>

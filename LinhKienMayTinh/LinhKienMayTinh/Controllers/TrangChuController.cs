@@ -21,11 +21,7 @@ namespace LinhKienMayTinh.Controllers
             var sp = SanPhamMoi(8);
             return View(sp);
         }
-        private List<SANPHAM> SanPhamKM(int count)
-        {
-            //sap xep theo ngaycapnhat
-            return db.SANPHAMs.OrderBy(a => a.MAKM).Take(count).ToList();
-        }
+
         public ActionResult SPTheoLoai(int id)
         {
             var sp = from s in db.SANPHAMs where s.MALOAI == id select s;

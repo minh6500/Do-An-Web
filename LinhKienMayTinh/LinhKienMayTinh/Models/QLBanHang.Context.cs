@@ -29,7 +29,6 @@ namespace LinhKienMayTinh.Models
         public virtual DbSet<CTDDH> CTDDHs { get; set; }
         public virtual DbSet<DONDATHANG> DONDATHANGs { get; set; }
         public virtual DbSet<KHACHHANG> KHACHHANGs { get; set; }
-        public virtual DbSet<KHUYENMAI> KHUYENMAIs { get; set; }
         public virtual DbSet<LOAISP> LOAISPs { get; set; }
         public virtual DbSet<NSX> NSXes { get; set; }
         public virtual DbSet<QUANGCAO> QUANGCAOs { get; set; }

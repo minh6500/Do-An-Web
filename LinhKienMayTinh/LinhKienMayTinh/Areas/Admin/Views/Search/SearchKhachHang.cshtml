@@ -61,7 +61,7 @@
                                             <th>
                                                 @Html.DisplayNameFor(model => model.First().NGAYDANGKY)
                                             </th>
-                                            <th></th>
+                                            
                                         </tr>
                                     </thead>
                                     @foreach (var item in Model)
@@ -90,9 +90,9 @@
                                                     @Html.DisplayFor(modelItem => item.NGAYDANGKY)
                                                 </td>
                                                 <td>
-                                                    @Html.ActionLink("Sửa", "Edit", new { id = item.MAKH }) |
-                                                    @Html.ActionLink("Hiển Thị", "Details", new { id = item.MAKH }) |
-                                                    @Html.ActionLink("Xóa", "Delete", new { id = item.MAKH })
+                                                    <a href="@Url.Action("Edit","KHACHHANGs",new { id = item.MAKH })">Sửa</a> |
+                                                    <a href="@Url.Action("Details","KHACHHANGs",new { id = item.MAKH })">Hiển Thị</a> |
+                                                    <a href="@Url.Action("Delete","KHACHHANGs",new { id = item.MAKH })">Xóa</a>  
                                                 </td>
                                             </tr>
                                         </tbody>

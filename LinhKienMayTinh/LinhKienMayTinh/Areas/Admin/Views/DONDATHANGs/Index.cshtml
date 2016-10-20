@@ -45,9 +45,6 @@
                                             @Html.DisplayNameFor(model => model.First().NGAYDAT)
                                         </th>
                                         <th>
-                                            @Html.DisplayNameFor(model => model.First().NGAYGIAO)
-                                        </th>
-                                        <th>
                                             @Html.DisplayNameFor(model => model.First().TENDAIDIEN)
                                         </th>
                                         <th>
@@ -65,7 +62,7 @@
                                         <th>
                                             @Html.DisplayNameFor(model => model.First().KHACHHANG.TENKH)
                                         </th>
-                                        <th></th>
+                                        
                                     </tr>
                                 </thead>
                                 @foreach (var item in Model)
@@ -74,9 +71,6 @@
                                         <tr>
                                             <td>
                                                 @Html.DisplayFor(modelItem => item.NGAYDAT)
-                                            </td>
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.NGAYGIAO)
                                             </td>
                                             <td>
                                                 @Html.DisplayFor(modelItem => item.TENDAIDIEN)
@@ -98,7 +92,7 @@
                                             </td>
                                             <td>
                                                 @Html.ActionLink("Sửa", "Edit", new { id = item.MAD }) |
-                                                @Html.ActionLink("Hiển Thị", "Details", new { id = item.MAD }) |
+                                                @Html.ActionLink("Chi Tiết", "Details", new { id = item.MAD }) |
                                                 @Html.ActionLink("Xóa", "Delete", new { id = item.MAD })
                                             </td>
                                         </tr>

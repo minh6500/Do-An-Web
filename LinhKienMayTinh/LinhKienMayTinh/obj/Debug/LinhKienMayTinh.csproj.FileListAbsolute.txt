@@ -160,3 +160,4 @@ D:\web\Do-An-Web\LinhKienMayTinh\LinhKienMayTinh\bin\System.Web.Mvc.xml
 D:\web\Do-An-Web\LinhKienMayTinh\LinhKienMayTinh\obj\Debug\LinhKienMayTinh.dll
 D:\web\Do-An-Web\LinhKienMayTinh\LinhKienMayTinh\obj\Debug\LinhKienMayTinh.pdb
 D:\web\Do-An-Web\LinhKienMayTinh\LinhKienMayTinh\obj\Debug\LinhKienMayTinh.csprojResolveAssemblyReference.cache
+D:\web\Do-An-Web\LinhKienMayTinh\LinhKienMayTinh\bin\roslyn\tools.zip

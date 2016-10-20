@@ -44,8 +44,7 @@
                                                 <th>@Html.DisplayNameFor(model => model.First().TENSP)</th>
                                                 <th>@Html.DisplayNameFor(model => model.First().MOTA)</th>
                                                 <th>@Html.DisplayNameFor(model => model.First().NGAYCAPNHAT)</th>
-                                                <th>@Html.DisplayNameFor(model => model.First().DONGIA)</th>
-                                                <th>@Html.DisplayNameFor(model => model.First().KHUYENMAI.TENKM)</th>
+                                                <th>@Html.DisplayNameFor(model => model.First().DONGIA)</th>                                                
                                                 <th>@Html.DisplayNameFor(model => model.First().LOAISP.TENLOAI)</th>
                                                 <th>@Html.DisplayNameFor(model => model.First().NSX.TENNSX)</th>
                                             </tr>
@@ -70,18 +69,15 @@
                                                         @Html.DisplayFor(modelItem => item.DONGIA)
                                                     </td>
                                                     <td>
-                                                        @Html.DisplayFor(modelItem => item.KHUYENMAI.TENKM)
-                                                    </td>
-                                                    <td>
                                                         @Html.DisplayFor(modelItem => item.LOAISP.TENLOAI)
                                                     </td>
                                                     <td>
                                                         @Html.DisplayFor(modelItem => item.NSX.TENNSX)
                                                     </td>
                                                     <td>
-                                                        @Html.ActionLink("Sửa", "Edit", new { id = item.MASP }) |
-                                                        @Html.ActionLink("Hiển Thị", "Details", new { id = item.MASP }) |
-                                                        @Html.ActionLink("Xóa", "Delete", new { id = item.MASP })
+                                                        <a href="@Url.Action("Edit","SANPHAMs",new { id = item.MASP })">Sửa</a> |
+                                                        <a href="@Url.Action("Details","SANPHAMs",new { id = item.MASP })">Hiển Thị</a> |
+                                                        <a href="@Url.Action("Delete","SANPHAMs",new { id = item.MASP })">Xóa</a>                                           
                                                     </td>
                                                 </tr>
                                             </tbody>

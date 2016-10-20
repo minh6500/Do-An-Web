@@ -1,0 +1,49 @@
+﻿@model LinhKienMayTinh.Models.NSX
+
+@{
+    ViewBag.Title = "Xóa Nhà Sản Xuất";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">@ViewBag.Title</h1>
+    </div>
+</div>
+
+<h3>Bạn có chắc chắn xóa nhà sản xuất này không?</h3>
+<div class="form-horizontal">
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TENNSX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TENNSX)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa Tài Khoản" class="btn btn-default" /> |
+            @Html.ActionLink("Trở Về", "Index")
+        </div>
+    }
+</div>
+<!-- jQuery -->
+<script src="~/Areas/Admin/Content/bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="~/Areas/Admin/Content/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Metis Menu Plugin JavaScript -->
+<script src="~/Areas/Admin/Content/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+<!-- DataTables JavaScript -->
+<script src="~/Areas/Admin/Content/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+<script src="~/Areas/Admin/Content/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+<!-- Custom Theme JavaScript -->
+<script src="~/Areas/Admin/Content/dist/js/sb-admin-2.js"></script>
+

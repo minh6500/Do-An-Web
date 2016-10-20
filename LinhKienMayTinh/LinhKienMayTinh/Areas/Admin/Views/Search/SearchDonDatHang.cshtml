@@ -23,7 +23,7 @@
     </div>
 }
 <p></p>
-@if (ViewBag.ThongBao != "Không tìm thấy sản phẩm")
+@if (ViewBag.ThongBao != "Không tìm thấy thông tin")
 {
     <p style="color:red;font-size:20px;font-weight:bold">@ViewBag.ThongBao</p>
     <div class="row">
@@ -44,9 +44,6 @@
                                                 @Html.DisplayNameFor(model => model.First().NGAYDAT)
                                             </th>
                                             <th>
-                                                @Html.DisplayNameFor(model => model.First().NGAYGIAO)
-                                            </th>
-                                            <th>
                                                 @Html.DisplayNameFor(model => model.First().TENDAIDIEN)
                                             </th>
                                             <th>
@@ -64,7 +61,7 @@
                                             <th>
                                                 @Html.DisplayNameFor(model => model.First().KHACHHANG.TENKH)
                                             </th>
-                                            <th></th>
+                                            
                                         </tr>
                                     </thead>
                                     @foreach (var item in Model)
@@ -73,9 +70,6 @@
                                             <tr>
                                                 <td>
                                                     @Html.DisplayFor(modelItem => item.NGAYDAT)
-                                                </td>
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.NGAYGIAO)
                                                 </td>
                                                 <td>
                                                     @Html.DisplayFor(modelItem => item.TENDAIDIEN)
@@ -96,9 +90,9 @@
                                                     @Html.DisplayFor(modelItem => item.KHACHHANG.TENKH)
                                                 </td>
                                                 <td>
-                                                    @Html.ActionLink("Sửa", "Edit", new { id = item.MAD }) |
-                                                    @Html.ActionLink("Hiển Thị", "Details", new { id = item.MAD }) |
-                                                    @Html.ActionLink("Xóa", "Delete", new { id = item.MAD })
+                                                    <a href="@Url.Action("Edit","DONDATHANGs", new { id = item.MAD })">Sửa</a> |
+                                                    <a href="@Url.Action("Details","DONDATHANGs", new { id = item.MAD })">Chi Tiết</a> |
+                                                    <a href="@Url.Action("Delete","DONDATHANGs", new { id = item.MAD })">Xóa</a> |
                                                 </td>
                                             </tr>
                                         </tbody>

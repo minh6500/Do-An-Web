@@ -25,7 +25,6 @@
     </Key>
     <Property Name="MAD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="NGAYDAT" Type="date" Nullable="false" />
-    <Property Name="NGAYGIAO" Type="date" Nullable="false" />
     <Property Name="TENDAIDIEN" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="SDT" Type="char" MaxLength="11" Nullable="false" />
     <Property Name="DIACHIGIAO" Type="nvarchar" MaxLength="100" Nullable="false" />
@@ -45,14 +44,6 @@
     <Property Name="USERNAME" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="PASS" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="NGAYDANGKY" Type="date" Nullable="false" />
-  </EntityType>
-  <EntityType Name="KHUYENMAI">
-    <Key>
-      <PropertyRef Name="MAKM" />
-    </Key>
-    <Property Name="MAKM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="TENKM" Type="nvarchar" MaxLength="100" Nullable="false" />
-    <Property Name="TYLEKM" Type="float" Nullable="false" />
   </EntityType>
   <EntityType Name="LOAISP">
     <Key>
@@ -87,9 +78,8 @@
     <Property Name="DONGIA" Type="int" Nullable="false" />
     <Property Name="MALOAI" Type="int" Nullable="false" />
     <Property Name="MANSX" Type="int" Nullable="false" />
-    <Property Name="MAKM" Type="int" Nullable="false" />
   </EntityType>
-  <Association Name="FK__CTDDH__MAD__20C1E124">
+  <Association Name="FK__CTDDH__MAD__1DE57479">
     <End Role="DONDATHANG" Type="Self.DONDATHANG" Multiplicity="1" />
     <End Role="CTDDH" Type="Self.CTDDH" Multiplicity="*" />
     <ReferentialConstraint>
@@ -101,7 +91,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__CTDDH__MASP__1FCDBCEB">
+  <Association Name="FK__CTDDH__MASP__1CF15040">
     <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="1" />
     <End Role="CTDDH" Type="Self.CTDDH" Multiplicity="*" />
     <ReferentialConstraint>
@@ -113,7 +103,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__DONDATHANG__MAKH__1CF15040">
+  <Association Name="FK__DONDATHANG__MAKH__1A14E395">
     <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
     <End Role="DONDATHANG" Type="Self.DONDATHANG" Multiplicity="*" />
     <ReferentialConstraint>
@@ -125,19 +115,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__SANPHAM__MAKM__182C9B23">
-    <End Role="KHUYENMAI" Type="Self.KHUYENMAI" Multiplicity="1" />
-    <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="KHUYENMAI">
-        <PropertyRef Name="MAKM" />
-      </Principal>
-      <Dependent Role="SANPHAM">
-        <PropertyRef Name="MAKM" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__SANPHAM__MALOAI__164452B1">
+  <Association Name="FK__SANPHAM__MALOAI__145C0A3F">
     <End Role="LOAISP" Type="Self.LOAISP" Multiplicity="1" />
     <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="*" />
     <ReferentialConstraint>
@@ -149,7 +127,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__SANPHAM__MANSX__173876EA">
+  <Association Name="FK__SANPHAM__MANSX__15502E78">
     <End Role="NSX" Type="Self.NSX" Multiplicity="1" />
     <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="*" />
     <ReferentialConstraint>
@@ -166,32 +144,27 @@
     <EntitySet Name="CTDDH" EntityType="Self.CTDDH" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DONDATHANG" EntityType="Self.DONDATHANG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="KHACHHANG" EntityType="Self.KHACHHANG" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="KHUYENMAI" EntityType="Self.KHUYENMAI" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LOAISP" EntityType="Self.LOAISP" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NSX" EntityType="Self.NSX" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="QUANGCAO" EntityType="Self.QUANGCAO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SANPHAM" EntityType="Self.SANPHAM" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__CTDDH__MAD__20C1E124" Association="Self.FK__CTDDH__MAD__20C1E124">
+    <AssociationSet Name="FK__CTDDH__MAD__1DE57479" Association="Self.FK__CTDDH__MAD__1DE57479">
       <End Role="DONDATHANG" EntitySet="DONDATHANG" />
       <End Role="CTDDH" EntitySet="CTDDH" />
     </AssociationSet>
-    <AssociationSet Name="FK__CTDDH__MASP__1FCDBCEB" Association="Self.FK__CTDDH__MASP__1FCDBCEB">
+    <AssociationSet Name="FK__CTDDH__MASP__1CF15040" Association="Self.FK__CTDDH__MASP__1CF15040">
       <End Role="SANPHAM" EntitySet="SANPHAM" />
       <End Role="CTDDH" EntitySet="CTDDH" />
     </AssociationSet>
-    <AssociationSet Name="FK__DONDATHANG__MAKH__1CF15040" Association="Self.FK__DONDATHANG__MAKH__1CF15040">
+    <AssociationSet Name="FK__DONDATHANG__MAKH__1A14E395" Association="Self.FK__DONDATHANG__MAKH__1A14E395">
       <End Role="KHACHHANG" EntitySet="KHACHHANG" />
       <End Role="DONDATHANG" EntitySet="DONDATHANG" />
     </AssociationSet>
-    <AssociationSet Name="FK__SANPHAM__MAKM__182C9B23" Association="Self.FK__SANPHAM__MAKM__182C9B23">
-      <End Role="KHUYENMAI" EntitySet="KHUYENMAI" />
-      <End Role="SANPHAM" EntitySet="SANPHAM" />
-    </AssociationSet>
-    <AssociationSet Name="FK__SANPHAM__MALOAI__164452B1" Association="Self.FK__SANPHAM__MALOAI__164452B1">
+    <AssociationSet Name="FK__SANPHAM__MALOAI__145C0A3F" Association="Self.FK__SANPHAM__MALOAI__145C0A3F">
       <End Role="LOAISP" EntitySet="LOAISP" />
       <End Role="SANPHAM" EntitySet="SANPHAM" />
     </AssociationSet>
-    <AssociationSet Name="FK__SANPHAM__MANSX__173876EA" Association="Self.FK__SANPHAM__MANSX__173876EA">
+    <AssociationSet Name="FK__SANPHAM__MANSX__15502E78" Association="Self.FK__SANPHAM__MANSX__15502E78">
       <End Role="NSX" EntitySet="NSX" />
       <End Role="SANPHAM" EntitySet="SANPHAM" />
     </AssociationSet>

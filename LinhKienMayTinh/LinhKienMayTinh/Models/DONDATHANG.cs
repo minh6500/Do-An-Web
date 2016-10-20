@@ -22,7 +22,6 @@ namespace LinhKienMayTinh.Models
     
         public int MAD { get; set; }
         public System.DateTime NGAYDAT { get; set; }
-        public System.DateTime NGAYGIAO { get; set; }
         public string TENDAIDIEN { get; set; }
         public string SDT { get; set; }
         public string DIACHIGIAO { get; set; }

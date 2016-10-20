@@ -32,7 +32,7 @@ namespace LinhKienMayTinh.Areas.Admin.Controllers
                 ViewBag.ThongBao = "Không tìm thấy sản phẩm";
                 return View();
             }
-            ViewBag.ThongBao = "Đã tìm thấy" + lstKQTK.Count + " " + "kết quả";
+            ViewBag.ThongBao = "Đã tìm thấy" + " " + lstKQTK.Count + " " + "kết quả";
             return View(lstKQTK.OrderBy(n => n.TENSP).ToPagedList(pageNumber, pageSize));
         }
         [HttpGet]
@@ -50,7 +50,7 @@ namespace LinhKienMayTinh.Areas.Admin.Controllers
                 ViewBag.ThongBao = "Không tìm thấy sản phẩm";
                 return View();
             }
-            ViewBag.ThongBao = "Đã tìm thấy " + lstKQTK.Count + " " + "kết quả";
+            ViewBag.ThongBao = "Đã tìm thấy " + " " + lstKQTK.Count + " " + "kết quả";
             return View(lstKQTK.OrderBy(n => n.TENSP).ToPagedList(pageNumber, pageSize));
         }
         #endregion
@@ -72,7 +72,7 @@ namespace LinhKienMayTinh.Areas.Admin.Controllers
                 ViewBag.ThongBao = "Không tìm thấy thông tin";
                 return View();
             }
-            ViewBag.ThongBao = "Đã tìm thấy" + lstKQTK.Count + " " + "kết quả";
+            ViewBag.ThongBao = "Đã tìm thấy" + " " + lstKQTK.Count + " " + "kết quả";
             return View(lstKQTK.OrderBy(n => n.TENKH).ToPagedList(pageNumber, pageSize));
         }
         [HttpGet]
@@ -90,7 +90,7 @@ namespace LinhKienMayTinh.Areas.Admin.Controllers
                 ViewBag.ThongBao = "Không tìm thấy thông tin";
                 return View();
             }
-            ViewBag.ThongBao = "Đã tìm thấy " + lstKQTK.Count + " " + "kết quả";
+            ViewBag.ThongBao = "Đã tìm thấy " + " " + lstKQTK.Count + " " + "kết quả";
             return View(lstKQTK.OrderBy(n => n.TENKH).ToPagedList(pageNumber, pageSize));
         }
         #endregion
@@ -112,7 +112,7 @@ namespace LinhKienMayTinh.Areas.Admin.Controllers
                 ViewBag.ThongBao = "Không tìm thấy thông tin";
                 return View();
             }
-            ViewBag.ThongBao = "Đã tìm thấy" + lstKQTK.Count + " " + "kết quả";
+            ViewBag.ThongBao = "Đã tìm thấy" + " " + lstKQTK.Count + " " + "kết quả";
             return View(lstKQTK.OrderBy(n => n.KHACHHANG.TENKH).ToPagedList(pageNumber, pageSize));
         }
         [HttpGet]
@@ -130,13 +130,51 @@ namespace LinhKienMayTinh.Areas.Admin.Controllers
                 ViewBag.ThongBao = "Không tìm thấy thông tin";
                 return View();
             }
-            ViewBag.ThongBao = "Đã tìm thấy " + lstKQTK.Count + " " + "kết quả";
+            ViewBag.ThongBao = "Đã tìm thấy " + " " + lstKQTK.Count + " " + "kết quả";
             return View(lstKQTK.OrderBy(n => n.KHACHHANG.TENKH).ToPagedList(pageNumber, pageSize));
         }
         #endregion
 
         #region Search Admin
+        [HttpPost]
+        public ActionResult SearchAdmin(FormCollection f, int? page)
+        {
+            string sTuKhoa = f["txt_TimKiem"].ToString();
+            ViewBag.TuKhoa = sTuKhoa;
+            List<ADMINLOGIN> lstKQTK = db.ADMINLOGINs.Where(n => n.TENAD.Contains(sTuKhoa)).ToList();
 
+            //Phan Trang
+            int pageNumber = (page ?? 1);
+            int pageSize = 5;
+
+            if (lstKQTK.Count == 0)
+            {
+                ViewBag.ThongBao = "Không tìm thấy thông tin";
+                return View();
+            }
+            ViewBag.ThongBao = "Đã tìm thấy" + " " + lstKQTK.Count + " " + "kết quả";
+            return View(lstKQTK.OrderBy(n => n.TENAD).ToPagedList(pageNumber, pageSize));
+        }
+        [HttpGet]
+        public ActionResult SearchAdmin(string sTuKhoa, int? page)
+        {
+
+            List<ADMINLOGIN> lstKQTK = db.ADMINLOGINs.Where(n => n.TENAD.Contains(sTuKhoa)).ToList();
+            ViewBag.TuKhoa = sTuKhoa;
+            //Phan Trang
+            int pageNumber = (page ?? 1);
+            int pageSize = 5;
+
+            if (lstKQTK.Count == 0)
+            {
+                ViewBag.ThongBao = "Không tìm thấy thông tin";
+                return View();
+            }
+            ViewBag.ThongBao = "Đã tìm thấy " + " " + lstKQTK.Count + " " + "kết quả";
+            return View(lstKQTK.OrderBy(n => n.TENAD).ToPagedList(pageNumber, pageSize));
+        }
         #endregion
+
+
     }
 }

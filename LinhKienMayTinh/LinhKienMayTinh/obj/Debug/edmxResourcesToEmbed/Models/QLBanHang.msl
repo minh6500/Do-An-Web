@@ -26,7 +26,6 @@
         <MappingFragment StoreEntitySet="DONDATHANG">
           <ScalarProperty Name="MAD" ColumnName="MAD" />
           <ScalarProperty Name="NGAYDAT" ColumnName="NGAYDAT" />
-          <ScalarProperty Name="NGAYGIAO" ColumnName="NGAYGIAO" />
           <ScalarProperty Name="TENDAIDIEN" ColumnName="TENDAIDIEN" />
           <ScalarProperty Name="SDT" ColumnName="SDT" />
           <ScalarProperty Name="DIACHIGIAO" ColumnName="DIACHIGIAO" />
@@ -47,15 +46,6 @@
           <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
           <ScalarProperty Name="PASS" ColumnName="PASS" />
           <ScalarProperty Name="NGAYDANGKY" ColumnName="NGAYDANGKY" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="KHUYENMAIs">
-      <EntityTypeMapping TypeName="QLBANHANGModel.KHUYENMAI">
-        <MappingFragment StoreEntitySet="KHUYENMAI">
-          <ScalarProperty Name="MAKM" ColumnName="MAKM" />
-          <ScalarProperty Name="TENKM" ColumnName="TENKM" />
-          <ScalarProperty Name="TYLEKM" ColumnName="TYLEKM" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -94,7 +84,6 @@
           <ScalarProperty Name="DONGIA" ColumnName="DONGIA" />
           <ScalarProperty Name="MALOAI" ColumnName="MALOAI" />
           <ScalarProperty Name="MANSX" ColumnName="MANSX" />
-          <ScalarProperty Name="MAKM" ColumnName="MAKM" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

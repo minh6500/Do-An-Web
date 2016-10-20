@@ -51,7 +51,6 @@ namespace LinhKienMayTinh.Areas.Admin.Controllers
         // GET: Admin/SANPHAMs/Create
         public ActionResult Create()
         {
-            ViewBag.MAKM = new SelectList(db.KHUYENMAIs, "MAKM", "TENKM");
             ViewBag.MALOAI = new SelectList(db.LOAISPs, "MALOAI", "TENLOAI");
             ViewBag.MANSX = new SelectList(db.NSXes, "MANSX", "TENNSX");
             return View();
@@ -62,7 +61,7 @@ namespace LinhKienMayTinh.Areas.Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MASP,TENSP,MOTA,HINHANH,NGAYCAPNHAT,DONGIA,MALOAI,MANSX,MAKM")] SANPHAM sANPHAM)
+        public ActionResult Create([Bind(Include = "MASP,TENSP,MOTA,HINHANH,NGAYCAPNHAT,DONGIA,MALOAI,MANSX")] SANPHAM sANPHAM)
         {
             if (ModelState.IsValid)
             {
@@ -71,7 +70,6 @@ namespace LinhKienMayTinh.Areas.Admin.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.MAKM = new SelectList(db.KHUYENMAIs, "MAKM", "TENKM", sANPHAM.MAKM);
             ViewBag.MALOAI = new SelectList(db.LOAISPs, "MALOAI", "TENLOAI", sANPHAM.MALOAI);
             ViewBag.MANSX = new SelectList(db.NSXes, "MANSX", "TENNSX", sANPHAM.MANSX);
             return View(sANPHAM);
@@ -89,7 +87,6 @@ namespace LinhKienMayTinh.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.MAKM = new SelectList(db.KHUYENMAIs, "MAKM", "TENKM", sANPHAM.MAKM);
             ViewBag.MALOAI = new SelectList(db.LOAISPs, "MALOAI", "TENLOAI", sANPHAM.MALOAI);
             ViewBag.MANSX = new SelectList(db.NSXes, "MANSX", "TENNSX", sANPHAM.MANSX);
             return View(sANPHAM);
@@ -100,7 +97,7 @@ namespace LinhKienMayTinh.Areas.Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MASP,TENSP,MOTA,HINHANH,NGAYCAPNHAT,DONGIA,MALOAI,MANSX,MAKM")] SANPHAM sANPHAM)
+        public ActionResult Edit([Bind(Include = "MASP,TENSP,MOTA,HINHANH,NGAYCAPNHAT,DONGIA,MALOAI,MANSX")] SANPHAM sANPHAM)
         {
             if (ModelState.IsValid)
             {
@@ -108,7 +105,6 @@ namespace LinhKienMayTinh.Areas.Admin.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.MAKM = new SelectList(db.KHUYENMAIs, "MAKM", "TENKM", sANPHAM.MAKM);
             ViewBag.MALOAI = new SelectList(db.LOAISPs, "MALOAI", "TENLOAI", sANPHAM.MALOAI);
             ViewBag.MANSX = new SelectList(db.NSXes, "MANSX", "TENNSX", sANPHAM.MANSX);
             return View(sANPHAM);
