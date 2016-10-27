@@ -18,6 +18,7 @@ namespace LinhKienMayTinh.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
         public async Task<ActionResult> LienHe(LienHe model)
         {
             if (ModelState.IsValid)

@@ -1,0 +1,13 @@
+﻿@using LinhKienMayTinh.Models
+@{
+    var session = (KHACHHANG)Session["taikhoan"];
+
+}
+@{
+    ViewBag.Title = "ThanhToanThanhCong";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div style="text-align:center;margin-bottom:20px;">
+    <h2 style="color:darkred;text-align:center;margin-bottom:20px;">Chúc Mừng @session.TENKH ! Bạn Đã Thanh Toán Thành Công</h2>
+    <a href="@Url.Action("Index","TrangChu")">Trở Về Trang Chủ</a>
+</div>

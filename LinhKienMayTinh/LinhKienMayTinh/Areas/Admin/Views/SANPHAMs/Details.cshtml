@@ -23,7 +23,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.MOTA)
+            @Html.Raw(Model.MOTA)
         </dd>
 
         <dt>
@@ -32,6 +32,7 @@
 
         <dd>
             @Html.DisplayFor(model => model.HINHANH)
+            <img src="~/images/@Model.HINHANH" class="img-responsive"/>
         </dd>
 
         <dt>

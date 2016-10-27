@@ -83,6 +83,7 @@
     <Property Name="HINHANH" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
     <Property Name="NGAYCAPNHAT" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="DONGIA" Type="Int32" Nullable="false" />
+    <Property Name="THANHTOANTRUCTIEP" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="MALOAI" Type="Int32" Nullable="false" />
     <Property Name="MANSX" Type="Int32" Nullable="false" />
     <NavigationProperty Name="CTDDHs" Relationship="Self.FK__CTDDH__MASP__1CF15040" FromRole="SANPHAM" ToRole="CTDDH" />

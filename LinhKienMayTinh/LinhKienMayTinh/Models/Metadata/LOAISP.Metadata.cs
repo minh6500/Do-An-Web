@@ -14,6 +14,7 @@ namespace LinhKienMayTinh.Models
         internal sealed class LOAISPMetadata
         {
             [Display(Name ="Loại Sản Phẩm")]
+            [Required(ErrorMessage = "{0} Vui lòng nhập dữ liệu cho trường này")]
             public string TENLOAI { get; set; }
 
             

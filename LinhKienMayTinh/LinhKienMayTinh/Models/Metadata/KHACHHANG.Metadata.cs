@@ -40,7 +40,7 @@ namespace LinhKienMayTinh.Models
             public string USERNAME { get; set; }
 
             [Display(Name = "Mật Khẩu")]
-            [StringLength(20, MinimumLength = 10, ErrorMessage = "Mật khẩu phải có từ 10-20 ký tự")]
+            [StringLength(20, MinimumLength = 5, ErrorMessage = "Mật khẩu phải có từ 5-20 ký tự")]
             [Required(ErrorMessage = "{0} Vui lòng nhập dữ liệu cho trường này")]
             public string PASS { get; set; }
 

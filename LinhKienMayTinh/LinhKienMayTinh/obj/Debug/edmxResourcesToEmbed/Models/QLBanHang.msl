@@ -82,6 +82,7 @@
           <ScalarProperty Name="HINHANH" ColumnName="HINHANH" />
           <ScalarProperty Name="NGAYCAPNHAT" ColumnName="NGAYCAPNHAT" />
           <ScalarProperty Name="DONGIA" ColumnName="DONGIA" />
+          <ScalarProperty Name="THANHTOANTRUCTIEP" ColumnName="THANHTOANTRUCTIEP" />
           <ScalarProperty Name="MALOAI" ColumnName="MALOAI" />
           <ScalarProperty Name="MANSX" ColumnName="MANSX" />
         </MappingFragment>

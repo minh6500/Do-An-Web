@@ -7,7 +7,7 @@
 
 <h2>Thêm Mới Sản Phẩm</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("Create", "SANPHAMs",FormMethod.Post,new { @enctype = "multipart/form-data"}))
 {
     @Html.AntiForgeryToken()
     
@@ -33,7 +33,8 @@
             @Html.LabelFor(model => model.HINHANH, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <!--name của thẻ input phải cùng tên với tham số bên controller-->
-                <input type="file" name="fileupload" />
+                <input type="file" name="fileUpload" />
+                @Html.ValidationMessageFor(model => model.HINHANH, "", new { @class = "text-danger" })
                 <!--Thông báo trùng tên-->
                 @ViewBag.ThongBao
             </div>

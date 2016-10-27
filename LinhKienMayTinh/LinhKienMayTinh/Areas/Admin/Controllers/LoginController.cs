@@ -31,5 +31,11 @@ namespace LinhKienMayTinh.Areas.Admin.Controllers
             return View();
         }
 
+        public ActionResult Logout()
+        {
+            Session["admin"] = null;
+            return RedirectToAction("Index","Home");
+        }
+
     }
 }

@@ -25,7 +25,11 @@ namespace LinhKienMayTinh.Areas.Admin.Controllers
             var dONDATHANGs = db.DONDATHANGs.Include(d => d.KHACHHANG);
             return View(dONDATHANGs.ToList().ToPagedList(pageNumber, pageSize));
         }
-
+        public ActionResult CHITIET (int? id)
+        {
+            List<CTDDH> cTDDHs = db.CTDDHs.Where(n => n.MAD == id).ToList();
+            return View(cTDDHs);
+        }
         // GET: Admin/DONDATHANGs/Details/5
         public ActionResult Details(int? id)
         {

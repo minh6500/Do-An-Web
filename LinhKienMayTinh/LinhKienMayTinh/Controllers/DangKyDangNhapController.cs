@@ -25,16 +25,25 @@ namespace LinhKienMayTinh.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult DangKy(KHACHHANG kh)
+        public ActionResult DangKy(KHACHHANG kh,FormCollection f)
         {
             kh.NGAYDANGKY = DateTime.Now;
+            var xacnhan = f["XACNHAN"];
             if (ModelState.IsValid)
             {
-                //Insert dữ liệu vào bảng khách hàng
-                db.KHACHHANGs.Add(kh);
-                //lưu vào csdl
-                db.SaveChanges();
-                return RedirectToAction("DangNhap", "DangKyDangNhap");
+                if (kh.PASS != xacnhan)
+                {
+                    ViewBag.ThongBao = "Xác Nhận Mật Khẩu Không Chính Xác !";
+                    return View();
+                }
+                else
+                {
+                    //Insert dữ liệu vào bảng khách hàng
+                    db.KHACHHANGs.Add(kh);
+                    //lưu vào csdl
+                    db.SaveChanges();
+                    return RedirectToAction("DangNhap", "DangKyDangNhap");
+                } 
             }
             return View();
         }
@@ -123,7 +132,7 @@ namespace LinhKienMayTinh.Controllers
                 {
                     if (xacnhan != matkhaumoi)
                     {
-                        ViewBag.ThongBao = "Mật Khẩu Xác Nhận Không Chính Xác !";
+                        ViewBag.ThongBao = "Xác Nhận Mật Khẩu Không Chính Xác !";
                         return View();
                     }
                     else

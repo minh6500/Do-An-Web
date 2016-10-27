@@ -1,0 +1,71 @@
+﻿@model IEnumerable<LinhKienMayTinh.Models.CTDDH>
+@{
+    ViewBag.Title = "Chi Tiết Đơn Hàng Của Khách Hàng";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">@ViewBag.Title</h1>
+    </div>
+</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MAD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DONDATHANG.KHACHHANG.TENKH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DONGIA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SOLUONG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DONDATHANG.TENDAIDIEN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SANPHAM.TENSP)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MAD)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DONDATHANG.KHACHHANG.TENKH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DONGIA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SOLUONG)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DONDATHANG.TENDAIDIEN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SANPHAM.TENSP)
+            </td>
+        </tr>
+    }
+
+</table>
+
+<!-- jQuery -->
+<script src="~/Areas/Admin/Content/bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="~/Areas/Admin/Content/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Metis Menu Plugin JavaScript -->
+<script src="~/Areas/Admin/Content/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+<!-- DataTables JavaScript -->
+<script src="~/Areas/Admin/Content/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+<script src="~/Areas/Admin/Content/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+<!-- Custom Theme JavaScript -->
+<script src="~/Areas/Admin/Content/dist/js/sb-admin-2.js"></script>
+<!-- Page-Level Demo Scripts - Tables - Use for reference -->

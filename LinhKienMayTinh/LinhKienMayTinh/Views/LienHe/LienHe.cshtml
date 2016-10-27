@@ -62,7 +62,7 @@
                     <div class="form-group">
                         <p style="margin-top:20px;">@Html.LabelFor(m => m.NoiDung, new { @class = "col-md-2 control-label" })</p>
                         <div class="col-md-10">
-                            @Html.TextBoxFor(m => m.NoiDung, new { @class = "form-control" })
+                            <textarea name="NoiDung" style="margin-top:20px;" >@Model.NoiDung</textarea>
                             <p style="color:red;">@Html.ValidationMessageFor(m => m.NoiDung)</p>
                         </div>
                     </div>

@@ -61,17 +61,24 @@ namespace LinhKienMayTinh.Areas.Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MASP,TENSP,MOTA,HINHANH,NGAYCAPNHAT,DONGIA,MALOAI,MANSX")] SANPHAM sANPHAM)
+        [ValidateInput(false)]
+        public ActionResult Create(SANPHAM sANPHAM, HttpPostedFileBase fileUpload)
         {
+
+            ViewBag.MALOAI = new SelectList(db.LOAISPs, "MALOAI", "TENLOAI", sANPHAM.MALOAI);
+            ViewBag.MANSX = new SelectList(db.NSXes, "MANSX", "TENNSX", sANPHAM.MANSX);
+            //Lưu Tên File
+            var fileName = Path.GetFileName(fileUpload.FileName);
+            //Lưu đường dẫn của file
+            var path = Path.Combine(Server.MapPath("~/images"), fileName);
             if (ModelState.IsValid)
             {
+                fileUpload.SaveAs(path);
+                sANPHAM.HINHANH = fileUpload.FileName;
                 db.SANPHAMs.Add(sANPHAM);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
-            ViewBag.MALOAI = new SelectList(db.LOAISPs, "MALOAI", "TENLOAI", sANPHAM.MALOAI);
-            ViewBag.MANSX = new SelectList(db.NSXes, "MANSX", "TENNSX", sANPHAM.MANSX);
             return View(sANPHAM);
         }
 
@@ -97,16 +104,25 @@ namespace LinhKienMayTinh.Areas.Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MASP,TENSP,MOTA,HINHANH,NGAYCAPNHAT,DONGIA,MALOAI,MANSX")] SANPHAM sANPHAM)
+        [ValidateInput(false)]
+        public ActionResult Edit([Bind(Include = "MASP,TENSP,MOTA,HINHANH,DONGIA,NGAYCAPNHAT,THANHTOANTRUCTUYEN,MALOAI,MANSX")]SANPHAM sANPHAM, HttpPostedFileBase fileUpload)
         {
+            ViewBag.MALOAI = new SelectList(db.LOAISPs, "MALOAI", "TENLOAI", sANPHAM.MALOAI);
+            ViewBag.MANSX = new SelectList(db.NSXes, "MANSX", "TENNSX", sANPHAM.MANSX);
+            var fileName = Path.GetFileName(fileUpload.FileName);
+            //Lưu đường dẫn của file
+            var path = Path.Combine(Server.MapPath("~/images"), fileName);
+
             if (ModelState.IsValid)
             {
+                //Kiểm tra hình ảnh
+                fileUpload.SaveAs(path);
+                sANPHAM.HINHANH = fileUpload.FileName;
                 db.Entry(sANPHAM).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.MALOAI = new SelectList(db.LOAISPs, "MALOAI", "TENLOAI", sANPHAM.MALOAI);
-            ViewBag.MANSX = new SelectList(db.NSXes, "MANSX", "TENNSX", sANPHAM.MANSX);
+
             return View(sANPHAM);
         }
 

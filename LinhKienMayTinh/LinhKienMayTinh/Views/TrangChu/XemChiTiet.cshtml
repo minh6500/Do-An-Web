@@ -44,7 +44,7 @@
                     <div class="block block-w3">
                         <div class="starbox small ghosting"> </div>
                     </div>
-                    <p class="in-pa"> @Model.MOTA </p>
+                    <p class="in-pa"> @Html.Raw(Model.MOTA) </p>
 
                     <ul class="social-top">
                         <li><a href="https://www.facebook.com/" class="icon facebook"><i class="fa fa-facebook" aria-hidden="true"></i><span></span></a></li>
@@ -62,8 +62,9 @@
 
                     <div class="clearfix"> </div>
                 </div>
-
-
+                <div style="margin-top:30px;">
+                    <a href="@Model.THANHTOANTRUCTIEP"><img src="http://www.baokim.vn/developers/uploads/baokim_btn/thanhtoanantoan-l.png" alt="Thanh toán an toàn với Bảo Kim !" border="0" title="Thanh toán trực tuyến an toàn dùng tài khoản Ngân hàng (VietcomBank, TechcomBank, Đông Á, VietinBank, Quân Đội, VIB, SHB,... và thẻ Quốc tế (Visa, Master Card...) qua Cổng thanh toán trực tuyến BảoKim.vn"></a>
+                </div>
             </div>
             <div class="clearfix"> </div>
         </div>

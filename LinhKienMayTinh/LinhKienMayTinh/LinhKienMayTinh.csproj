@@ -712,6 +712,7 @@
     <Content Include="images\mouse-r8-1618-led.jpg" />
     <Content Include="images\mouse-r8-1628-led.jpg" />
     <Content Include="images\mouse-r8-1656-led.jpg" />
+    <Content Include="images\mouse-r8-1658-led.jpg" />
     <Content Include="images\s2.jpg" />
     <Content Include="Models\QLBanHang.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -740,7 +741,6 @@
     <Content Include="Areas\Admin\Views\SANPHAMs\SanPhamTheoLoai.cshtml" />
     <Content Include="Areas\Admin\Views\DONDATHANGs\Create.cshtml" />
     <Content Include="Areas\Admin\Views\DONDATHANGs\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\DONDATHANGs\Details.cshtml" />
     <Content Include="Areas\Admin\Views\DONDATHANGs\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\DONDATHANGs\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Register\Register.cshtml" />
@@ -1165,6 +1165,12 @@
     <Content Include="Areas\Admin\Views\LOAISPs\Details.cshtml" />
     <Content Include="Areas\Admin\Views\LOAISPs\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\LOAISPs\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\NSXes\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\NSXes\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\NSXes\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\NSXes\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\NSXes\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Search\SearchAdmin.cshtml" />
     <EntityDeploy Include="Models\QLBanHang.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>QLBanHang.Designer.cs</LastGenOutput>
@@ -1172,12 +1178,7 @@
     <Content Include="Models\QLBanHang.edmx.diagram">
       <DependentUpon>QLBanHang.edmx</DependentUpon>
     </Content>
-    <Content Include="Areas\Admin\Views\NSXes\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\NSXes\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\NSXes\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\NSXes\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\NSXes\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Search\SearchAdmin.cshtml" />
+    <Content Include="Areas\Admin\Views\DONDATHANGs\CHITIET.cshtml" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="scripts\jquery-1.10.2.js" />
     <Content Include="scripts\jquery-1.10.2.min.js" />
@@ -1297,6 +1298,7 @@
     <Content Include="tinymce\js\tinymce\skins\lightgray\fonts\tinymce.woff" />
     <Content Include="Views\DangKyDangNhap\ThongTinTaiKhoan.cshtml" />
     <Content Include="Views\DangKyDangNhap\DoiMatKhau.cshtml" />
+    <Content Include="Views\GioHang\ThanhToanThanhCong.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

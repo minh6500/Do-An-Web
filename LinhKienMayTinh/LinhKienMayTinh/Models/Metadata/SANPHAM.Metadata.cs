@@ -35,7 +35,7 @@ namespace LinhKienMayTinh.Models
             public string MOTA { get; set; }
 
             [Display(Name = "Hình Ảnh")]
-            [Required(ErrorMessage = "Vui lòng nhập dữ liệu cho trường này ")]
+            [Required(ErrorMessage = "{0} Vui lòng nhập dữ liệu cho trường này")]
             public string HINHANH { get; set; }
 
 

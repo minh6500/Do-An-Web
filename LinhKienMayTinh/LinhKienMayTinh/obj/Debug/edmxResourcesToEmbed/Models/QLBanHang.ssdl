@@ -76,6 +76,7 @@
     <Property Name="HINHANH" Type="varchar" MaxLength="200" />
     <Property Name="NGAYCAPNHAT" Type="datetime" Nullable="false" />
     <Property Name="DONGIA" Type="int" Nullable="false" />
+    <Property Name="THANHTOANTRUCTIEP" Type="nvarchar(max)" />
     <Property Name="MALOAI" Type="int" Nullable="false" />
     <Property Name="MANSX" Type="int" Nullable="false" />
   </EntityType>

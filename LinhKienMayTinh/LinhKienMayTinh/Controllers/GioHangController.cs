@@ -180,5 +180,14 @@ namespace LinhKienMayTinh.Controllers
             return RedirectToAction("Index","TrangChu");
         }
         #endregion
+
+        public ActionResult ThanhToanThanhCong()
+        {
+            if(Session["taikhoan"] == null)
+            {
+                return RedirectToAction("DangNhap","DangKyDangNhap");
+            }
+            return View();
+        }
     }
 }

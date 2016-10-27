@@ -26,6 +26,7 @@ namespace LinhKienMayTinh.Models
         public string HINHANH { get; set; }
         public System.DateTime NGAYCAPNHAT { get; set; }
         public int DONGIA { get; set; }
+        public string THANHTOANTRUCTIEP { get; set; }
         public int MALOAI { get; set; }
         public int MANSX { get; set; }
     

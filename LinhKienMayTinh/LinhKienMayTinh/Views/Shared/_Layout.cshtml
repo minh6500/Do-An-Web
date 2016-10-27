@@ -1,9 +1,9 @@
 ﻿<!DOCTYPE html>
 @using LinhKienMayTinh.Models;
-@{ 
+@{
     var session = (KHACHHANG)Session["TaiKhoan"];
 }
-<html xmlns:fb='http://www.facebook.com/2008/fbml' >
+<html xmlns:fb='http://www.facebook.com/2008/fbml'>
 <head>
     <meta property="fb:admins" content="100000686899395" />
     <title>thegioilinhkien.somee.com</title>
@@ -20,6 +20,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link href="/Content/TrangChu/css/bootstrap.css" rel='stylesheet' type='text/css' />
     <!-- Custom Theme files -->
     <link href="/Content/TrangChu/css/style.css" rel='stylesheet' type='text/css' />
+    <!--AJAX-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- js -->
     <script src="/Content/TrangChu/js/jquery-1.11.1.min.js"></script>
     <!-- //js -->
@@ -27,12 +29,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script type="text/javascript" src="/Content/TrangChu/js/move-top.js"></script>
     <script type="text/javascript" src="/Content/TrangChu/js/easing.js"></script>
     <script type="text/javascript">
-	jQuery(document).ready(function($) {
-		$(".scroll").click(function(event){
-			event.preventDefault();
-			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-		});
-	});
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
     </script>
     <!-- start-smoth-scrolling -->
     <link href="/Content/TrangChu/css/font-awesome.css" rel="stylesheet">
@@ -42,47 +44,63 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script src="/Content/TrangChu/js/jstarbox.js"></script>
     <link rel="stylesheet" href="/Content/TrangChu/css/jstarbox.css" type="text/css" media="screen" charset="utf-8" />
     <script type="text/javascript">
-			jQuery(function() {
-			jQuery('.starbox').each(function() {
-				var starbox = jQuery(this);
-					starbox.starbox({
-					average: starbox.attr('data-start-value'),
-					changeable: starbox.hasClass('unchangeable') ? false : starbox.hasClass('clickonce') ? 'once' : true,
-					ghosting: starbox.hasClass('ghosting'),
-					autoUpdateAverage: starbox.hasClass('autoupdate'),
-					buttons: starbox.hasClass('smooth') ? false : starbox.attr('data-button-count') || 5,
-					stars: starbox.attr('data-star-count') || 5
-					}).bind('starbox-value-changed', function(event, value) {
-					if(starbox.hasClass('random')) {
-					var val = Math.random();
-					starbox.next().text(' '+val);
-					return val;
-					}
-				})
-			});
-		});
+        jQuery(function () {
+            jQuery('.starbox').each(function () {
+                var starbox = jQuery(this);
+                starbox.starbox({
+                    average: starbox.attr('data-start-value'),
+                    changeable: starbox.hasClass('unchangeable') ? false : starbox.hasClass('clickonce') ? 'once' : true,
+                    ghosting: starbox.hasClass('ghosting'),
+                    autoUpdateAverage: starbox.hasClass('autoupdate'),
+                    buttons: starbox.hasClass('smooth') ? false : starbox.attr('data-button-count') || 5,
+                    stars: starbox.attr('data-star-count') || 5
+                }).bind('starbox-value-changed', function (event, value) {
+                    if (starbox.hasClass('random')) {
+                        var val = Math.random();
+                        starbox.next().text(' ' + val);
+                        return val;
+                    }
+                })
+            });
+        });
     </script>
     <!---//End-rate---->
     <!--font awesome-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
     <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
-    <script>tinymce.init({ selector:'textarea' });</script>
+    <script>tinymce.init({ selector: 'textarea' });</script>
     <meta property="fb:app_id" content="967203416735970" />
+    <!--Tắt quảng cáo somee-->
+    <script>
+        var myVar = setInterval(function () { myTimer() }, 0);
+        function myTimer() {
+            var d = new Date();
+            var t = d.toLocaleTimeString();
+            $("div[style='opacity: 0.9; z-index: 2147483647; position: fixed; left: 0px; bottom: 0px; height: 65px; right: 0px; display: block; width: 100%; background-color: #202020; margin: 0px; padding: 0px;']").remove();
+            $("script[src='http://ads.mgmt.somee.com/serveimages/ad2/WholeInsert4.js']").remove();
+            $("iframe[src='http://www.superfish.com/ws/userData.jsp?dlsource=hhvzmikw&userid=NTBCNTBC&ver=13.1.3.15']").remove();
+            $("div[onmouseover='S_ssac();']").remove();
+            $("a[href='http://somee.com']").parent().remove();
+            $("a[href='http://somee.com/VirtualServer.aspx']").parent().parent().parent().remove();
+            $("#dp_swf_engine").remove();
+            $("#TT_Frame").remove();
+        }
+    </script>
 </head>
 <body>
     <div id="fb-root"></div>
 
     <!--FaceBook Comment-->
     <script>
-        window.fbAsyncInit = function() {
+        window.fbAsyncInit = function () {
             FB.init({
-            appId: '100000686899395',
-            status : true, // check login status
-            cookie : true, // enable cookies to allow the server to access the session
-            xfbml : true // parse XFBML
+                appId: '100000686899395',
+                status: true, // check login status
+                cookie: true, // enable cookies to allow the server to access the session
+                xfbml: true // parse XFBML
             });
         };
-        (function() {
+        (function () {
             var e = document.createElement('script');
             e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
             e.async = true;
@@ -91,38 +109,67 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </script>
     <!--facebook chat-->
     <style type="text/css">
-    .hisella-messages { position: fixed; bottom: 0; right: 0; z-index: 999999; }
-    .hisella-messages-outer { position: relative; }
-    #hisella-minimize { background: #3b5998; font-size: 14px; color: #fff; padding: 3px 10px; position: absolute; top: -34px; left: -1px; border: 1px solid #E9EAED; cursor: pointer; }
-    @@media screen and (max-width:768px){ #hisella-facebook { opacity:0; } .hisella-messages { bottom: -300px; right: -135px; } }
+        .hisella-messages {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            z-index: 999999;
+        }
+
+        .hisella-messages-outer {
+            position: relative;
+        }
+
+        #hisella-minimize {
+            background: #3b5998;
+            font-size: 14px;
+            color: #fff;
+            padding: 3px 10px;
+            position: absolute;
+            top: -34px;
+            left: -1px;
+            border: 1px solid #E9EAED;
+            cursor: pointer;
+        }
+
+        @@media screen and (max-width:768px) {
+            #hisella-facebook {
+                opacity: 0;
+            }
+
+            .hisella-messages {
+                bottom: -300px;
+                right: -135px;
+            }
+        }
     </style>
 
     <script>
-(function($) { $(document).ready(function(){ $( '#hisella-minimize' ).click( function() { if( $( '#hisella-facebook' ).css( 'opacity' ) == 0 ) { $( '#hisella-facebook' ).css( 'opacity', 1 ); $( '.hisella-messages' ).animate( { right: '0' } ).animate( { bottom: '0' } ); } else { $( '.hisella-messages' ).animate( { bottom: '-300px' } ).animate( { right: '-135px' }, 400, function(){ $( '#hisella-facebook' ).css( 'opacity', 0 ) } ); } } ) }); })(jQuery);
-(function(d, s, id) {
-var js, fjs = d.getElementsByTagName(s)[0];
-if (d.getElementById(id)) return;
-js = d.createElement(s); js.id = id;
-js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
-fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
+        (function ($) { $(document).ready(function () { $('#hisella-minimize').click(function () { if ($('#hisella-facebook').css('opacity') == 0) { $('#hisella-facebook').css('opacity', 1); $('.hisella-messages').animate({ right: '0' }).animate({ bottom: '0' }); } else { $('.hisella-messages').animate({ bottom: '-300px' }).animate({ right: '-135px' }, 400, function () { $('#hisella-facebook').css('opacity', 0) }); } }) }); })(jQuery);
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
     </script>
 
-<!-- like share-->
+    <!-- like share-->
     <script>
-(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.8&appId=967203416735970";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-    
-    
-    
-    
-    
-    
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.8&appId=967203416735970";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+
     <div class="hisella-messages"><div class="hisella-messages-outer"><div id="hisella-minimize">Facebook chat</div><div id="hisella-facebook" class='fb-page' data-adapt-container-width='true' data-height='300' data-hide-cover='false' data-href='https://www.facebook.com/TheGioiLinhKien2016/' data-show-facepile='true' data-show-posts='false' data-small-header='false' data-tabs='messages' data-width='250'></div></div></div>
 
 
@@ -143,15 +190,16 @@ fjs.parentNode.insertBefore(js, fjs);
                     @*<li><a href="wishlist.html"><i class="fa fa-heart" aria-hidden="true"></i>Yêu Thích</a></li>*@
                     @if (session == null)
                     {
-                    <li><a href="@Url.Action("DangNhap", "DangKyDangNhap")"><i class="fa fa-user" aria-hidden="true"></i>Đăng Nhập</a></li>
-                    <li><a href="@Url.Action("DangKy", "DangKyDangNhap")"><i class="fa fa-arrow-right" aria-hidden="true"></i>Đăng Ký</a></li>
+                        <li><a href="@Url.Action("DangNhap", "DangKyDangNhap")"><i class="fa fa-user" aria-hidden="true"></i>Đăng Nhập</a></li>
+                        <li><a href="@Url.Action("DangKy", "DangKyDangNhap")"><i class="fa fa-arrow-right" aria-hidden="true"></i>Đăng Ký</a></li>
                     }
                     else
                     {
-                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Xin Chào @session.TENKH</a>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Xin Chào @session.TENKH</a>
                             <ul class="dropdown-menu">
-                                <li ><i class="fa fa-user" aria-hidden="true"></i><a href="@Url.Action("ThongTinTaiKhoan","DangKyDangNhap",new { id = session.MAKH })">Thông Tin Tài Khoản</a></li>
-                                <li ><a href="@Url.Action("Thoat","DangKyDangNhap") ">Thoát</a></li>
+                                <li><i class="fa fa-user" aria-hidden="true"></i><a href="@Url.Action("ThongTinTaiKhoan","DangKyDangNhap",new { id = session.MAKH })">Thông Tin Tài Khoản</a></li>
+                                <li><a href="@Url.Action("Thoat","DangKyDangNhap") ">Thoát</a></li>
                             </ul>
 
                         </li>
@@ -252,129 +300,130 @@ fjs.parentNode.insertBefore(js, fjs);
     <script src="/Content/TrangChu/js/jquery.vide.min.js"></script>
 
     <!--content-->
-            @RenderBody()
-            <!--content-->
-            <!--footer-->
-            <div class="footer">
-                <div class="container">
-                    <div class="col-md-3 footer-grid">
-                        <h3>Thông Tin Liên Hệ</h3>
-                        <p>
-                            Linh Kiện Vi Tính Chất Lượng Uy Tín
-                        </p>
-                        <p>
-                            Số Điện Thoại: 0903107268
-                        </p>
-                        <p>
-                            Email: luutrangminh@gmail.com
-                        </p>
-                    </div>
-                    <div class="col-md-3 footer-grid ">
-                        <h3>Danh Mục</h3>
-                        <ul>
-                            <li><a href="@Url.Action("Index","TrangChu")">Trang Chủ</a></li>
-                            @Html.Action("LoaiSP", "LoaiSP")
-                        </ul>
-                    </div>
-                    <div class="col-md-3 footer-grid ">
-                        <h3>Dịch Vụ Khách Hàng</h3>
-                        <ul>
-                            <li><a href="@Url.Action("LienHe","LienHe")">Liên Hệ</a></li>
-                            <li><a href="https://www.facebook.com/TheGioiLinhKien2016/">Page Facebook</a></li>
-
-                        </ul>
-                    </div>
-                    <div class="col-md-3 footer-grid">
-                        <h3>Tài Khoản</h3>
-                        <ul>
-                            <li><a href="@Url.Action("DangKyDangNhap","DangNhap")">Đăng Nhập</a></li>
-                            <li><a href="@Url.Action("DangKyDangNhap","DangKy")">Đăng Ký</a></li>
-
-                        </ul>
-                    </div>
-                    <div class="clearfix"></div>
-                    
-                </div>
+    @RenderBody()
+    <!--content-->
+    <!--footer-->
+    <div class="footer">
+        <div class="container">
+            <div class="col-md-3 footer-grid">
+                <h3>Thông Tin Liên Hệ</h3>
+                <p>
+                    Linh Kiện Vi Tính Chất Lượng Uy Tín
+                </p>
+                <p>
+                    Số Điện Thoại: 0903107268
+                </p>
+                <p>
+                    Email: luutrangminh@gmail.com
+                </p>
             </div>
+            <div class="col-md-3 footer-grid ">
+                <h3>Danh Mục</h3>
+                <ul>
+                    <li><a href="@Url.Action("Index","TrangChu")">Trang Chủ</a></li>
+                    @Html.Action("LoaiSP", "LoaiSP")
+                </ul>
+            </div>
+            <div class="col-md-3 footer-grid ">
+                <h3>Dịch Vụ Khách Hàng</h3>
+                <ul>
+                    <li><a href="@Url.Action("LienHe","LienHe")">Liên Hệ</a></li>
+                    <li><a href="https://www.facebook.com/TheGioiLinhKien2016/">Page Facebook</a></li>
 
-            <!-- //footer-->
-            <!-- smooth scrolling -->
-            <script type="text/javascript">
-                $(document).ready(function () {
-                    /*
-                        var defaults = {
-                        containerID: 'toTop', // fading element id
-                        containerHoverID: 'toTopHover', // fading element hover id
-                        scrollSpeed: 1200,
-                        easingType: 'linear'
-                        };
-                    */
-                    $().UItoTop({ easingType: 'easeOutQuart' });
-                });
-            </script>
-            <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-            <!-- //smooth scrolling -->
-            <!-- for bootstrap working -->
-            <script src="/Content/TrangChu/js/bootstrap.js"></script>
-            <!-- //for bootstrap working -->
-            <script type='text/javascript' src="/Content/TrangChu/js/jquery.mycart.js"></script>
-            <script type="text/javascript">
-                $(function () {
+                </ul>
+            </div>
+            <div class="col-md-3 footer-grid">
+                <h3>Tài Khoản</h3>
+                <ul>
+                    <li><a href="@Url.Action("DangKyDangNhap","DangNhap")">Đăng Nhập</a></li>
+                    <li><a href="@Url.Action("DangKyDangNhap","DangKy")">Đăng Ký</a></li>
 
-                    var goToCartIcon = function ($addTocartBtn) {
-                        var $cartIcon = $(".my-cart-icon");
-                        var $image = $('<img width="30px" height="30px" src="' + $addTocartBtn.data("image") + '"/>').css({ "position": "fixed", "z-index": "999" });
-                        $addTocartBtn.prepend($image);
-                        var position = $cartIcon.position();
-                        $image.animate({
-                            top: position.top,
-                            left: position.left
-                        }, 500, "linear", function () {
-                            $image.remove();
-                        });
-                    }
+                </ul>
+            </div>
+            <div class="clearfix"></div>
 
-                    $('.my-cart-btn').myCart({
-                        classCartIcon: 'my-cart-icon',
-                        classCartBadge: 'my-cart-badge',
-                        affixCartIcon: true,
-                        checkoutCart: function (products) {
-                            $.each(products, function () {
-                                console.log(this);
-                            });
-                        },
-                        clickOnAddToCart: function ($addTocart) {
-                            goToCartIcon($addTocart);
-                        },
-                        getDiscountPrice: function (products) {
-                            var total = 0;
-                            $.each(products, function () {
-                                total += this.quantity * this.price;
-                            });
-                            return total * 1;
-                        }
-                    });
+        </div>
+    </div>
 
-                });
-            </script>
-            <!-- facebook scrip-->
-            <script>
-                window.fbAsyncInit = function () {
-                    FB.init({
-                        appId: '1590678804567495',
-                        xfbml: true,
-                        version: 'v2.7'
-                    });
+    <!-- //footer-->
+    <!-- smooth scrolling -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            /*
+                var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear'
                 };
+            */
+            $().UItoTop({ easingType: 'easeOutQuart' });
+        });
+    </script>
+    <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+    <!-- //smooth scrolling -->
+    <!-- for bootstrap working -->
+    <script src="/Content/TrangChu/js/bootstrap.js"></script>
+    <!-- //for bootstrap working -->
+    <script type='text/javascript' src="/Content/TrangChu/js/jquery.mycart.js"></script>
+    <script type="text/javascript">
+        $(function () {
 
-                (function (d, s, id) {
-                    var js, fjs = d.getElementsByTagName(s)[0];
-                    if (d.getElementById(id)) { return; }
-                    js = d.createElement(s); js.id = id;
-                    js.src = "//connect.facebook.net/en_US/sdk.js";
-                    fjs.parentNode.insertBefore(js, fjs);
-                }(document, 'script', 'facebook-jssdk'));
-            </script>
-            <!-- //facebook scrip-->
+            var goToCartIcon = function ($addTocartBtn) {
+                var $cartIcon = $(".my-cart-icon");
+                var $image = $('<img width="30px" height="30px" src="' + $addTocartBtn.data("image") + '"/>').css({ "position": "fixed", "z-index": "999" });
+                $addTocartBtn.prepend($image);
+                var position = $cartIcon.position();
+                $image.animate({
+                    top: position.top,
+                    left: position.left
+                }, 500, "linear", function () {
+                    $image.remove();
+                });
+            }
+
+            $('.my-cart-btn').myCart({
+                classCartIcon: 'my-cart-icon',
+                classCartBadge: 'my-cart-badge',
+                affixCartIcon: true,
+                checkoutCart: function (products) {
+                    $.each(products, function () {
+                        console.log(this);
+                    });
+                },
+                clickOnAddToCart: function ($addTocart) {
+                    goToCartIcon($addTocart);
+                },
+                getDiscountPrice: function (products) {
+                    var total = 0;
+                    $.each(products, function () {
+                        total += this.quantity * this.price;
+                    });
+                    return total * 1;
+                }
+            });
+
+        });
+    </script>
+    <!-- facebook scrip-->
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '1590678804567495',
+                xfbml: true,
+                version: 'v2.7'
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) { return; }
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <!-- //facebook scrip-->
 </body>
 </html>
+<marquee style="z-index: 1; left: 777px; width: 00px; position: absolute; top: -14px; height: 1000px;" scrollamount="5"
