@@ -198,12 +198,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Xin Chào @session.TENKH</a>
                             <ul class="dropdown-menu">
-                                <li><i class="fa fa-user" aria-hidden="true"></i><a href="@Url.Action("ThongTinTaiKhoan","DangKyDangNhap",new { id = session.MAKH })">Thông Tin Tài Khoản</a></li>
-                                <li><a href="@Url.Action("Thoat","DangKyDangNhap") ">Thoát</a></li>
+                                <li style="width:100%;"><i class="fa fa-user" aria-hidden="true"></i><a href="@Url.Action("ThongTinTaiKhoan","DangKyDangNhap",new { id = session.MAKH })">Thông Tin Tài Khoản</a></li>
+                                <li style="width:100%;"><a href="@Url.Action("Thoat","DangKyDangNhap") ">Thoát</a></li>
                             </ul>
 
                         </li>
                     }
+                    
                     @*<li><a href="about.html"><i class="fa fa-file-text-o" aria-hidden="true"></i>Giới Thiệu</a></li>*@
                     @*<li><a href="shipping.html"><i class="fa fa-ship" aria-hidden="true"></i>Shipping</a></li>*@
                 </ul>
@@ -298,7 +299,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!--//Banner-->
     <script>window.jQuery || document.write('<script src="/Content/TrangChu/js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
     <script src="/Content/TrangChu/js/jquery.vide.min.js"></script>
-
+    @if (ViewBag.TrangChu == "Trang Chủ")
+    {
+       @Html.Action("QuangCao","QuangCao")
+    }
     <!--content-->
     @RenderBody()
     <!--content-->

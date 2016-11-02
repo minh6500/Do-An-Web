@@ -69,7 +69,10 @@
       <EntityTypeMapping TypeName="QLBANHANGModel.QUANGCAO">
         <MappingFragment StoreEntitySet="QUANGCAO">
           <ScalarProperty Name="MAQC" ColumnName="MAQC" />
+          <ScalarProperty Name="HINHANH" ColumnName="HINHANH" />
           <ScalarProperty Name="LINK" ColumnName="LINK" />
+          <ScalarProperty Name="CLASS" ColumnName="CLASS" />
+          <ScalarProperty Name="ALT" ColumnName="ALT" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

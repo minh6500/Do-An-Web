@@ -4,15 +4,15 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="QLBANHANGModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="QLBANHANGModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ADMINLOGIN">
           <Key>
             <PropertyRef Name="MAAD" />
           </Key>
           <Property Name="MAAD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TENAD" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="USERNAME" Type="char" MaxLength="20" Nullable="false" />
-          <Property Name="PASS" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="TENAD" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="USERNAME" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="PASS" Type="varchar" MaxLength="20" Nullable="false" />
         </EntityType>
         <EntityType Name="CTDDH">
           <Key>
@@ -30,9 +30,9 @@
           </Key>
           <Property Name="MAD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NGAYDAT" Type="date" Nullable="false" />
-          <Property Name="TENDAIDIEN" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="SDT" Type="char" MaxLength="11" Nullable="false" />
-          <Property Name="DIACHIGIAO" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="TENDAIDIEN" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SDT" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="DIACHIGIAO" Type="ntext" Nullable="false" />
           <Property Name="TINHTRANGTHANHTOAN" Type="bit" />
           <Property Name="TINHTRANGGIAOHANG" Type="bit" />
           <Property Name="MAKH" Type="int" />
@@ -43,11 +43,11 @@
           </Key>
           <Property Name="MAKH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TENKH" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="SDT" Type="char" MaxLength="11" Nullable="false" />
-          <Property Name="DIACHI" Type="nvarchar" MaxLength="200" Nullable="false" />
-          <Property Name="EMAIL" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="USERNAME" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="PASS" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="SDT" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="DIACHI" Type="ntext" Nullable="false" />
+          <Property Name="EMAIL" Type="text" Nullable="false" />
+          <Property Name="USERNAME" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PASS" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="NGAYDANGKY" Type="date" Nullable="false" />
         </EntityType>
         <EntityType Name="LOAISP">
@@ -55,30 +55,33 @@
             <PropertyRef Name="MALOAI" />
           </Key>
           <Property Name="MALOAI" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TENLOAI" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="TENLOAI" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="NSX">
           <Key>
             <PropertyRef Name="MANSX" />
           </Key>
           <Property Name="MANSX" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TENNSX" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="TENNSX" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="QUANGCAO">
           <Key>
             <PropertyRef Name="MAQC" />
           </Key>
           <Property Name="MAQC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="LINK" Type="varchar" MaxLength="300" Nullable="false" />
+          <Property Name="HINHANH" Type="varchar(max)" />
+          <Property Name="LINK" Type="ntext" />
+          <Property Name="CLASS" Type="text" />
+          <Property Name="ALT" Type="text" />
         </EntityType>
         <EntityType Name="SANPHAM">
           <Key>
             <PropertyRef Name="MASP" />
           </Key>
           <Property Name="MASP" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TENSP" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="MOTA" Type="nvarchar" MaxLength="300" />
-          <Property Name="HINHANH" Type="varchar" MaxLength="200" />
+          <Property Name="TENSP" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MOTA" Type="ntext" />
+          <Property Name="HINHANH" Type="varchar(max)" />
           <Property Name="NGAYCAPNHAT" Type="datetime" Nullable="false" />
           <Property Name="DONGIA" Type="int" Nullable="false" />
           <Property Name="THANHTOANTRUCTIEP" Type="nvarchar(max)" />
@@ -175,7 +178,8 @@
             <End Role="SANPHAM" EntitySet="SANPHAM" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="QLBANHANGModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -184,9 +188,9 @@
             <PropertyRef Name="MAAD" />
           </Key>
           <Property Name="MAAD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TENAD" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="USERNAME" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="PASS" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TENAD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="USERNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PASS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
         <EntityType Name="CTDDH">
           <Key>
@@ -206,9 +210,9 @@
           </Key>
           <Property Name="MAD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NGAYDAT" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="TENDAIDIEN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="SDT" Type="String" MaxLength="11" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="DIACHIGIAO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TENDAIDIEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SDT" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DIACHIGIAO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="TINHTRANGTHANHTOAN" Type="Boolean" />
           <Property Name="TINHTRANGGIAOHANG" Type="Boolean" />
           <Property Name="MAKH" Type="Int32" />
@@ -221,11 +225,11 @@
           </Key>
           <Property Name="MAKH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TENKH" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="SDT" Type="String" MaxLength="11" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="DIACHI" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="USERNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="PASS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SDT" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DIACHI" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PASS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="NGAYDANGKY" Type="DateTime" Nullable="false" Precision="0" />
           <NavigationProperty Name="DONDATHANGs" Relationship="Self.FK__DONDATHANG__MAKH__1A14E395" FromRole="KHACHHANG" ToRole="DONDATHANG" />
         </EntityType>
@@ -234,7 +238,7 @@
             <PropertyRef Name="MALOAI" />
           </Key>
           <Property Name="MALOAI" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TENLOAI" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TENLOAI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="SANPHAMs" Relationship="Self.FK__SANPHAM__MALOAI__145C0A3F" FromRole="LOAISP" ToRole="SANPHAM" />
         </EntityType>
         <EntityType Name="NSX">
@@ -242,7 +246,7 @@
             <PropertyRef Name="MANSX" />
           </Key>
           <Property Name="MANSX" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TENNSX" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TENNSX" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="SANPHAMs" Relationship="Self.FK__SANPHAM__MANSX__15502E78" FromRole="NSX" ToRole="SANPHAM" />
         </EntityType>
         <EntityType Name="QUANGCAO">
@@ -250,16 +254,19 @@
             <PropertyRef Name="MAQC" />
           </Key>
           <Property Name="MAQC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="LINK" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="HINHANH" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LINK" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CLASS" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ALT" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="SANPHAM">
           <Key>
             <PropertyRef Name="MASP" />
           </Key>
           <Property Name="MASP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TENSP" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="MOTA" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-          <Property Name="HINHANH" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="TENSP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MOTA" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HINHANH" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="NGAYCAPNHAT" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="DONGIA" Type="Int32" Nullable="false" />
           <Property Name="THANHTOANTRUCTIEP" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
@@ -433,7 +440,10 @@
             <EntityTypeMapping TypeName="QLBANHANGModel.QUANGCAO">
               <MappingFragment StoreEntitySet="QUANGCAO">
                 <ScalarProperty Name="MAQC" ColumnName="MAQC" />
+                <ScalarProperty Name="HINHANH" ColumnName="HINHANH" />
                 <ScalarProperty Name="LINK" ColumnName="LINK" />
+                <ScalarProperty Name="CLASS" ColumnName="CLASS" />
+                <ScalarProperty Name="ALT" ColumnName="ALT" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

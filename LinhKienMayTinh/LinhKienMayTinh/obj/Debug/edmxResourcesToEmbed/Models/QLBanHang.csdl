@@ -5,9 +5,9 @@
       <PropertyRef Name="MAAD" />
     </Key>
     <Property Name="MAAD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="TENAD" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="USERNAME" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="PASS" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="TENAD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="USERNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PASS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
   </EntityType>
   <EntityType Name="CTDDH">
     <Key>
@@ -27,9 +27,9 @@
     </Key>
     <Property Name="MAD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="NGAYDAT" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="TENDAIDIEN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="SDT" Type="String" MaxLength="11" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="DIACHIGIAO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TENDAIDIEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SDT" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DIACHIGIAO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="TINHTRANGTHANHTOAN" Type="Boolean" />
     <Property Name="TINHTRANGGIAOHANG" Type="Boolean" />
     <Property Name="MAKH" Type="Int32" />
@@ -42,11 +42,11 @@
     </Key>
     <Property Name="MAKH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="TENKH" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="SDT" Type="String" MaxLength="11" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="DIACHI" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="USERNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="PASS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SDT" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DIACHI" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PASS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="NGAYDANGKY" Type="DateTime" Nullable="false" Precision="0" />
     <NavigationProperty Name="DONDATHANGs" Relationship="Self.FK__DONDATHANG__MAKH__1A14E395" FromRole="KHACHHANG" ToRole="DONDATHANG" />
   </EntityType>
@@ -55,7 +55,7 @@
       <PropertyRef Name="MALOAI" />
     </Key>
     <Property Name="MALOAI" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="TENLOAI" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TENLOAI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="SANPHAMs" Relationship="Self.FK__SANPHAM__MALOAI__145C0A3F" FromRole="LOAISP" ToRole="SANPHAM" />
   </EntityType>
   <EntityType Name="NSX">
@@ -63,7 +63,7 @@
       <PropertyRef Name="MANSX" />
     </Key>
     <Property Name="MANSX" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="TENNSX" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TENNSX" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="SANPHAMs" Relationship="Self.FK__SANPHAM__MANSX__15502E78" FromRole="NSX" ToRole="SANPHAM" />
   </EntityType>
   <EntityType Name="QUANGCAO">
@@ -71,16 +71,19 @@
       <PropertyRef Name="MAQC" />
     </Key>
     <Property Name="MAQC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="LINK" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="HINHANH" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LINK" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CLASS" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ALT" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="SANPHAM">
     <Key>
       <PropertyRef Name="MASP" />
     </Key>
     <Property Name="MASP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="TENSP" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="MOTA" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Name="HINHANH" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="TENSP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MOTA" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HINHANH" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="NGAYCAPNHAT" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="DONGIA" Type="Int32" Nullable="false" />
     <Property Name="THANHTOANTRUCTIEP" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />

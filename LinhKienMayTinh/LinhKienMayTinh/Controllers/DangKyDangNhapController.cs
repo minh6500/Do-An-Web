@@ -29,11 +29,20 @@ namespace LinhKienMayTinh.Controllers
         {
             kh.NGAYDANGKY = DateTime.Now;
             var xacnhan = f["XACNHAN"];
+            var username = db.KHACHHANGs.ToList();
+            foreach(var item in username)
+            {
+                if(f["USERNAME"] == item.USERNAME)
+                {
+                    ViewBag.ThongBaoUserName = "Tên tài khoản đã có người sử dụng";
+                    return View();
+                }
+            }
             if (ModelState.IsValid)
             {
                 if (kh.PASS != xacnhan)
                 {
-                    ViewBag.ThongBao = "Xác Nhận Mật Khẩu Không Chính Xác !";
+                    ViewBag.ThongBaoXacNhan = "Xác Nhận Mật Khẩu Không Chính Xác !";
                     return View();
                 }
                 else
@@ -42,7 +51,8 @@ namespace LinhKienMayTinh.Controllers
                     db.KHACHHANGs.Add(kh);
                     //lưu vào csdl
                     db.SaveChanges();
-                    return RedirectToAction("DangNhap", "DangKyDangNhap");
+                    ViewBag.DangKy = "Chúc mừng bạn đã đăng ký thành công";
+                    return View();
                 } 
             }
             return View();

@@ -5,9 +5,9 @@
       <PropertyRef Name="MAAD" />
     </Key>
     <Property Name="MAAD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="TENAD" Type="nvarchar" MaxLength="100" Nullable="false" />
-    <Property Name="USERNAME" Type="char" MaxLength="20" Nullable="false" />
-    <Property Name="PASS" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="TENAD" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="USERNAME" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="PASS" Type="varchar" MaxLength="20" Nullable="false" />
   </EntityType>
   <EntityType Name="CTDDH">
     <Key>
@@ -25,9 +25,9 @@
     </Key>
     <Property Name="MAD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="NGAYDAT" Type="date" Nullable="false" />
-    <Property Name="TENDAIDIEN" Type="nvarchar" MaxLength="100" Nullable="false" />
-    <Property Name="SDT" Type="char" MaxLength="11" Nullable="false" />
-    <Property Name="DIACHIGIAO" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="TENDAIDIEN" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SDT" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="DIACHIGIAO" Type="ntext" Nullable="false" />
     <Property Name="TINHTRANGTHANHTOAN" Type="bit" />
     <Property Name="TINHTRANGGIAOHANG" Type="bit" />
     <Property Name="MAKH" Type="int" />
@@ -38,11 +38,11 @@
     </Key>
     <Property Name="MAKH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TENKH" Type="nvarchar" MaxLength="100" Nullable="false" />
-    <Property Name="SDT" Type="char" MaxLength="11" Nullable="false" />
-    <Property Name="DIACHI" Type="nvarchar" MaxLength="200" Nullable="false" />
-    <Property Name="EMAIL" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="USERNAME" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="PASS" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="SDT" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="DIACHI" Type="ntext" Nullable="false" />
+    <Property Name="EMAIL" Type="text" Nullable="false" />
+    <Property Name="USERNAME" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PASS" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="NGAYDANGKY" Type="date" Nullable="false" />
   </EntityType>
   <EntityType Name="LOAISP">
@@ -50,30 +50,33 @@
       <PropertyRef Name="MALOAI" />
     </Key>
     <Property Name="MALOAI" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="TENLOAI" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="TENLOAI" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="NSX">
     <Key>
       <PropertyRef Name="MANSX" />
     </Key>
     <Property Name="MANSX" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="TENNSX" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="TENNSX" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="QUANGCAO">
     <Key>
       <PropertyRef Name="MAQC" />
     </Key>
     <Property Name="MAQC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="LINK" Type="varchar" MaxLength="300" Nullable="false" />
+    <Property Name="HINHANH" Type="varchar(max)" />
+    <Property Name="LINK" Type="ntext" />
+    <Property Name="CLASS" Type="text" />
+    <Property Name="ALT" Type="text" />
   </EntityType>
   <EntityType Name="SANPHAM">
     <Key>
       <PropertyRef Name="MASP" />
     </Key>
     <Property Name="MASP" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="TENSP" Type="nvarchar" MaxLength="100" Nullable="false" />
-    <Property Name="MOTA" Type="nvarchar" MaxLength="300" />
-    <Property Name="HINHANH" Type="varchar" MaxLength="200" />
+    <Property Name="TENSP" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MOTA" Type="ntext" />
+    <Property Name="HINHANH" Type="varchar(max)" />
     <Property Name="NGAYCAPNHAT" Type="datetime" Nullable="false" />
     <Property Name="DONGIA" Type="int" Nullable="false" />
     <Property Name="THANHTOANTRUCTIEP" Type="nvarchar(max)" />

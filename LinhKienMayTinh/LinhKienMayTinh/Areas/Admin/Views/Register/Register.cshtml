@@ -1,6 +1,6 @@
-﻿
+﻿@model LinhKienMayTinh.Models.ADMINLOGIN
 @{
-    ViewBag.Title = "Register";
+    ViewBag.Title = "Đăng Ký Tài Khoản Quản Trị";
     Layout = null;
 }
 
@@ -11,13 +11,6 @@
     <link href="/Areas/Admin/Content/Register/css/style.css" rel='stylesheet' type='text/css' />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-    
-    <script>
-			function myFunction()
-			{
-				alert("Chúc Mừng Đăng Ký Thành Công");
-			}
-    </script>
 </head>
 <body>
     <!--start-login-form-->
@@ -27,21 +20,31 @@
         {
             @Html.AntiForgeryToken()
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <p style="color:red;">@ViewBag.ThongBaoXacNhan</p>
+            <p style="color:red;">@ViewBag.ThongBao</p>
+            <p style="color:red;">@ViewBag.ThongBaoUserName</p>
             <span>
-                <input type="text" name="TENAD" class="user" value="Họ Tên" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Họ Tên';}">
+                <input type="text" name="TENAD" class="user" value = 'Họ Tên'  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Họ Tên';}">
+                @Html.ValidationMessageFor(model => model.TENAD, "", new { @class = "text-danger" })
             </span>
             <span>
-                <input type="text" name="USERNAME" class="user" value="Tài Khoản" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Tài Khoản';}">
+                <input type="text" name="USERNAME" class="user" value = 'Tài Khoản'  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Tài Khoản';}">
+                @Html.ValidationMessageFor(model => model.USERNAME, "", new { @class = "text-danger" })
             </span>
             <span>
-                <input type="password" name="PASS" class="lock" value="Mật Khẩu" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Mật Khẩu';}">
+                <input type="password" name="PASS" class="lock" value = 'Mật Khẩu'  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Mật Khẩu';}">
+                @Html.ValidationMessageFor(model => model.PASS, "", new { @class = "text-danger" })
+            </span>
+            <span>
+                <input type="password" name="XACNHAN" class="lock" value = 'Mật Khẩu'  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Mật Khẩu';}">
             </span>
             <div class="submit">
-                <input type="submit" onclick="myFunction()" value="Đăng Ký Tài Khoản" />
-            </div>
+                <input type="submit" value="Đăng Ký Tài Khoản" />
 
+
+            </div>
         }
-       
+
     </div>
     <!--//End-login-form-->
 

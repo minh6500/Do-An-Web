@@ -6,7 +6,7 @@
 
 <div class="banner-top" style="background-color:#333;">
     <div class="container">
-        <h3>Giỏ Hàng</h3>
+        <h3>@ViewBag.Title</h3>
         <h4><a href="@Url.Action("Index", "TrangChu")">Trang Chủ</a><label>/</label>Liên Hệ</h4>
         <div class="clearfix"> </div>
     </div>
@@ -25,110 +25,136 @@
     <div>
         <div class="col-md-5 contact-right" style="float:left;">
             <img src="~/images/cac.jpg" class="img-responsive" alt="">
-            <button class="btn btn-primary" style="" onclick="timDuongDi()">Tìm đường đi</button>
+            <button class="timduongdi" onclick="timDuongDi()">
+                Tìm đường đi
+            </button>
             <div id="map"></div>
         </div>
     </div>
- 
-        @using (Html.BeginForm())
-            {
-            @Html.AntiForgeryToken()
-            <hr />
-            <div class="left">
-                <fieldset>
-                    <legend style="font-size:24px;color:#029241;font-weight:bold;">Điền Đơn Liên Hệ</legend>
 
-                    <div class="form-group">
-                        @Html.LabelFor(m => m.UserName, new { @class = "col-md-2 control-label" })
-                        <div class="col-md-10">
-                            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
-                            <p style="color:red;">@Html.ValidationMessageFor(m => m.UserName)</p>
-                        </div>
+    @using (Html.BeginForm())
+            {
+        @Html.AntiForgeryToken()
+        <hr />
+        <div class="left">
+            <fieldset>
+                <legend style="font-size:24px;color:#029241;font-weight:bold;">Điền Đơn Liên Hệ</legend>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.UserName, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+                        <p style="color:red;">@Html.ValidationMessageFor(m => m.UserName)</p>
                     </div>
-                    <div class="form-group">
-                        <p style="margin-top:20px;">@Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })</p>
-                        <div class="col-md-10">
-                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-                            <p style="color:red;">@Html.ValidationMessageFor(m => m.Email)</p>
-                        </div>
+                </div>
+
+                <div class="form-group">
+                    <p style="margin-top:20px;">@Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })</p>
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                        <p style="color:red;">@Html.ValidationMessageFor(m => m.Email)</p>
                     </div>
-                    <div class="form-group">
-                        <p style="margin-top:20px;">@Html.LabelFor(m => m.ChuDe, new { @class = "col-md-2 control-label" })</p>
-                        <div class="col-md-10">
-                            @Html.TextBoxFor(m => m.ChuDe, new { @class = "form-control" })
-                            <p style="color:red;">@Html.ValidationMessageFor(m => m.ChuDe)</p>
-                        </div>
+                </div>
+
+                <div class="form-group">
+                    <p style="margin-top:20px;">@Html.LabelFor(m => m.ChuDe, new { @class = "col-md-2 control-label" })</p>
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.ChuDe, new { @class = "form-control" })
+                        <p style="color:red;">@Html.ValidationMessageFor(m => m.ChuDe)</p>
                     </div>
-                    <div class="form-group">
-                        <p style="margin-top:20px;">@Html.LabelFor(m => m.NoiDung, new { @class = "col-md-2 control-label" })</p>
-                        <div class="col-md-10">
-                            <textarea name="NoiDung" style="margin-top:20px;" >@Model.NoiDung</textarea>
-                            <p style="color:red;">@Html.ValidationMessageFor(m => m.NoiDung)</p>
-                        </div>
+                </div>
+
+                <div class="form-group">
+                    <p style="margin-top:20px;">@Html.LabelFor(m => m.NoiDung, new { @class = "col-md-2 control-label" })</p>
+                    <div class="col-md-10">
+                        @Html.TextAreaFor(m => m.ChuDe)
+                        <p style="color:red;">@Html.ValidationMessageFor(m => m.NoiDung)</p>
                     </div>
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <input type="submit" class="btn btn-default" value="Gửi Liên Hệ" />
-                        </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" class="btn btn-default" value="Gửi Liên Hệ" />
                     </div>
-                    <div class="clearfix"></div>
-                </fieldset>
-            </div>
-        }
- 
+                </div>
+                <div class="clearfix"></div>
+            </fieldset>
+        </div>
+    }
+
 </div>
 <div class="clearfix"></div>
 
 
 
-            <style>
-                .left {
-                    width: 55%;
-                    height: auto;
-                    float:left;
-                }
+<style>
+    .left {
+        width: 55%;
+        height: auto;
+        float: left;
+    }
 
-                .form-control {
-                    width: 50%;
-                    height: 35px;
-                    margin-top: 20px;
-                }
+    .form-control {
+        width: 50%;
+        height: 35px;
+        margin-top: 20px;
+    }
 
-                .col-md-2 {
-                    margin-top: 20px;
-                }
+    .col-md-2 {
+        margin-top: 20px;
+    }
 
-                .col-md-offset-2 {
-                    margin-top: 20px;
-                }
+    .col-md-offset-2 {
+        margin-top: 20px;
+    }
 
-                input[type="submit"]:hover {
-                    background-color: #FAB005;
-                    color: #fff;
-                }
-                .form-control{
-                    width:100%;
-                }
+    input[type="submit"]:hover {
+        background-color: #FAB005;
+        color: #fff;
+    }
 
-                input[type="submit"] {
-                    border: none;
-                    width:auto;
-                    height: 50px;
-                    margin-top: 0.5em;
-                    margin-bottom: 1em;
-                    font-size: 1em;
-                    color: #fff;
-                    letter-spacing: 1px;
-                    outline: none;
-                    background: #029241;
-                    transition: 0.5s all ease;
-                    -webkit-transition: 0.5s all ease;
-                    -moz-transition: 0.5s all ease;
-                    -o-transition: 0.5s all ease;
-                    -webkit-appearance: none;
-                }
-                
-            </style>
+    .form-control {
+        width: 100%;
+    }
+
+    input[type="submit"] {
+        border: none;
+        width: auto;
+        height: 50px;
+        margin-top: 0.5em;
+        margin-bottom: 1em;
+        font-size: 1em;
+        color: #fff;
+        letter-spacing: 1px;
+        outline: none;
+        background: #029241;
+        transition: 0.5s all ease;
+        -webkit-transition: 0.5s all ease;
+        -moz-transition: 0.5s all ease;
+        -o-transition: 0.5s all ease;
+        -webkit-appearance: none;
+    }
+
+    .timduongdi:hover {
+        background-color: #FAB005;
+        color: #fff;
+    }
+
+    .timduongdi {
+        width:20%;
+        height:30px;
+        color:#fff;
+        border:none;
+        border-radius:4px;
+        margin-bottom: 20px;
+        background: #029241;
+        transition: 0.5s all ease;
+        -webkit-transition: 0.5s all ease;
+        -moz-transition: 0.5s all ease;
+        -o-transition: 0.5s all ease;
+        -webkit-appearance: none;
+    }
+</style>
 <style>
     #map {
         width: 100%;

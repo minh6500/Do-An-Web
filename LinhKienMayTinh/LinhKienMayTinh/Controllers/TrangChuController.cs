@@ -18,6 +18,7 @@ namespace LinhKienMayTinh.Controllers
         }
         public ActionResult Index()
         {
+            ViewBag.TrangChu = "Trang Chủ";
             var sp = SanPhamMoi(8);
             return View(sp);
         }

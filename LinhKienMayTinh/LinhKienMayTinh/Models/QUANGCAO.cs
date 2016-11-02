@@ -15,6 +15,9 @@ namespace LinhKienMayTinh.Models
     public partial class QUANGCAO
     {
         public int MAQC { get; set; }
+        public string HINHANH { get; set; }
         public string LINK { get; set; }
+        public string CLASS { get; set; }
+        public string ALT { get; set; }
     }
 }

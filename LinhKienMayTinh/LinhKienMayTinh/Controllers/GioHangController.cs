@@ -15,7 +15,7 @@ namespace LinhKienMayTinh.Controllers
         public List<GioHang> LayGioHang()
         {                                                 //ép kiểu          
             List<GioHang> lstGioHang = Session["GioHang"] as List<GioHang>;
-            if(lstGioHang == null)
+            if (lstGioHang == null)
             {
                 //Nếu giỏ hàng chưa tồn tại thì mình tiến hành khởi tạo list giỏ hàng
                 lstGioHang = new List<GioHang>();
@@ -25,7 +25,7 @@ namespace LinhKienMayTinh.Controllers
         }
 
         //Thêm giỏ hàng
-        public ActionResult ThemGioHang(int id,string strURL)
+        public ActionResult ThemGioHang(int id, string strURL)
         {
             //Lấy session giỏ hàng
             List<GioHang> lstGioHang = LayGioHang();
@@ -47,7 +47,7 @@ namespace LinhKienMayTinh.Controllers
             }
         }
         //Cập nhật giỏ hàng
-        public ActionResult CapNhatGioHang(int iMASP,FormCollection f)
+        public ActionResult CapNhatGioHang(int iMASP, FormCollection f)
         {
             //Lấy giỏ hàng ra từ session
             List<GioHang> lstGioHang = LayGioHang();
@@ -68,7 +68,7 @@ namespace LinhKienMayTinh.Controllers
             List<GioHang> lstGioHang = LayGioHang();
             //Kiểm tra sp có tồn tại trong session[GioHang] hay không
             GioHang ghsanpham = lstGioHang.SingleOrDefault(n => n.iMASP == iMASP);
-            if(ghsanpham !=null)
+            if (ghsanpham != null)
             {
                 lstGioHang.RemoveAll(n => n.iMASP == iMASP);
             }
@@ -101,7 +101,7 @@ namespace LinhKienMayTinh.Controllers
             {
                 iTongSoLuong = lstGioHang.Sum(n => n.iSOLUONG);
             }
-            
+
             return iTongSoLuong;
         }
 
@@ -114,14 +114,14 @@ namespace LinhKienMayTinh.Controllers
             {
                 dTongTien = lstGioHang.Sum(n => n.dTHANHTIEN);
             }
-            
+
             return dTongTien;
         }
 
         //Tạo Giỏ Hàng Partial chứa tổng số lượng và tổng tiền
         public ActionResult GioHangPartial()
         {
-            if(TongSoLuong() == 0 )
+            if (TongSoLuong() == 0)
             {
                 return PartialView();
             }
@@ -148,44 +148,46 @@ namespace LinhKienMayTinh.Controllers
             }
             return View();
         }
-        
-        [HttpPost, ActionName("DatHang")]
+
+        [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult DonDatHang(DONDATHANG ddh)
+        public ActionResult DatHang(DONDATHANG dONDATHANG)
         {
-            
+
             //Thêm đơn hàng
             List<GioHang> gh = LayGioHang();
-            KHACHHANG kh = (KHACHHANG) Session["TaiKhoan"];
-            ddh.MAKH = kh.MAKH;
-            ddh.NGAYDAT = DateTime.Now;           
-            ddh.TINHTRANGGIAOHANG = false;
-            ddh.TINHTRANGTHANHTOAN = false;
+            KHACHHANG kh = (KHACHHANG)Session["TaiKhoan"];
+            dONDATHANG.MAKH = kh.MAKH;
+            dONDATHANG.NGAYDAT = DateTime.Now;
+            dONDATHANG.TINHTRANGGIAOHANG = false;
+            dONDATHANG.TINHTRANGTHANHTOAN = false;
+            dONDATHANG.NGAYDAT = DateTime.Now;
             if (ModelState.IsValid)
             {
-                db.DONDATHANGs.Add(ddh);
+                db.DONDATHANGs.Add(dONDATHANG);
                 db.SaveChanges();
+                //Thêm chi tiết đơn hàng
+                foreach (var item in gh)
+                {
+                    CTDDH ctdh = new CTDDH();
+                    ctdh.MAD = dONDATHANG.MAD;
+                    ctdh.MASP = item.iMASP;
+                    ctdh.SOLUONG = item.iSOLUONG;
+                    ctdh.DONGIA = (int)item.dDONGIA;
+                    db.CTDDHs.Add(ctdh);
+                }
+                db.SaveChanges();
+                return RedirectToAction("Index", "TrangChu");
             }
-            //Thêm chi tiết đơn hàng
-            foreach (var item in gh)
-            {
-                CTDDH ctdh = new CTDDH();
-                ctdh.MAD = ddh.MAD;
-                ctdh.MASP = item.iMASP;
-                ctdh.SOLUONG = item.iSOLUONG;
-                ctdh.DONGIA = (int)item.dDONGIA;
-                db.CTDDHs.Add(ctdh);
-            }
-            db.SaveChanges();
-            return RedirectToAction("Index","TrangChu");
+            return View();
         }
         #endregion
 
         public ActionResult ThanhToanThanhCong()
         {
-            if(Session["taikhoan"] == null)
+            if (Session["taikhoan"] == null)
             {
-                return RedirectToAction("DangNhap","DangKyDangNhap");
+                return RedirectToAction("DangNhap", "DangKyDangNhap");
             }
             return View();
         }

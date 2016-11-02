@@ -19,11 +19,33 @@ namespace LinhKienMayTinh.Areas.Admin.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Register(ADMINLOGIN ad)
+        public ActionResult Register(ADMINLOGIN ad, FormCollection f)
         {
+            var xacnhan = f["XACNHAN"];
+            var ten = f["TENAD"];
+            var taikhoan = f["USERNAME"];
+            var pass = f["PASS"];
+            var admin = db.ADMINLOGINs.ToList();
+            foreach (var item in admin)
+            {
+                if (taikhoan == item.USERNAME)
+                {
+                    ViewBag.ThongBaoUserName = "Tên tài khoản đã có người sử dụng";
+                    return View();
+                }
+            }
+            if (ten == "Họ Tên" || taikhoan == "Tài Khoản" || pass == "Mật Khẩu" || xacnhan == "Mật Khẩu")
+            {
+                ViewBag.ThongBao = "Vui Lòng Nhập Đầy Đủ Dữ Liệu";
+                return View();
+            }
             if (ModelState.IsValid)
             {
-                //Insert dữ liệu vào bảng khách hàng
+                if (ad.PASS != xacnhan)
+                {
+                    ViewBag.ThongBaoXacNhan = "Xác Nhận Mật Khẩu Không Chính Xác !";
+                    return View();
+                }
                 db.ADMINLOGINs.Add(ad);
                 //lưu vào csdl
                 db.SaveChanges();

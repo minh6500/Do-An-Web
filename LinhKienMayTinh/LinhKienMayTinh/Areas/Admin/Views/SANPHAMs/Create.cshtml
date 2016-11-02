@@ -35,8 +35,8 @@
                 <!--name của thẻ input phải cùng tên với tham số bên controller-->
                 <input type="file" name="fileUpload" />
                 @Html.ValidationMessageFor(model => model.HINHANH, "", new { @class = "text-danger" })
-                <!--Thông báo trùng tên-->
-                @ViewBag.ThongBao
+                
+                <p style="color:darkred">@ViewBag.ThongBao</p>
             </div>
         </div>
 

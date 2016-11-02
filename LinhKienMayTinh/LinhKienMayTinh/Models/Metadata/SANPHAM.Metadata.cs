@@ -21,11 +21,11 @@ namespace LinhKienMayTinh.Models
             public Nullable<System.DateTime> NGAYCAPNHAT { get; set; }
 
             [Display(Name = "Tên Sản Phẩm")]
-            [Required(ErrorMessage = "{0} Vui lòng nhập dữ liệu cho trường này")]
+            [Required(ErrorMessage = "Vui lòng nhập dữ liệu cho trường này")]
             public string TENSP { get; set; }
 
             [Display(Name = "Đơn Giá")]
-            [Required(ErrorMessage = "{0} Vui lòng nhập dữ liệu cho trường này")]
+            [Required(ErrorMessage = "Vui lòng nhập dữ liệu cho trường này")]
             public double DONGIA { get; set; }
 
             [Display (Name ="Mã Sản Phẩm")]
@@ -34,8 +34,7 @@ namespace LinhKienMayTinh.Models
             [Display(Name = "Mô Tả")]
             public string MOTA { get; set; }
 
-            [Display(Name = "Hình Ảnh")]
-            [Required(ErrorMessage = "{0} Vui lòng nhập dữ liệu cho trường này")]
+            [Display(Name = "Hình Ảnh")]            
             public string HINHANH { get; set; }
 
 

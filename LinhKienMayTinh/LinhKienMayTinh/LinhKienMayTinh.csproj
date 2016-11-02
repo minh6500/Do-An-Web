@@ -1171,6 +1171,7 @@
     <Content Include="Areas\Admin\Views\NSXes\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\NSXes\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Search\SearchAdmin.cshtml" />
+    <Content Include="Areas\Admin\Views\DONDATHANGs\CHITIET.cshtml" />
     <EntityDeploy Include="Models\QLBanHang.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>QLBanHang.Designer.cs</LastGenOutput>
@@ -1178,7 +1179,9 @@
     <Content Include="Models\QLBanHang.edmx.diagram">
       <DependentUpon>QLBanHang.edmx</DependentUpon>
     </Content>
-    <Content Include="Areas\Admin\Views\DONDATHANGs\CHITIET.cshtml" />
+    <Content Include="Areas\Admin\Views\QUANGCAOs\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\QUANGCAOs\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\QUANGCAOs\Index.cshtml" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="scripts\jquery-1.10.2.js" />
     <Content Include="scripts\jquery-1.10.2.min.js" />
@@ -1201,6 +1204,7 @@
     <Compile Include="Areas\Admin\Controllers\LOAISPsController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\NSXesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\QUANGCAOsController.cs" />
     <Compile Include="Areas\Admin\Controllers\RegisterController.cs" />
     <Compile Include="Areas\Admin\Controllers\SANPHAMsController.cs" />
     <Compile Include="Areas\Admin\Controllers\SearchController.cs" />
@@ -1209,6 +1213,7 @@
     <Compile Include="Controllers\LienHeController.cs" />
     <Compile Include="Controllers\LoaiSPController.cs" />
     <Compile Include="Controllers\NSXController.cs" />
+    <Compile Include="Controllers\QuangCaoController.cs" />
     <Compile Include="Controllers\SanPhamController.cs" />
     <Compile Include="Controllers\TimKiemController.cs" />
     <Compile Include="Controllers\TrangChuController.cs" />
@@ -1233,10 +1238,12 @@
     <Compile Include="Models\LOAISP.cs">
       <DependentUpon>QLBanHang.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Metadata\ADMINLOGIN.Metadata.cs" />
     <Compile Include="Models\Metadata\DONDATHANG.Metadata.cs" />
     <Compile Include="Models\Metadata\KHACHHANG.Metadata.cs" />
     <Compile Include="Models\Metadata\LOAISP.Metadata.cs" />
     <Compile Include="Models\Metadata\NSX.Metadata.cs" />
+    <Compile Include="Models\Metadata\QUANGCAO.Metadata.cs" />
     <Compile Include="Models\Metadata\SANPHAM.Metadata.cs" />
     <Compile Include="Models\NSX.cs">
       <DependentUpon>QLBanHang.tt</DependentUpon>
@@ -1287,7 +1294,7 @@
     <Content Include="Views\GioHang\GioHangPartial.cshtml" />
     <Content Include="Views\GioHang\DatHang.cshtml" />
     <Content Include="Views\LienHe\Sent.cshtml" />
-    <Content Include="Views\LienHe\LienHe.cshtml" />
+    <Content Include="Views\LienHe\abc.cshtml" />
     <Content Include="Views\TimKiem\KetQuaTimKiem.cshtml" />
     <Content Include="tinymce\js\tinymce\langs\readme.md" />
     <Content Include="tinymce\js\tinymce\skins\lightgray\fonts\tinymce-small.eot" />
@@ -1299,6 +1306,8 @@
     <Content Include="Views\DangKyDangNhap\ThongTinTaiKhoan.cshtml" />
     <Content Include="Views\DangKyDangNhap\DoiMatKhau.cshtml" />
     <Content Include="Views\GioHang\ThanhToanThanhCong.cshtml" />
+    <Content Include="Views\QuangCao\QuangCao.cshtml" />
+    <Content Include="Views\LienHe\LienHe.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -33,11 +33,11 @@ namespace LinhKienMayTinh.Models
 
             [Display(Name = "Tình Trạng Thanh Toán")]
             [Required(ErrorMessage = "Vui lòng nhập dữ liệu cho trường này ")]
-            public string TINHTRANGTHANHTOAN { get; set; }
+            public Nullable<bool> TINHTRANGTHANHTOAN { get; set; }
 
             [Display(Name = "Tình Trạng Giao Hàng")]
             [Required(ErrorMessage = "Vui lòng nhập dữ liệu cho trường này ")]
-            public string TINHTRANGGIAOHANG { get; set; }
+            public Nullable<bool> TINHTRANGGIAOHANG { get; set; }
         }
     }
 }

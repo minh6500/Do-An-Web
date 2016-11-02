@@ -54,7 +54,7 @@
                                 <tbody>
                                     <tr>
                                         <td>
-                                            <img src="~/images/@Html.DisplayFor(modelItem => item.HINHANH)" class="img-responsive" />
+                                            <img src="~/images/@Html.DisplayFor(modelItem => item.HINHANH)" class="img-responsive" width="100" height="100" />
                                         </td>
                                         <td>
                                             @Html.DisplayFor(modelItem => item.TENSP)
@@ -112,10 +112,3 @@ Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.Page
 <!-- Custom Theme JavaScript -->
 <script src="~/Areas/Admin/Content/dist/js/sb-admin-2.js"></script>
 <!-- Page-Level Demo Scripts - Tables - Use for reference -->
-<script>
-    $(document).ready(function() {
-        $('#dataTables-example').DataTable({
-                responsive: true
-        });
-    });
-</script>

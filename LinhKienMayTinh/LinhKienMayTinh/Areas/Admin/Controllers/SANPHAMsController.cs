@@ -67,6 +67,11 @@ namespace LinhKienMayTinh.Areas.Admin.Controllers
 
             ViewBag.MALOAI = new SelectList(db.LOAISPs, "MALOAI", "TENLOAI", sANPHAM.MALOAI);
             ViewBag.MANSX = new SelectList(db.NSXes, "MANSX", "TENNSX", sANPHAM.MANSX);
+            if(fileUpload == null)
+            {
+                ViewBag.ThongBao = "Vui lòng nhập dữ liệu hình ảnh";
+                return View();
+            }
             //Lưu Tên File
             var fileName = Path.GetFileName(fileUpload.FileName);
             //Lưu đường dẫn của file
@@ -109,15 +114,19 @@ namespace LinhKienMayTinh.Areas.Admin.Controllers
         {
             ViewBag.MALOAI = new SelectList(db.LOAISPs, "MALOAI", "TENLOAI", sANPHAM.MALOAI);
             ViewBag.MANSX = new SelectList(db.NSXes, "MANSX", "TENNSX", sANPHAM.MANSX);
+            if (fileUpload == null)
+            {
+                ViewBag.ThongBao = "Vui lòng nhập dữ liệu hình ảnh";
+                return View();
+            }
             var fileName = Path.GetFileName(fileUpload.FileName);
             //Lưu đường dẫn của file
             var path = Path.Combine(Server.MapPath("~/images"), fileName);
-
+            //Kiểm tra hình ảnh
+            fileUpload.SaveAs(path);
+            sANPHAM.HINHANH = fileUpload.FileName;
             if (ModelState.IsValid)
             {
-                //Kiểm tra hình ảnh
-                fileUpload.SaveAs(path);
-                sANPHAM.HINHANH = fileUpload.FileName;
                 db.Entry(sANPHAM).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

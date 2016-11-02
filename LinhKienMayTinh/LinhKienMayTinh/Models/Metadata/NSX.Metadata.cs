@@ -14,6 +14,7 @@ namespace LinhKienMayTinh.Models
         internal sealed class NSXMetadata
         {
             [Display(Name = "Nhà Sản Xuất")]
+            [Required(ErrorMessage = "Vui lòng nhập dữ liệu cho trường này")]
             public string TENNSX { get; set; }
         }
     }
