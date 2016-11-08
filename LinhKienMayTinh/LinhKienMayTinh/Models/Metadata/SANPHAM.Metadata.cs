@@ -37,8 +37,8 @@ namespace LinhKienMayTinh.Models
             [Display(Name = "Hình Ảnh")]            
             public string HINHANH { get; set; }
 
-
-
+            [Display(Name ="Thanh Toán Trực Tuyến")]
+            public string THANHTOANTRUCTIEP { get; set; }
         }
     }
 }

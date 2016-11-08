@@ -116,6 +116,7 @@ D:\web\Do-An-Web\LinhKienMayTinh\LinhKienMayTinh\bin\roslyn\Microsoft.CSharp.Cor
 D:\web\Do-An-Web\LinhKienMayTinh\LinhKienMayTinh\bin\roslyn\Microsoft.VisualBasic.Core.targets
 D:\web\Do-An-Web\LinhKienMayTinh\LinhKienMayTinh\bin\roslyn\System.Collections.Immutable.dll
 D:\web\Do-An-Web\LinhKienMayTinh\LinhKienMayTinh\bin\roslyn\System.Reflection.Metadata.dll
+D:\web\Do-An-Web\LinhKienMayTinh\LinhKienMayTinh\bin\roslyn\tools.zip
 D:\web\Do-An-Web\LinhKienMayTinh\LinhKienMayTinh\bin\roslyn\vbc.exe
 D:\web\Do-An-Web\LinhKienMayTinh\LinhKienMayTinh\bin\roslyn\VBCSCompiler.exe
 D:\web\Do-An-Web\LinhKienMayTinh\LinhKienMayTinh\bin\roslyn\VBCSCompiler.exe.config
@@ -159,5 +160,3 @@ D:\web\Do-An-Web\LinhKienMayTinh\LinhKienMayTinh\bin\System.Web.Helpers.xml
 D:\web\Do-An-Web\LinhKienMayTinh\LinhKienMayTinh\bin\System.Web.Mvc.xml
 D:\web\Do-An-Web\LinhKienMayTinh\LinhKienMayTinh\obj\Debug\LinhKienMayTinh.dll
 D:\web\Do-An-Web\LinhKienMayTinh\LinhKienMayTinh\obj\Debug\LinhKienMayTinh.pdb
-D:\web\Do-An-Web\LinhKienMayTinh\LinhKienMayTinh\bin\roslyn\tools.zip
-D:\web\Do-An-Web\LinhKienMayTinh\LinhKienMayTinh\obj\Debug\LinhKienMayTinh.csprojResolveAssemblyReference.cache

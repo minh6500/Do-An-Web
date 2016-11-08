@@ -31,7 +31,9 @@
                                         <th>
                                             @Html.DisplayNameFor(model => model.First().TENNSX)
                                         </th>
-                                        
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.First().URL)
+                                        </th>
                                     </tr>
                                 </thead>
                                 @foreach (var item in Model)
@@ -40,6 +42,9 @@
                                         <tr>
                                             <td>
                                                 @Html.DisplayFor(modelItem => item.TENNSX)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.URL)
                                             </td>
                                             <td>
                                                 @Html.ActionLink("Sửa", "Edit", new { id = item.MANSX }) |

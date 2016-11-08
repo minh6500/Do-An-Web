@@ -43,5 +43,10 @@ namespace LinhKienMayTinh.Controllers
             }
             return View(sp);
         }
+        public ActionResult SanPhamKhac()
+        {
+            var rd = db.SANPHAMs.LaySanPhamNgauNhien(4).ToList();
+            return View(rd);
+        }
     }
 }

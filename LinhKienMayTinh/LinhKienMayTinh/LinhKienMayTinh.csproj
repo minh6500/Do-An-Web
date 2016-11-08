@@ -579,8 +579,6 @@
     <Content Include="Areas\Admin\Content\bower_components\raphael\license.txt" />
     <Content Include="Areas\Admin\Content\bower_components\raphael\raphael-min.js" />
     <Content Include="Areas\Admin\Content\bower_components\raphael\raphael.js" />
-    <Content Include="Areas\Admin\Content\DangNhap\css\style.css" />
-    <Content Include="Areas\Admin\Content\DangNhap\images\bg.jpg" />
     <Content Include="Areas\Admin\Content\dist\css\sb-admin-2.css" />
     <Content Include="Areas\Admin\Content\dist\css\timeline.css" />
     <Content Include="Areas\Admin\Content\dist\js\sb-admin-2.js" />
@@ -738,7 +736,6 @@
     <Content Include="Areas\Admin\Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <Content Include="Areas\Admin\Views\loai\loai.cshtml" />
-    <Content Include="Areas\Admin\Views\SANPHAMs\SanPhamTheoLoai.cshtml" />
     <Content Include="Areas\Admin\Views\DONDATHANGs\Create.cshtml" />
     <Content Include="Areas\Admin\Views\DONDATHANGs\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\DONDATHANGs\Edit.cshtml" />
@@ -749,11 +746,6 @@
     <Content Include="Areas\Admin\Views\ADMINLOGINs\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\ADMINLOGINs\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Login\Login.cshtml" />
-    <Content Include="Areas\Admin\Views\SANPHAMs\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\SANPHAMs\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\SANPHAMs\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\SANPHAMs\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\SANPHAMs\Index.cshtml" />
     <Content Include="Areas\Admin\Content\bower_components\bootstrap\.bower.json" />
     <Content Include="Areas\Admin\Content\bower_components\bootstrap\bower.json" />
     <Content Include="Areas\Admin\Content\bower_components\bootstrap\CHANGELOG.md" />
@@ -1182,6 +1174,12 @@
     <Content Include="Areas\Admin\Views\QUANGCAOs\Details.cshtml" />
     <Content Include="Areas\Admin\Views\QUANGCAOs\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\QUANGCAOs\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\SP\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\SP\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\SP\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\SP\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\SP\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\SP\SanPhamTheoLoai.cshtml" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="scripts\jquery-1.10.2.js" />
     <Content Include="scripts\jquery-1.10.2.min.js" />
@@ -1206,8 +1204,8 @@
     <Compile Include="Areas\Admin\Controllers\NSXesController.cs" />
     <Compile Include="Areas\Admin\Controllers\QUANGCAOsController.cs" />
     <Compile Include="Areas\Admin\Controllers\RegisterController.cs" />
-    <Compile Include="Areas\Admin\Controllers\SANPHAMsController.cs" />
     <Compile Include="Areas\Admin\Controllers\SearchController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SPController.cs" />
     <Compile Include="Controllers\DangKyDangNhapController.cs" />
     <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\LienHeController.cs" />
@@ -1239,6 +1237,7 @@
       <DependentUpon>QLBanHang.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Metadata\ADMINLOGIN.Metadata.cs" />
+    <Compile Include="Models\Metadata\CTDDH.Metadata.cs" />
     <Compile Include="Models\Metadata\DONDATHANG.Metadata.cs" />
     <Compile Include="Models\Metadata\KHACHHANG.Metadata.cs" />
     <Compile Include="Models\Metadata\LOAISP.Metadata.cs" />
@@ -1269,6 +1268,7 @@
     <Compile Include="Models\SANPHAM.cs">
       <DependentUpon>QLBanHang.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SanPhamKhac.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1294,7 +1294,6 @@
     <Content Include="Views\GioHang\GioHangPartial.cshtml" />
     <Content Include="Views\GioHang\DatHang.cshtml" />
     <Content Include="Views\LienHe\Sent.cshtml" />
-    <Content Include="Views\LienHe\abc.cshtml" />
     <Content Include="Views\TimKiem\KetQuaTimKiem.cshtml" />
     <Content Include="tinymce\js\tinymce\langs\readme.md" />
     <Content Include="tinymce\js\tinymce\skins\lightgray\fonts\tinymce-small.eot" />
@@ -1308,6 +1307,7 @@
     <Content Include="Views\GioHang\ThanhToanThanhCong.cshtml" />
     <Content Include="Views\QuangCao\QuangCao.cshtml" />
     <Content Include="Views\LienHe\LienHe.cshtml" />
+    <Content Include="Views\TrangChu\SanPhamKhac.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1317,6 +1317,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Content\DangNhap\data\" />
+    <Folder Include="Areas\Admin\Content\DangNhap\dist\" />
+    <Folder Include="Areas\Admin\Content\DangNhap\js\" />
+    <Folder Include="Areas\Admin\Content\DangNhap\less\" />
+    <Folder Include="Areas\Admin\Content\DangNhap\pages\" />
+    <Folder Include="Areas\Admin\Content\DangNhap\vendor\" />
     <Folder Include="Areas\Admin\Models\" />
   </ItemGroup>
   <ItemGroup>

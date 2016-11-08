@@ -51,6 +51,7 @@
     </Key>
     <Property Name="MALOAI" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TENLOAI" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="URL" Type="text" />
   </EntityType>
   <EntityType Name="NSX">
     <Key>
@@ -58,6 +59,7 @@
     </Key>
     <Property Name="MANSX" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TENNSX" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="URL" Type="text" />
   </EntityType>
   <EntityType Name="QUANGCAO">
     <Key>
@@ -80,6 +82,7 @@
     <Property Name="NGAYCAPNHAT" Type="datetime" Nullable="false" />
     <Property Name="DONGIA" Type="int" Nullable="false" />
     <Property Name="THANHTOANTRUCTIEP" Type="nvarchar(max)" />
+    <Property Name="URL" Type="text" />
     <Property Name="MALOAI" Type="int" Nullable="false" />
     <Property Name="MANSX" Type="int" Nullable="false" />
   </EntityType>

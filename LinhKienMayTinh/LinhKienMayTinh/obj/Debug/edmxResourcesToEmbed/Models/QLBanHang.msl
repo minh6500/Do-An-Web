@@ -52,6 +52,7 @@
     <EntitySetMapping Name="LOAISPs">
       <EntityTypeMapping TypeName="QLBANHANGModel.LOAISP">
         <MappingFragment StoreEntitySet="LOAISP">
+          <ScalarProperty Name="URL" ColumnName="URL" />
           <ScalarProperty Name="MALOAI" ColumnName="MALOAI" />
           <ScalarProperty Name="TENLOAI" ColumnName="TENLOAI" />
         </MappingFragment>
@@ -60,6 +61,7 @@
     <EntitySetMapping Name="NSXes">
       <EntityTypeMapping TypeName="QLBANHANGModel.NSX">
         <MappingFragment StoreEntitySet="NSX">
+          <ScalarProperty Name="URL" ColumnName="URL" />
           <ScalarProperty Name="MANSX" ColumnName="MANSX" />
           <ScalarProperty Name="TENNSX" ColumnName="TENNSX" />
         </MappingFragment>
@@ -79,6 +81,7 @@
     <EntitySetMapping Name="SANPHAMs">
       <EntityTypeMapping TypeName="QLBANHANGModel.SANPHAM">
         <MappingFragment StoreEntitySet="SANPHAM">
+          <ScalarProperty Name="URL" ColumnName="URL" />
           <ScalarProperty Name="MASP" ColumnName="MASP" />
           <ScalarProperty Name="TENSP" ColumnName="TENSP" />
           <ScalarProperty Name="MOTA" ColumnName="MOTA" />

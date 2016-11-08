@@ -22,6 +22,7 @@
                     <div class="form-horizontal">
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                         @Html.HiddenFor(model => model.MAKH)
+                        @Html.HiddenFor(model => model.NGAYDANGKY)
 
                         <div class="form-group">
                             @Html.LabelFor(model => model.TENKH, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -68,14 +69,6 @@
                             <div class="col-md-10">
                                 @Html.EditorFor(model => model.PASS, new { htmlAttributes = new { @class = "form-control" } })
                                 @Html.ValidationMessageFor(model => model.PASS, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            @Html.LabelFor(model => model.NGAYDANGKY, htmlAttributes: new { @class = "control-label col-md-2" })
-                            <div class="col-md-10">
-                                @Html.EditorFor(model => model.NGAYDANGKY, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.NGAYDANGKY, "", new { @class = "text-danger" })
                             </div>
                         </div>
 

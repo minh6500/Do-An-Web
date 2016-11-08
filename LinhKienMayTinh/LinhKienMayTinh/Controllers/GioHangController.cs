@@ -146,11 +146,17 @@ namespace LinhKienMayTinh.Controllers
             {
                 return RedirectToAction("Index", "TrangChu");
             }
+            List<GioHang> gh = LayGioHang();
+            if (gh.Count == 0)
+            {
+                return RedirectToAction("Index","TrangChu");
+            }
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
         public ActionResult DatHang(DONDATHANG dONDATHANG)
         {
 
@@ -161,7 +167,6 @@ namespace LinhKienMayTinh.Controllers
             dONDATHANG.NGAYDAT = DateTime.Now;
             dONDATHANG.TINHTRANGGIAOHANG = false;
             dONDATHANG.TINHTRANGTHANHTOAN = false;
-            dONDATHANG.NGAYDAT = DateTime.Now;
             if (ModelState.IsValid)
             {
                 db.DONDATHANGs.Add(dONDATHANG);

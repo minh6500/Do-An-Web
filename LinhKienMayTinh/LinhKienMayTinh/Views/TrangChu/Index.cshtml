@@ -33,12 +33,12 @@
                 {
                     <div class="col-md-3 pro-1">
                         <div class="col-m">
-                            <a href="@Url.Action("XemChiTiet","TrangChu",new { id = @item.MASP })" data-toggle="modal" data-target="#myModal17" class="offer-img">
+                            <a href="/chi-tiet-san-pham/@item.URL-@item.MASP" data-toggle="modal" data-target="#myModal17" class="offer-img">
                                 <img src="~/images/@item.HINHANH" class="img-responsive" alt="">
                             </a>
                             <div class="mid-1">
                                 <div class="women">
-                                    <h6><a href="@Url.Action("XemChiTiet","TrangChu",new { id = @item.MASP })">@RutGon(item.TENSP,19)</a></h6>
+                                    <h6><a href="/chi-tiet-san-pham/@item.URL-@item.MASP">@RutGon(item.TENSP,19)</a></h6>
                                 </div>
                                 <div class="mid-2">
                                     <p> @*@<label>@item.DONGIA</label>*@<em class="item_price">@String.Format("{0:0,0}",item.DONGIA) VNĐ</em></p>
@@ -50,7 +50,7 @@
                                 @using (Html.BeginForm("ThemGioHang", "GioHang", new { @id = @item.MASP, @strURL = Request.Url.ToString() }))
                                 {
                                 <div class="add add-2">
-                                    <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="product 1" data-summary="summary 1" data-price="6.00" data-quantity="1" data-image="~/images/of16.png">Đặt Hàng</button>
+                                    <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="product 1" data-summary="summary 1" data-price="6.00" data-quantity="1" data-image="~/images/of16.png">Đặt Mua</button>
                                 </div>
                                 }
                             </div>

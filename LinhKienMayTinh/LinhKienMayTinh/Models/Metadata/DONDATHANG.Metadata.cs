@@ -15,6 +15,8 @@ namespace LinhKienMayTinh.Models
         //chỉ sử dụng cho 1 class này không cho kế thừa
         internal sealed class DONDATHANGMetadata
         {
+            [Display(Name = "Mã Đơn Hàng")]
+            public int MAD { get; set; }
 
             [Display(Name = "Ngày Đặt")]
             public System.DateTime NGAYDAT { get; set; }
@@ -32,12 +34,11 @@ namespace LinhKienMayTinh.Models
             public string SDT { get; set; }
 
             [Display(Name = "Tình Trạng Thanh Toán")]
-            [Required(ErrorMessage = "Vui lòng nhập dữ liệu cho trường này ")]
             public Nullable<bool> TINHTRANGTHANHTOAN { get; set; }
 
             [Display(Name = "Tình Trạng Giao Hàng")]
-            [Required(ErrorMessage = "Vui lòng nhập dữ liệu cho trường này ")]
             public Nullable<bool> TINHTRANGGIAOHANG { get; set; }
+
         }
     }
 }

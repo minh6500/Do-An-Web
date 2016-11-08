@@ -1,0 +1,44 @@
+﻿@using LinhKienMayTinh.Models;
+@model List<SANPHAM>
+@{
+    ViewBag.Title = "SanPhamKhac";
+    Layout = null;
+}
+
+@helper RutGon(string input, int length)
+{
+if (input.Length < length)
+{
+        @input
+}
+else
+{
+        @input.Substring(0, length)<text>...</text>
+}
+}
+<div class=" con-w3l">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-3 pro-1">
+            <div class="col-m">
+                <a href="/chi-tiet-san-pham/@item.URL-@item.MASP" data-toggle="modal" data-target="#myModal17" class="offer-img">
+                    <img src="~/images/@item.HINHANH" class="img-responsive" alt="">
+                </a>
+                <div class="mid-1">
+                    <div class="women">
+                        <h6><a href="/chi-tiet-san-pham/@item.URL-@item.MASP">@RutGon(item.TENSP, 19)</a></h6>
+                    </div>
+                    <div class="mid-2">
+                        <p> @*@<label>@item.DONGIA</label>*@<em class="item_price">@String.Format("{0:0,0}", item.DONGIA) VNĐ</em></p>
+                        <div class="block">
+                            <div class="starbox small ghosting"> </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+    <div class="clearfix"></div>
+</div>

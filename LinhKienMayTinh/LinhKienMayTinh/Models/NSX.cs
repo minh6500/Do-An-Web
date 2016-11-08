@@ -22,6 +22,7 @@ namespace LinhKienMayTinh.Models
     
         public int MANSX { get; set; }
         public string TENNSX { get; set; }
+        public string URL { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SANPHAM> SANPHAMs { get; set; }

@@ -50,7 +50,7 @@ namespace LinhKienMayTinh.Areas.Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MALOAI,TENLOAI")] LOAISP lOAISP)
+        public ActionResult Create([Bind(Include = "MALOAI,TENLOAI,URL")] LOAISP lOAISP)
         {
             if (ModelState.IsValid)
             {
@@ -82,7 +82,7 @@ namespace LinhKienMayTinh.Areas.Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MALOAI,TENLOAI")] LOAISP lOAISP)
+        public ActionResult Edit([Bind(Include = "MALOAI,TENLOAI,URL")] LOAISP lOAISP)
         {
             if (ModelState.IsValid)
             {

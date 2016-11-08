@@ -28,6 +28,9 @@
         <th>
             @Html.DisplayNameFor(model => model.SANPHAM.TENSP)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DONDATHANG.NGAYDAT)
+        </th>
         <th></th>
     </tr>
 
@@ -51,6 +54,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.SANPHAM.TENSP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DONDATHANG.NGAYDAT)
             </td>
         </tr>
     }

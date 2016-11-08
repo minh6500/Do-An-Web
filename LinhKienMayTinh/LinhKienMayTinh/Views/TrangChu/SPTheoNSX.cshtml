@@ -7,7 +7,7 @@
 <div class="product">
     <div class="container">
         <div class="spec ">
-            <h3>Sản Phẩm</h3>
+            <h3>Sản Phẩm Theo Nhà Sản Xuất</h3>
             <div class="ser-t">
                 <b></b>
                 <span><i></i></span>
@@ -19,12 +19,12 @@
             {
                 <div class="col-md-3 pro-1">
                     <div class="col-m">
-                        <a href="@Url.Action("XemChiTiet","TrangChu",new { id = @item.MASP })" data-toggle="modal" data-target="#myModal1" class="offer-img">
+                        <a href="/chi-tiet-san-pham/@item.URL-@item.MASP" data-toggle="modal" data-target="#myModal1" class="offer-img">
                             <img src="/images/@item.HINHANH" class="img-responsive" alt="">
                         </a>
                         <div class="mid-1">
                             <div class="women">
-                                <h6><a href="single.html">@item.TENSP</a></h6>
+                                <h6><a href="/chi-tiet-san-pham/@item.URL-@item.MASP">@item.TENSP</a></h6>
                             </div>
                             <div class="mid-2">
                                 <p>@*<label>$7.00</label>*@<em class="item_price">@item.DONGIA</em></p>
@@ -36,7 +36,7 @@
                             @using (Html.BeginForm("ThemGioHang", "GioHang", new { @id = @item.MASP, @strURL = Request.Url.ToString() }))
                             {
                             <div class="add">
-                                <button class="btn btn-danger my-cart-btn my-cart-b" data-id="24" data-name="Wheat" data-summary="summary 24" data-price="6.00" data-quantity="1" data-image="images/of24.png">Đặt Hàng</button>
+                                <button class="btn btn-danger my-cart-btn my-cart-b" data-id="24" data-name="Wheat" data-summary="summary 24" data-price="6.00" data-quantity="1" data-image="images/of24.png">Đặt Mua</button>
                             </div>
                             }
                         </div>

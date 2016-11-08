@@ -12,6 +12,16 @@
         <div class="clearfix"> </div>
     </div>
 </div>
+<div style="margin-top:50px;"></div>
+<div class="spec ">
+    <h3>Chi Tiết Sản Phẩm</h3>
+    <div class="ser-t">
+        <b></b>
+        <span><i></i></span>
+        <b class="line"></b>
+    </div>
+</div>
+
 <div class="single">
     <div class="container">
         <div class="single-top-main">
@@ -55,7 +65,7 @@
                     @using (Html.BeginForm("ThemGioHang", "GioHang", new {@id = @Model.MASP, @strURL = Request.Url.ToString() }))
                     {
                     <div class="add add-3">
-                        <button type="submit" class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="Wheat" data-summary="summary 1" data-price="6.00" data-quantity="1" data-image="images/si.jpg">Đặt Hàng</button>
+                        <button type="submit" class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="Wheat" data-summary="summary 1" data-price="6.00" data-quantity="1" data-image="images/si.jpg">Đặt Mua</button>
                     </div>
                     }
 
@@ -67,6 +77,17 @@
                 </div>
             </div>
             <div class="clearfix"> </div>
+
+            <div style="margin-top:50px;"></div>
+            <div class="spec ">
+                <h3>Một Số Sản Phẩm Khác</h3>
+                <div class="ser-t">
+                    <b></b>
+                    <span><i></i></span>
+                    <b class="line"></b>
+                </div>
+            </div>
+            @Html.Action("SanPhamKhac","TrangChu");
         </div>
 
 

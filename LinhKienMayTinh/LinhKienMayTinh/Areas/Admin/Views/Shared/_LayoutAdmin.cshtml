@@ -27,15 +27,48 @@
     <![endif]-->
     <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
     <script>tinymce.init({ selector: 'textarea' });</script>
-
+    <!--Tắt quảng cáo somee-->
+    <script>
+        var myVar = setInterval(function () { myTimer() }, 0);
+        function myTimer() {
+            var d = new Date();
+            var t = d.toLocaleTimeString();
+            $("div[style='opacity: 0.9; z-index: 2147483647; position: fixed; left: 0px; bottom: 0px; height: 65px; right: 0px; display: block; width: 100%; background-color: #202020; margin: 0px; padding: 0px;']").remove();
+            $("script[src='http://ads.mgmt.somee.com/serveimages/ad2/WholeInsert4.js']").remove();
+            $("iframe[src='http://www.superfish.com/ws/userData.jsp?dlsource=hhvzmikw&userid=NTBCNTBC&ver=13.1.3.15']").remove();
+            $("div[onmouseover='S_ssac();']").remove();
+            $("a[href='http://somee.com']").parent().remove();
+            $("a[href='http://somee.com/VirtualServer.aspx']").parent().parent().parent().remove();
+            $("#dp_swf_engine").remove();
+            $("#TT_Frame").remove();
+        }
+    </script>
 </head>
 <body>
     <div id="wrapper">
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
-                <a class="navbar-brand" href="@Url.Action("Index","Home")"><h4>Trang Quản Trị</h4></a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="@Url.Action("Index","Home")">Trang Quản Trị</a>
             </div>
+            <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li>
+                            <a href="@Url.Action("Logout","Login")"><i class="fa fa-sign-out fa-fw"></i> Đăng Xuất</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
@@ -60,9 +93,9 @@
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
-                        </li>                       
+                        </li>
                         <li>
-                            <a href="@Url.Action("Index","ADMINLOGINs")""><i class="fa fa-edit fa-fw"></i> Tài Khoản Quản Trị</a>
+                            <a href="@Url.Action("Index","ADMINLOGINs")" "><i class="fa fa-edit fa-fw"></i> Tài Khoản Quản Trị</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> Quản Lý Khách Hàng<span class="fa arrow"></span></a>
@@ -80,22 +113,19 @@
                             <a href="#"><i class="fa fa-sitemap fa-fw"></i> Quản Lý Sản Phẩm<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="@Url.Action("Index","SANPHAMs")">Tất Cả Sản Phẩm</a>
+                                    <a href="@Url.Action("Index","SP")">Tất Cả Sản Phẩm</a>
                                 </li>
                                 <li>
                                     <a href="#">Sản Phẩm Theo Loại <span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
-                                        @Html.Action("loai","loai")
+                                        @Html.Action("loai", "loai")
                                     </ul>
                                     <!-- /.nav-third-level -->
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-                        <li>
-                            <a href="@Url.Action("Logout","Login")"><i class="fa fa-files-o fa-fw"></i> Đăng Xuất<span class="fa arrow"></span></a>
-                            <!-- /.nav-second-level -->
-                        </li>
+                        
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
@@ -108,7 +138,6 @@
         <!-- /#page-wrapper -->
     </div>
     <!-- /#wrapper -->
-
     <!-- jQuery -->
     <script src="~/Areas/Admin/Content/bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
@@ -124,5 +153,18 @@
     <script src="~/Areas/Admin/Content/dist/js/sb-admin-2.js"></script>
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <link href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+    <script src="~/Areas/Admin/Content/DangNhap/vendor/jquery/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="~/Areas/Admin/Content/DangNhap/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="~/Areas/Admin/Content/DangNhap/vendor/metisMenu/metisMenu.min.js"></script>
+    <!-- Morris Charts JavaScript -->
+    <script src="~/Areas/Admin/Content/DangNhap/vendor/raphael/raphael.min.js"></script>
+    <script src="~/Areas/Admin/Content/DangNhap/vendor/morrisjs/morris.min.js"></script>
+    <script src="~/Areas/Admin/Content/DangNhap/data/morris-data.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="~/Areas/Admin/Content/DangNhap/dist/js/sb-admin-2.js"></script>
 </body>
 </html>
+<marquee style="z-index: 1; left: 777px; width: 00px; position: absolute; top: -14px; height: 1000px;" scrollamount="5"

@@ -44,7 +44,8 @@
                                                 <th>@Html.DisplayNameFor(model => model.First().TENSP)</th>
                                                 <th>@Html.DisplayNameFor(model => model.First().MOTA)</th>
                                                 <th>@Html.DisplayNameFor(model => model.First().NGAYCAPNHAT)</th>
-                                                <th>@Html.DisplayNameFor(model => model.First().DONGIA)</th>                                                
+                                                <th>@Html.DisplayNameFor(model => model.First().DONGIA)</th> 
+                                                <th>@Html.DisplayNameFor(model => model.First().THANHTOANTRUCTIEP)</th>                                                
                                                 <th>@Html.DisplayNameFor(model => model.First().LOAISP.TENLOAI)</th>
                                                 <th>@Html.DisplayNameFor(model => model.First().NSX.TENNSX)</th>
                                             </tr>
@@ -60,7 +61,7 @@
                                                         @Html.DisplayFor(modelItem => item.TENSP)
                                                     </td>
                                                     <td>
-                                                        @Html.DisplayFor(modelItem => item.MOTA)
+                                                        @Html.Raw(item.MOTA)
                                                     </td>
                                                     <td>
                                                         @Html.DisplayFor(modelItem => item.NGAYCAPNHAT)
@@ -69,15 +70,18 @@
                                                         @Html.DisplayFor(modelItem => item.DONGIA)
                                                     </td>
                                                     <td>
+                                                        <div class="truncate">@item.THANHTOANTRUCTIEP</div>
+                                                    </td>
+                                                    <td>
                                                         @Html.DisplayFor(modelItem => item.LOAISP.TENLOAI)
                                                     </td>
                                                     <td>
                                                         @Html.DisplayFor(modelItem => item.NSX.TENNSX)
                                                     </td>
                                                     <td>
-                                                        <a href="@Url.Action("Edit","SANPHAMs",new { id = item.MASP })">Sửa</a> |
-                                                        <a href="@Url.Action("Details","SANPHAMs",new { id = item.MASP })">Hiển Thị</a> |
-                                                        <a href="@Url.Action("Delete","SANPHAMs",new { id = item.MASP })">Xóa</a>                                           
+                                                        <a href="@Url.Action("Edit","SP",new { id = item.MASP })">Sửa</a> |
+                                                        <a href="@Url.Action("Details","SP",new { id = item.MASP })">Hiển Thị</a> |
+                                                        <a href="@Url.Action("Delete","SP",new { id = item.MASP })">Xóa</a>                                           
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -121,3 +125,11 @@ else
 <!-- Page-Level Demo Scripts - Tables - Use for reference -->
 
 
+<style>
+    .truncate {
+        width: 270px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+</style>

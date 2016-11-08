@@ -4,6 +4,6 @@
 @foreach (var item in Model)
 {
     <li>
-        <a href="@Url.Action("SanPhamTheoLoai","SANPHAMs",new { id = item.MALOAI})">@item.TENLOAI</a>
+        <a href="@Url.Action("SanPhamTheoLoai","SP",new { id = item.MALOAI})">@item.TENLOAI</a>
     </li>
 }
