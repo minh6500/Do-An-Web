@@ -27,12 +27,12 @@
         {
             <div class="col-md-3 pro-1">
                 <div class="col-m">
-                    <a href="@Url.Action("XemChiTiet", "TrangChu", new { id = @item.MASP })" data-toggle="modal" data-target="#myModal17" class="offer-img">
+                    <a href="/chi-tiet-san-pham/@item.URL-@item.MASP" data-toggle="modal" data-target="#myModal17" class="offer-img">
                         <img src="~/images/@item.HINHANH" class="img-responsive" alt="">
                     </a>
                     <div class="mid-1">
                         <div class="women">
-                            <h6><a href="@Url.Action("XemChiTiet", "TrangChu", new { id = @item.MASP })">@item.TENSP</a></h6>
+                            <h6><a href="/chi-tiet-san-pham/@item.URL-@item.MASP">@item.TENSP</a></h6>
                         </div>
                         <div class="mid-2">
                             <p> @*@<label>@item.DONGIA</label>*@<em class="item_price">@item.DONGIA</em></p>

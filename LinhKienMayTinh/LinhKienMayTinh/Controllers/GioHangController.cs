@@ -182,7 +182,9 @@ namespace LinhKienMayTinh.Controllers
                     db.CTDDHs.Add(ctdh);
                 }
                 db.SaveChanges();
-                return RedirectToAction("Index", "TrangChu");
+                Session["GioHang"] = null;
+                ViewBag.DatHang = "Chúc mừng bạn đã đặt hàng thành công !";
+                return View();
             }
             return View();
         }

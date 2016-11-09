@@ -5,14 +5,14 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="36e979926e794270ae475badfcd3409e" Name="Diagram1">
-        <EntityTypeShape EntityType="QLBANHANGModel.ADMINLOGIN" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBANHANGModel.CTDDH" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBANHANGModel.DONDATHANG" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBANHANGModel.KHACHHANG" Width="1.5" PointX="0.75" PointY="9.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBANHANGModel.LOAISP" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBANHANGModel.NSX" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBANHANGModel.QUANGCAO" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBANHANGModel.SANPHAM" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBANHANGModel.ADMINLOGIN" Width="1.5" PointX="2.5" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBANHANGModel.CTDDH" Width="1.5" PointX="5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBANHANGModel.DONDATHANG" Width="1.5" PointX="7" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBANHANGModel.KHACHHANG" Width="1.5" PointX="9.375" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBANHANGModel.LOAISP" Width="1.5" PointX="0.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBANHANGModel.NSX" Width="1.5" PointX="0.5" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBANHANGModel.QUANGCAO" Width="1.5" PointX="5.625" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBANHANGModel.SANPHAM" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="QLBANHANGModel.FK__CTDDH__MAD__1DE57479" ManuallyRouted="false" />
         <AssociationConnector Association="QLBANHANGModel.FK__CTDDH__MASP__1CF15040" ManuallyRouted="false" />
         <AssociationConnector Association="QLBANHANGModel.FK__DONDATHANG__MAKH__1A14E395" ManuallyRouted="false" />

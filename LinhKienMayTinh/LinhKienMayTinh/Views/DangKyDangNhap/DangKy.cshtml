@@ -27,9 +27,9 @@
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
                     <div>
-                        @Html.LabelFor(model => model.TENKH, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.LabelFor(model => model.TENKH, htmlAttributes: new { @class = "control-label col-md-3" })
 
-                        <div class="col-md-10">
+                        <div class="col-md-9">
                             @Html.EditorFor(model => model.TENKH, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.TENKH, "", new { @class = "text-danger" })
                         </div>
@@ -37,16 +37,16 @@
                     </div>
 
                     <div style="margin-top:20px;">
-                        @Html.LabelFor(model => model.SDT, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
+                        @Html.LabelFor(model => model.SDT, htmlAttributes: new { @class = "control-label col-md-3" })
+                        <div class="col-md-9">
                             @Html.EditorFor(model => model.SDT, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.SDT, "", new { @class = "text-danger" })
                         </div>
                         <div class="clearfix"></div>
                     </div>
                     <div style="margin-top:20px;">
-                        @Html.LabelFor(model => model.DIACHI, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
+                        @Html.LabelFor(model => model.DIACHI, htmlAttributes: new { @class = "control-label col-md-3" })
+                        <div class="col-md-9">
                             @Html.EditorFor(model => model.DIACHI, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.DIACHI, "", new { @class = "text-danger" })
                         </div>
@@ -54,8 +54,8 @@
                     </div>
 
                     <div style="margin-top:20px;">
-                        @Html.LabelFor(model => model.EMAIL, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
+                        @Html.LabelFor(model => model.EMAIL, htmlAttributes: new { @class = "control-label col-md-3" })
+                        <div class="col-md-9">
                             @Html.EditorFor(model => model.EMAIL, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.EMAIL, "", new { @class = "text-danger" })
                         </div>
@@ -63,8 +63,8 @@
                     </div>
 
                     <div style="margin-top:20px;">
-                        @Html.LabelFor(model => model.USERNAME, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
+                        @Html.LabelFor(model => model.USERNAME, htmlAttributes: new { @class = "control-label col-md-3" })
+                        <div class="col-md-9">
                             @Html.EditorFor(model => model.USERNAME, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.USERNAME, "", new { @class = "text-danger" })
                             <p style="color:darkred">@ViewBag.ThongBaoUserName</p>
@@ -73,8 +73,8 @@
                     </div>
 
                     <div style="margin-top:20px;">
-                        @Html.LabelFor(model => model.PASS, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
+                        @Html.LabelFor(model => model.PASS, htmlAttributes: new { @class = "control-label col-md-3" })
+                        <div class="col-md-9">
                             <input type="password" name="PASS" class="form-control" />
                             @Html.ValidationMessageFor(model => model.PASS, "", new { @class = "text-danger" })
                         </div>
@@ -83,16 +83,17 @@
 
                     <div style="margin-top:20px;">
                         <div class="form-group">
-                            <label class="control-label col-md-2">Xác Nhận</label>
-                            <div class="col-md-10">
+                            <label class="control-label col-md-3">Xác Nhận</label>
+                            <div class="col-md-9">
                                 <input type="password" name="XACNHAN" class="form-control" />
                                 <p style="color:darkred">@ViewBag.ThongBaoXacNhan</p>
                             </div>
                         </div>
                     </div>
+                    <div class="clearfix"></div>
 
                     <div style="margin-top:20px;">
-                        <div class="col-md-offset-2 col-md-10">
+                        <div class="col-md-offset-3 col-md-9">
                             <input type="submit" value="Đăng Ký" class="btn btn-default" />
                         </div>
                         <div class="clearfix"></div>
@@ -108,7 +109,7 @@ else
                 <div class="form-w3agile form1">
                     <h3>Đăng Ký</h3>
                     <hr />
-                    <p style="color:darkred;text-align:center;font-size:30px;font-weight:bold;margin-top:30px;">@ViewBag.DangKy</p>
+                    <p style="color:red;text-align:center;font-weight:bold;margin-top:30px;">@ViewBag.DangKy</p>
                     <p style="text-align:center;margin-bottom:30px;margin-top:30px;"><a href="@Url.Action("DangNhap","DangKyDangNhap")">Về Trang Đăng Nhập</a></p>
                     <div class="clear"></div>
                 </div>

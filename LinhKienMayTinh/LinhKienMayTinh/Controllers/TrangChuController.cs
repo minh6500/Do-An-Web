@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using LinhKienMayTinh.Models;
+using PagedList;
+using PagedList.Mvc;
 
 namespace LinhKienMayTinh.Controllers
 {
@@ -23,14 +25,18 @@ namespace LinhKienMayTinh.Controllers
             return View(sp);
         }
 
-        public ActionResult SPTheoLoai(int id)
+        public ActionResult SPTheoLoai(int id,int? page)
         {
-            var sp = from s in db.SANPHAMs where s.MALOAI == id select s;
+            int pageNumber = (page ?? 1);
+            int pageSize = 8;
+            var sp = (from s in db.SANPHAMs where s.MALOAI == id select s).ToList().ToPagedList(pageNumber, pageSize);
             return View(sp);
         }
-        public ActionResult SPTheoNSX(int id)
+        public ActionResult SPTheoNSX(int? id, int? page)
         {
-            var a = from s in db.SANPHAMs where s.MANSX == id select s;
+            int pageNumber = (page ?? 1);
+            int pageSize = 8;
+            var a = (from n in db.SANPHAMs where n.MANSX == id select n).ToList().ToPagedList(pageNumber, pageSize);
             return View(a);
         }
         public ActionResult XemChiTiet(int id)

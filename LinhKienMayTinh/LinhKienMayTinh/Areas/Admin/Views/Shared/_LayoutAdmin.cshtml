@@ -95,7 +95,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="@Url.Action("Index","ADMINLOGINs")" "><i class="fa fa-edit fa-fw"></i> Tài Khoản Quản Trị</a>
+                            <a href="@Url.Action("Index","ADMINLOGINs")" ><i class="fa fa-edit fa-fw"></i> Tài Khoản Quản Trị</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> Quản Lý Khách Hàng<span class="fa arrow"></span></a>
@@ -104,7 +104,14 @@
                                     <a href="@Url.Action("Index","KHACHHANGs")">Tài Khoản</a>
                                 </li>
                                 <li>
-                                    <a href="@Url.Action("Index","DONDATHANGs")">Đơn Đặt Hàng</a>
+                                    <a href="#">Đơn Đặt Hàng <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                        <li><a href="@Url.Action("Index","DONDATHANGs")">Tất Cả Đơn Đặt Hàng</a></li>
+                                        <li><a href="@Url.Action("DonDatHangDaThanhToan","DONDATHANGs")">Đơn Đặt Hàng Đã Thanh Toán</a></li>
+                                        <li><a href="@Url.Action("DonDatHangChuaThanhToan","DONDATHANGs")">Đơn Đặt Hàng Chưa Thanh Toán</a></li>
+                                        <li><a href="@Url.Action("DonDatHangDaGiaoHang","DONDATHANGs")">Đơn Đặt Hàng Đã Giao Hàng</a></li>
+                                        <li><a href="@Url.Action("DonDatHangChuaGiaoHang","DONDATHANGs")">Đơn Đặt Hàng Chưa Giao Hàng</a></li>
+                                    </ul>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

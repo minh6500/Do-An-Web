@@ -204,7 +204,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                         </li>
                     }
-                    
+
                     @*<li><a href="about.html"><i class="fa fa-file-text-o" aria-hidden="true"></i>Giới Thiệu</a></li>*@
                     @*<li><a href="shipping.html"><i class="fa fa-ship" aria-hidden="true"></i>Shipping</a></li>*@
                 </ul>
@@ -288,11 +288,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="container">
         <div class="banner-info">
             <div class="search-form">
-                @using (Html.BeginForm("KetQuaTimKiem", "TimKiem", FormMethod.Post))
+                @using (Html.BeginForm("KetQuaTimKiem", "TimKiem", FormMethod.Post, new { tukhoa = "#txt_TimKiem" }))
                 {
-                    <input type="text" placeholder="Search..." name="txt_TimKiem">
+                    <input type="text" placeholder="Search..." name="txt_TimKiem" id="txt_TimKiem">
                     <input type="submit" value=" ">
                 }
+
             </div>
         </div>
     </div>
@@ -301,7 +302,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script src="/Content/TrangChu/js/jquery.vide.min.js"></script>
     @if (ViewBag.TrangChu == "Trang Chủ")
     {
-       @Html.Action("QuangCao","QuangCao")
+        @Html.Action("QuangCao", "QuangCao")
     }
     <!--content-->
     @RenderBody()

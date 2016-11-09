@@ -22,7 +22,34 @@ namespace LinhKienMayTinh.Areas.Admin.Controllers
         {
             int pageNumber = (page ?? 1);
             int pageSize = 5;
-            var dONDATHANGs = db.DONDATHANGs.Include(d => d.KHACHHANG);
+            return View(db.DONDATHANGs.ToList().ToPagedList(pageNumber, pageSize));
+        }
+        public ActionResult DonDatHangDaThanhToan(int? page)
+        {
+            int pageNumber = (page ?? 1);
+            int pageSize = 5;
+            var dONDATHANGs = db.DONDATHANGs.Where(n => n.TINHTRANGTHANHTOAN == true);
+            return View(dONDATHANGs.ToList().ToPagedList(pageNumber, pageSize));
+        }
+        public ActionResult DonDatHangChuaThanhToan(int? page)
+        {
+            int pageNumber = (page ?? 1);
+            int pageSize = 5;
+            var dONDATHANGs = db.DONDATHANGs.Where(n => n.TINHTRANGTHANHTOAN == false);
+            return View(dONDATHANGs.ToList().ToPagedList(pageNumber, pageSize));
+        }
+        public ActionResult DonDatHangDaGiaoHang(int? page)
+        {
+            int pageNumber = (page ?? 1);
+            int pageSize = 5;
+            var dONDATHANGs = db.DONDATHANGs.Where(n => n.TINHTRANGGIAOHANG == true);
+            return View(dONDATHANGs.ToList().ToPagedList(pageNumber, pageSize));
+        }
+        public ActionResult DonDatHangChuaGiaoHang(int? page)
+        {
+            int pageNumber = (page ?? 1);
+            int pageSize = 5;
+            var dONDATHANGs = db.DONDATHANGs.Where(n => n.TINHTRANGGIAOHANG == false);
             return View(dONDATHANGs.ToList().ToPagedList(pageNumber, pageSize));
         }
         public ActionResult CHITIET (int? id)

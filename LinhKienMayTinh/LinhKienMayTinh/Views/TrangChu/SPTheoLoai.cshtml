@@ -1,4 +1,7 @@
-﻿@model IEnumerable<LinhKienMayTinh.Models.SANPHAM>
+﻿@using PagedList;
+@using PagedList.Mvc;
+@using LinhKienMayTinh.Models;
+@model PagedList.PagedList<SANPHAM>
 @{
     ViewBag.Title = "Sản Phẩm Theo Loại";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -48,3 +51,10 @@
     </div>
 </div>
 
+<!--Tạo link liên kết các trang-->
+<div style="text-align:center;">
+    Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+    <div class="MenuTrang">
+        @Html.PagedListPager(Model, page => Url.Action("SPTheoLoai", "TrangChu", new { page = page }))
+    </div>
+</div>

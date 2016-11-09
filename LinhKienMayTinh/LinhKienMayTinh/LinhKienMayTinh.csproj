@@ -1153,12 +1153,10 @@
     <Content Include="tinymce\js\tinymce\tinymce.min.js" />
     <Content Include="tinymce\LICENSE.TXT" />
     <Content Include="Areas\Admin\Views\LOAISPs\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\LOAISPs\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\LOAISPs\Details.cshtml" />
     <Content Include="Areas\Admin\Views\LOAISPs\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\LOAISPs\Index.cshtml" />
     <Content Include="Areas\Admin\Views\NSXes\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\NSXes\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\NSXes\Details.cshtml" />
     <Content Include="Areas\Admin\Views\NSXes\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\NSXes\Index.cshtml" />
@@ -1180,6 +1178,11 @@
     <Content Include="Areas\Admin\Views\SP\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\SP\Index.cshtml" />
     <Content Include="Areas\Admin\Views\SP\SanPhamTheoLoai.cshtml" />
+    <Content Include="Areas\Admin\Views\DONDATHANGs\DonDatHangDaThanhToan.cshtml" />
+    <Content Include="Areas\Admin\Views\DONDATHANGs\DonDatHangChuaThanhToan.cshtml" />
+    <Content Include="Areas\Admin\Views\DONDATHANGs\DonDatHangDaGiaoHang.cshtml" />
+    <Content Include="Areas\Admin\Views\DONDATHANGs\DonDatHangChuaGiaoHang.cshtml" />
+    <Content Include="Areas\Admin\Views\DONDATHANGs\Details.cshtml" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="scripts\jquery-1.10.2.js" />
     <Content Include="scripts\jquery-1.10.2.min.js" />

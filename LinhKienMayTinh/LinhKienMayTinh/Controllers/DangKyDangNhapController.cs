@@ -89,6 +89,7 @@ namespace LinhKienMayTinh.Controllers
         public ActionResult Thoat()
         {
             Session["TaiKhoan"] = null;
+            Session["GioHang"] = null;
             return RedirectToAction("Index", "TrangChu");
         }
 
@@ -135,14 +136,14 @@ namespace LinhKienMayTinh.Controllers
             {
                 if (matkhau != session.PASS)
                 {
-                    ViewBag.ThongBao = "Mật Khẩu Không Đúng Xin Vui Lòng Nhập Lại !";
+                    ViewBag.MatKhau = "Mật Khẩu Không Đúng Xin Vui Lòng Nhập Lại !";
                     return View();
                 }
                 else
                 {
                     if (xacnhan != matkhaumoi)
                     {
-                        ViewBag.ThongBao = "Xác Nhận Mật Khẩu Không Chính Xác !";
+                        ViewBag.XacNhan = "Xác Nhận Mật Khẩu Không Chính Xác !";
                         return View();
                     }
                     else

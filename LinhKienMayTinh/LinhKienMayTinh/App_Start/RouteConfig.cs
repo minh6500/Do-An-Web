@@ -65,12 +65,6 @@ namespace LinhKienMayTinh
             );
 
             routes.MapRoute(
-                name: "KetQuaTimKiem",
-                url: "ket-qua-tim-kiem",
-                defaults: new { controller = "TimKiem", action = "KetQuaTimKiem", id = UrlParameter.Optional }
-            );
-
-            routes.MapRoute(
                 name: "SanPham",
                 url: "san-pham",
                 defaults: new { controller = "SanPham", action = "SanPham", id = UrlParameter.Optional }
@@ -84,14 +78,20 @@ namespace LinhKienMayTinh
 
             routes.MapRoute(
                  name: "SanPhamTheoLoai",
-                 url: "san-pham/{URL}-{id}",
+                 url: "san-pham-theo-loai/{URL}-{id}",
                  defaults: new { controller = "TrangChu", action = "SPTheoLoai", id = UrlParameter.Optional }
              );
 
             routes.MapRoute(
                  name: "NSX",
-                 url: "san-pham/{URL}-{id}",
+                 url: "san-pham-theo-nha-san-xuat/{URL}-{id}",
                  defaults: new { controller = "TrangChu", action = "SPTheoNSX", id = UrlParameter.Optional }
+             );
+
+            routes.MapRoute(
+                 name: "TimKiem",
+                 url: "tim-kiem",
+                 defaults: new { controller = "TimKiem", action = "KetQuaTimKiem", id = UrlParameter.Optional }
              );
 
             routes.MapRoute(
